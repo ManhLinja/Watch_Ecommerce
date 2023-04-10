@@ -64,7 +64,7 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <button @click.prevent="add_to_cart(product)" type="button">Add to cart</button>
+                            <button @click.prevent="add_to_cart(product)" @click="notify" type="button">Add to cart</button>
                         </div>
                     </form>
                 </div>
@@ -117,6 +117,8 @@
 </template>
 
 <script>
+import { toast } from 'vue3-toastify';
+import 'vue3-toastify/dist/index.css';
 import { mapGetters, mapActions, mapMutations } from 'vuex';
     export default {
         props: ['selected_product'],
@@ -188,6 +190,14 @@ import { mapGetters, mapActions, mapMutations } from 'vuex';
                 return this.product.price;
             }
         }
+    },
+    setup() {
+        const notify = () => {
+        toast("success!!!", {
+            autoClose: 3000,
+        }); // ToastOptions
+        }
+        return { notify };
     }
     }
 </script>

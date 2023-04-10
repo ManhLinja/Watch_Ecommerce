@@ -172,7 +172,7 @@
                             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
                                 <div class="footer-widget">
                                     <div class="footer-logo mb-25">
-                                        <img src="{{ asset('contents/website') }}/img/logo/1.png" alt="" />
+                                        <img src="{{ asset('contents/website') }}/img/logo/9.png" alt="" style="margin-left: 50px;"/>
                                     </div>
                                     <div class="footer-content">
                                         <p>OneClick is a premium Wordpress theme with advanced admin module. It's extremely customizable, easy to use and</p>
@@ -300,7 +300,7 @@
         </div>
 
         <!-- Placed js at the end of the document so the pages load faster -->
-        @vite(['resources/js/abc.js','resources/js/app.js'])
+        @vite(['resources/js/app.js'])
         <!-- jquery latest version -->
         <script src="{{ asset('contents/website') }}/js/vendor/jquery-1.12.4.min.js"></script>
         <!-- Popper js -->

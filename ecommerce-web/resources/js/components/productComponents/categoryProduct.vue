@@ -148,7 +148,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="modal fade"  id="productViewModal" style="z-index: 99999999999;" tabindex="-1" aria-labelledby="productViewModalLabel" aria-hidden="true">
+                                <div class="modal fade"  id="productViewModal" style="z-index: 999;" tabindex="-1" aria-labelledby="productViewModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-xl">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -159,7 +159,7 @@
                                                 <product-details></product-details>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                             </div>
                                         </div>
                                     </div>
