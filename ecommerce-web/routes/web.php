@@ -1,11 +1,31 @@
 <?php
 
+use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\UserRoleController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\WebsiteController;
+use App\Http\Controllers\Product\ProductController;
+use App\Http\Controllers\Product\BrandController;
+use App\Http\Controllers\Product\MainCategoryController;
+use App\Http\Controllers\Product\CategoryController;
+use App\Http\Controllers\Product\SubCategoryController;
+use App\Http\Controllers\Product\ColorController;
+use App\Http\Controllers\Product\SizeController;
+use App\Http\Controllers\Product\UnitController;
+use App\Http\Controllers\Product\StatusController;
+use App\Http\Controllers\Product\WriterController;
+use App\Http\Controllers\Product\PublicationController;
+use App\Http\Controllers\Product\VendorController;
+
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +45,41 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/', [WebsiteController::class, 'index'])->name('website_index');
+
+Route::get('/products', [WebsiteController::class, 'products'])->name('website_products');
+
+Route::get('/products/category/{main_category}', [WebsiteController::class, 'main_category_products'])->name('website_main_category_products');
+Route::get('/products/category/{main_category}/all-product-json', [WebsiteController::class, 'main_category_products_json'])->name('website_main_category_products_json');
+
+Route::get('/products/category/{main_category}/{category}', [WebsiteController::class, 'category_products'])->name('website_category_products');
+Route::get('/products/category/{main_category}/{category}/all-product-json', [WebsiteController::class, 'category_products_json'])->name('website_category_products_json');
+
+Route::get('/products/category/{main_category}/{category}/{sub_category}', [WebsiteController::class, '@sub_category_products'])->name('website_sub_category_products');
+Route::get('/products/category/{main_category}/{category}/{sub_category}/all-product-json', [WebsiteController::class, 'sub_category_products_json'])->name('website_sub_category_products_json');
+
+Route::get('/product-details/{product}', [WebsiteController::class, 'details'])->name('website_product_details');
+Route::get('/cart', [WebsiteController::class, 'cart'])->name('website_cart');
+Route::get('/checkout', [WebsiteController::class, 'checkout'])->name('website_checkout')->middleware('auth');
+Route::get('/wishlist', [WebsiteController::class, 'wishlist'])->name('website_wishlist');
+Route::get('/contact', [WebsiteController::class, 'contact'])->name('website_contact');
+
+Route::group([
+    'prefix' => 'json',
+], function () {
+
+    Route::get('/get-min-max-price', [WebsiteController::class, 'get_min_max_price_json'])->name('product_get_min_max_price_json');
+    Route::get('/get-all-category', [WebsiteController::class, 'get_all_category_json'])->name('product_get_all_category_json');
+
+    // Route::get('/products/category/{main_category}/all-product-json', 'WebsiteController@main_category_products_json')->name('website_main_category_products_json');
+    // Route::get('/category-products-json/{main_category_id}/{category_id}', 'WebsiteController@category_product_json')->name('product_category_product_json');
+
+
+    Route::get('/latest-products-json', [WebsiteController::class, 'latest_product_json'])->name('product_latest_product_json');
+    Route::get('/show-product-json/{product}', [WebsiteController::class, 'show_product_json'])->name('product_show_product_json');
+    Route::get('/get-product-related-info-json/{product}', [WebsiteController::class, 'get_product_related_info_json'])->name('product_get_product_related_info_json');
+
+});
+
 
 
 
@@ -68,6 +123,49 @@ Route::group([
         Route::get('/edit', [UserRoleController::class, 'edit'])->name('admin_user_role_edit');
         Route::post('/update', [UserRoleController::class, 'update'])->name('admin_user_role_update');
         Route::post('/delete', [UserRoleController::class, 'delete'])->name('admin_user_role_delete');
+});
+
+
+Route::group([
+    'prefix'=>'admin/product', 
+    'middleware'=>['auth'], 
+    'namespace'=>''
+    ], function(){
+        // Route::get('/', [AdminController::class, 'index'])->name('admin_index');
+
+        //basic page
+        Route::resource('product',ProductController::class);
+        // Route::get('/index', [ProductController::class, 'index'])->name('admin_product_index');
+        // Route::get('/create', [ProductController::class, 'create'])->name('admin_product_create');
+        // Route::get('/show', [ProductController::class, 'show'])->name('admin_product_view');
+
+        // Route::get('/brand', [BrandController::class, 'index'])->name('brand.index');
+        // Route::get('/brand/get/{id}', [BrandController::class, 'get'])->name('brand.get');
+        // Route::get('/brand/create', [BrandController::class, 'create'])->name('brand.create');
+        // Route::get('/brand/show/{id}', [BrandController::class, 'show'])->name('brand.show');
+        // Route::get('/brand/edit/{id}', [BrandController::class, 'edit'])->name('brand.edit');
+        // Route::post('/brand', [BrandController::class, 'store'])->name('brand.store');
+        // Route::put('/brand/{id}', [BrandController::class, 'update'])->name('brand.update');
+        // Route::delete('/brand/{id}', [BrandController::class, 'destroy'])->name('brand.destroy');
+
+
+        Route::resource('brand',BrandController::class);
+        Route::resource('main_category',MainCategoryController::class);
+        Route::resource('category',CategoryController::class);
+        Route::resource('sub_category',SubCategoryController::class);
+        Route::resource('color',ColorController::class);
+        Route::resource('size',SizeController::class);
+        Route::resource('unit',UnitController::class);
+        Route::resource('status',StatusController::class);
+        Route::resource('writer',WriterController::class);
+        Route::resource('publication',PublicationController::class);
+        Route::resource('vendor', VendorController::class);
+        
+
+        Route::get('/get-all-cateogory-selected-by-main-category/{main_category_id}', [CategoryController::class, 'get_category_by_main_category'])->name('get_all_cateogory_selected_by_main_category');
+        Route::get('/get-all-sub-cateogory-selected-by-category/{category_id}', [CategoryController::class, 'get_sub_category_by_category'])->name('get_all_sub_category_by_category');
+        Route::get('/get-all-main-category-josn', [MainCategoryController::class, 'get_main_category_json'])->name('get_main_category_json');
+        Route::get('/get-all-category-josn', [CategoryController::class, 'get_category_json'])->name('get_category_json');
 });
 
 

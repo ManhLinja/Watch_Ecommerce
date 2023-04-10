@@ -49,6 +49,10 @@ class LoginController extends Controller
         $this->guard()->attempt(
             $this->credentials($request), $request->filled('remember')
         );
+        if(!User::where('email',$request->email)->exists()){
+            Auth::logout();
+            return redirect()->back()->with('error','your accont is blocked');;
+        }
         if(Auth::user()->status == 0){
             Auth::logout();
             return redirect()->back()->with('error','your accont is blocked');;

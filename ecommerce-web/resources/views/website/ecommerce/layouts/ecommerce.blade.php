@@ -14,6 +14,7 @@
         <link rel="shortcut icon" type="image/x-icon" href="{{ asset('contents/website') }}/img/favicon.png" />
 
         <!-- All css files are included here. -->
+        
         <!-- animate css -->
         <link rel="stylesheet" href="{{ asset('contents/website') }}/css/animate.min.css" />
         <!-- Bootstrap fremwork main css -->
@@ -41,6 +42,7 @@
 
         <!-- Modernizr JS -->
         <script src="{{ asset('contents/website') }}/js/vendor/modernizr-2.8.3.min.js"></script>
+        
     </head>
     <body>
         <!--[if lt IE 8]>
@@ -48,6 +50,8 @@
         <![endif]-->
 
         <!-- header start -->
+        <div id="app">
+            {{-- @include('include.flash') --}}
         <div class="main-wrapper box-shadow">
             <header class="clearfix">
                 <div class="header-top-area bb hidden-xs">
@@ -271,7 +275,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="footer-bottom ptb-20">
+                {{-- <div class="footer-bottom ptb-20">
                     <div class="container">
                         <div class="row">
                             <div class="col-xl-6 col-lg-6 col-md-6 col-12">
@@ -288,12 +292,15 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </footer>
             <!-- footer-area end -->
+            
+        </div>
         </div>
 
         <!-- Placed js at the end of the document so the pages load faster -->
+        @vite(['resources/js/abc.js','resources/js/app.js'])
         <!-- jquery latest version -->
         <script src="{{ asset('contents/website') }}/js/vendor/jquery-1.12.4.min.js"></script>
         <!-- Popper js -->
@@ -320,6 +327,9 @@
         <script src="{{ asset('contents/website') }}/js/plugins.js"></script>
         <!-- Main js file that contents all jQuery plugins activation. -->
         <script src="{{ asset('contents/website') }}/js/main.js"></script>
+
+        @stack('custom_js')
+        
     </body>
 
     <!-- Mirrored from demo.hasthemes.com/oneclick-preview/oneclick/index-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 01 Mar 2021 10:49:54 GMT -->

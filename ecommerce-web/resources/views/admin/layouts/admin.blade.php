@@ -25,10 +25,16 @@
         <link href="{{ asset('contents/admin/assets') }}/css/icons.css" rel="stylesheet" type="text/css" />
         <!-- Metismenu CSS-->
         <link href="{{ asset('contents/admin/assets') }}/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+        @stack('ccss')
         <!-- Custom Style-->
         <link href="{{ asset('contents/admin/assets') }}/css/app-style.css" rel="stylesheet" />
+        <link rel="stylesheet" href="{{ asset('contents/admin') }}/custom.css">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
         <script src="{{ asset('contents/admin/assets') }}/js/jquery.min.js"></script>
+        {{-- <script src="{{ asset('contents/admin') }}/axios.js"></script> --}}
+        <script src="{{ asset('contents/admin') }}/custom.js"></script>
+
+
         <script>
             $.ajaxSetup({
                 cache:false,
@@ -291,6 +297,7 @@
         <!--End wrapper-->
     </body>
     {{--modal part--}}
+    
     <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -321,7 +328,6 @@
     </form>
     <!-- Bootstrap core JavaScript-->
   
-  <script src="{{ asset('contents/admin') }}/custom.js"></script>
   <script src="{{ asset('contents/admin/assets') }}/js/popper.min.js"></script>
   <script src="{{ asset('contents/admin/assets') }}/js/bootstrap.min.js"></script>
 
