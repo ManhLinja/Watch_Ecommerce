@@ -358,28 +358,28 @@
 
                                         <div class="form-group col-md-6 col-xl-6">
                                             <label for="" class="col-form-label">Thumb Image</label>
-                                            <div class="">
+                                            {{-- <div class="">
                                                 <input type="file" name="thumb_image" class="form-control" id="" placeholder="Alert" />
                                                 <span class="text-danger thumb_image"></span>
-                                            </div>
-                                            {{-- @include('admin.product.components.input',[
+                                            </div> --}}
+                                            @include('admin.product.components.input',[
                                                 'name' => 'thumb_image',
                                                 'type' => 'file',
                                                 'attr' => ''
-                                            ]) --}}
+                                            ])
                                         </div>
 
                                         <div class="form-group col-md-6 col-xl-6">
                                             <label for="" class="col-form-label">Related Image</label>
-                                            <div class="">
+                                            {{-- <div class="">
                                                 <input type="file" multiple name="related_images[]" class="form-control" id="" placeholder="Alert" />
                                                 <span class="text-danger related_images"></span>
-                                            </div>
-                                            {{-- @include('admin.product.components.input',[
+                                            </div> --}}
+                                            @include('admin.product.components.input',[
                                                 'name' => 'related_images',
                                                 'type' => 'file',
                                                 'attr' => 'multiple'
-                                            ]) --}}
+                                            ])
                                         </div>
                                         
                                         <div class="form-group col-md-6  col-xl-4">

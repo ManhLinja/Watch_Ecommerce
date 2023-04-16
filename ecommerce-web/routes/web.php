@@ -8,8 +8,10 @@ use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\UserRoleController;
+use App\Http\Controllers\Admin\FileManagerController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\WebsiteController;
+use App\Http\Controllers\CheckOutController;
 use App\Http\Controllers\Product\ProductController;
 use App\Http\Controllers\Product\BrandController;
 use App\Http\Controllers\Product\MainCategoryController;
@@ -22,6 +24,7 @@ use App\Http\Controllers\Product\StatusController;
 use App\Http\Controllers\Product\WriterController;
 use App\Http\Controllers\Product\PublicationController;
 use App\Http\Controllers\Product\VendorController;
+
 
 
 
@@ -60,6 +63,9 @@ Route::get('/products/category/{main_category}/{category}/{sub_category}/all-pro
 Route::get('/product-details/{product}', [WebsiteController::class, 'details'])->name('website_product_details');
 Route::get('/cart', [WebsiteController::class, 'cart'])->name('website_cart');
 Route::get('/checkout', [WebsiteController::class, 'checkout'])->name('website_checkout')->middleware('auth');
+Route::get('/checkout_success',[WebsiteController::class, 'checkout_success'])->name('checkout_success')->middleware('auth');
+Route::post('/save_checkout_information',[CheckOutController::class, 'save_checkout_information'])->name('save_checkout_information')->middleware('auth');
+Route::get('/get_latest_checkout_information',[CheckOutController::class, 'get_latest_checkout_information'])->name('get_latest_checkout_information')->middleware('auth');
 Route::get('/wishlist', [WebsiteController::class, 'wishlist'])->name('website_wishlist');
 Route::get('/contact', [WebsiteController::class, 'contact'])->name('website_contact');
 
@@ -166,6 +172,17 @@ Route::group([
         Route::get('/get-all-sub-cateogory-selected-by-category/{category_id}', [CategoryController::class, 'get_sub_category_by_category'])->name('get_all_sub_category_by_category');
         Route::get('/get-all-main-category-josn', [MainCategoryController::class, 'get_main_category_json'])->name('get_main_category_json');
         Route::get('/get-all-category-josn', [CategoryController::class, 'get_category_json'])->name('get_category_json');
+});
+
+Route::group([
+    'prefix' => 'file-manager',
+    'middleware' => ['auth'],
+    'namespace' => 'Admin'
+], function () {
+
+    Route::post('/store-file', [FileManagerController::class, 'store_file'])->name('admin_fm_store_file');
+    Route::get('/get-files', [FileManagerController::class, 'get_files'])->name('admin_fm_get_files');
+    Route::delete('/delete-file/{image}', [FileManagerController::class, 'delete_file'])->name('admin_fm_delete_file');
 });
 
 

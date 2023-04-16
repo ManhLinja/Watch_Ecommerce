@@ -14,7 +14,7 @@
         <link href="{{ asset('contents/admin/assets') }}/css/pace.min.css" rel="stylesheet" />
         <script src="{{ asset('contents/admin/assets') }}/js/pace.min.js"></script>
         <!--favicon-->
-        <link rel="icon" href="{{ asset('contents/admin/assets') }}/images/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="{{ asset('contents/admin/assets') }}/images/9.png" type="image/x-icon" />
         <!-- simplebar CSS-->
         <link href="{{ asset('contents/admin/assets') }}/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
         <!-- Bootstrap core CSS-->
@@ -32,9 +32,6 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
         <script src="{{ asset('contents/admin/assets') }}/js/jquery.min.js"></script>
         {{-- <script src="{{ asset('contents/admin') }}/axios.js"></script> --}}
-        <script src="{{ asset('contents/admin') }}/custom.js"></script>
-
-
         <script>
             $.ajaxSetup({
                 cache:false,
@@ -55,17 +52,18 @@
                 })
             }
         </script>
+        <script src="{{ asset('contents/admin') }}/custom.js"></script>
     </head>
 
-    <body class="bg-theme bg-theme1">
+    <body class="bg-theme bg-theme2">
         @include('include.flash')
         <!-- Start wrapper-->
         <div id="wrapper">
             <!--Start sidebar-wrapper-->
             <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
                 <div class="brand-logo">
-                    <img src="{{ asset('contents/admin/assets') }}/images/logo-icon.png" class="logo-icon" alt="logo icon" />
-                    <h5 class="logo-text">Ecommerce</h5>
+                    <img src="{{ asset('contents/admin/assets') }}/images/9.png" class="logo-icon" alt="logo icon" />
+                    <h5 class="logo-text">PGM Web Shop</h5>
                     <div class="close-btn"><i class="zmdi zmdi-close"></i></div>
                 </div>
 
@@ -201,11 +199,11 @@
                             </div>
                         </li>
                         <li class="nav-item dropdown language">
-                            <a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" data-toggle="dropdown" href="javascript:void();"><i class="flag-icon flag-icon-gb align-middle"></i></a>
+                            <a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" data-toggle="dropdown" href="javascript:void();"><i class="flag-icon flag-icon-vn align-middle"></i></a>
                             <ul class="dropdown-menu dropdown-menu-right">
                                 <li class="dropdown-item"><i class="flag-icon flag-icon-gb mr-3"></i>English</li>
                                 <li class="dropdown-item"><i class="flag-icon flag-icon-fr mr-3"></i>French</li>
-                                <li class="dropdown-item"><i class="flag-icon flag-icon-cn mr-3"></i>Chinese</li>
+                                {{-- <li class="dropdown-item"><i class="flag-icon flag-icon-cn mr-3"></i>Chinese</li> --}}
                                 <li class="dropdown-item"><i class="flag-icon flag-icon-de mr-3"></i>German</li>
                             </ul>
                         </li>
@@ -322,6 +320,10 @@
         </div>
     </div>
     
+    {{-- file mananger --}}
+    @once
+        @include('admin.product.components.file_manager')
+    @endonce
     
     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
         @csrf

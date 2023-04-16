@@ -15,10 +15,10 @@
                             @include('website.ecommerce.home_include.featured')
                             <!-- featured-area end -->
                             <!-- testimonils-area start -->
-                            @include('website.ecommerce.home_include.testimonial')
+                            {{-- @include('website.ecommerce.home_include.testimonial') --}}
                             <!-- testimonils-area end -->
                             <!-- blog-area start -->
-                            {{-- @include('website.ecommerce.home_include.blog') --}}
+                            @include('website.ecommerce.home_include.blog')
                             <!-- blog-area end -->
                             <!-- newsletter-area start -->
                             {{-- @include('website.ecommerce.home_include.newsletter') --}}

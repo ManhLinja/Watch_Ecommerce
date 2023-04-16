@@ -116,8 +116,11 @@
     <div class="col-md-3" v-for="product in products.data" :key="product.id">
                                     <div class="product-wrapper">
                                         <div class="product-img">
+                                            <div class="discount_amount"  v-if="product.discount_price > 0">
+                                                <span>{{ product.discount }} %</span>
+                                            </div>
                                             <a href="#">
-                                                <img :src="`/${product.thumb_image}`" alt="">
+                                                <img :src="`/${product.thumb_image}`" alt="" style="height:180px;">
                                             </a>
                                             <div class="product-icon c-fff home3-hover-bg">
                                                 <ul>
@@ -244,7 +247,7 @@ import productDetails from './productDetails.vue';
                     }else{
                         this.products = res.data;
                     }
-                    $("html, body").animate({ scrollTop: 280 }, "slow");
+                    $("html, body").animate({ scrollTop: 295 }, "slow");
                 })
             },
             get_categories: function(){
@@ -332,4 +335,6 @@ import productDetails from './productDetails.vue';
             .toggle_display{
                 display: block!important;
             }
+
+            
 </style>

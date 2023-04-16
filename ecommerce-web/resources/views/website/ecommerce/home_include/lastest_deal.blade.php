@@ -10,6 +10,9 @@
     <div class="latest-deals-active">
         <div class="product-wrapper">
             <div class="product-img">
+                <div class="discount_amount" >
+                    <span>50 %</span>
+                </div>
                 <a href="#">
                     <img src="{{ asset('contents/website') }}/img/product/19.jpg" alt="" />
                     {{-- <img src="{{ asset('contents/website') }}/img/product/19.jpg" alt="" class="primary" /> --}}
@@ -34,12 +37,12 @@
                 <span class="sale">Sale</span>
                 <div class="deal-count">
                     <div class="timer">
-                        <div data-countdown="2017/06/01"></div>
+                        <div data-countdown="2023/05/06"></div>
                     </div>
                 </div>
             </div>
             <div class="product-content home3-hover">
-                <h3><a href="#">Adipiscing cursus eu</a></h3>
+                <h3><a href="#">ROLEX SILVER RL888-6AF-8D6</a></h3>
                 <ul>
                     <li><i class="fa fa-star"></i></li>
                     <li><i class="fa fa-star"></i></li>
@@ -47,7 +50,10 @@
                     <li><i class="fa fa-star"></i></li>
                     <li><i class="fa fa-star"></i></li>
                 </ul>
-                <span>&300.00</span>
+                <div class="d-flex justify-content-between">
+                    <span><del>$ 600</del></span>
+                    <span>$ 300</span>
+                </div>
             </div>
         </div>
         <div class="product-wrapper">

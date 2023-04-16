@@ -428,4 +428,9 @@ class WebsiteController extends Controller
 
         return view('website.ecommerce.product_details', compact('product'));
     }
+
+    public function checkout_success()
+    {
+        return view('website.ecommerce.invoice');
+    }
 }

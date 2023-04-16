@@ -1,12 +1,12 @@
 <div class="container clearfix">
     <div class="row">
-        <div class="col-lg-9 ml-auto">
+        <div class="col-lg-12 ml-auto">
             <div class="slider-area mt-35">
-                <div id="slider-active">
-                    <img src="{{ asset('contents/website') }}/img/slider/5.jpg" alt="" title="#active1" />
-                    <img src="{{ asset('contents/website') }}/img/slider/6.jpg" alt="" title="#active2" />
-                </div>
-                <div id="active1" class="nivo-html-caption">
+                {{-- <div id="slider-active">
+                    <img src="{{ asset('contents/website') }}/img/slider/6.jpg" alt="" title="#active1" />
+                    <img src="{{ asset('contents/website') }}/img/slider/5.jpg" alt="" title="#active2" />
+                </div> --}}
+                {{-- <div id="active1" class="nivo-html-caption">
                     <div class="slider-progress"></div>
                     <div class="container">
                         <div class="row">
@@ -63,7 +63,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
+                <banner/>
             </div>
         </div>
     </div>

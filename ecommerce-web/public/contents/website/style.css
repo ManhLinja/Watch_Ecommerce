@@ -161,6 +161,10 @@ img {
   max-width: 100%;
   height: auto;
 }
+.single-banner img {
+  max-width: 100%;
+  height: 200px;
+}
 .fix {
   overflow: hidden;
 }
@@ -1565,9 +1569,14 @@ a#scrollUp:hover {
 .home3-categories-menu {
   margin-right: 0;
 }
+
 .home3-menu-container.menu-container {
-  display: block;
+  display: none;
   width: 89%;
+}
+div.show-menu:hover .menu-container {
+  display: block;
+  
 }
 .home3-menu-container.menu-container ul li a i {
   color: #1077D1;

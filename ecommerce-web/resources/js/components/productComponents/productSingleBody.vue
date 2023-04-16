@@ -7,7 +7,7 @@
                         <span>{{ product.discount }} %</span>
                     </div>
                     <a href="#">
-                        <img :src="'/'+product.thumb_image" alt="">
+                        <img :src="'/'+product.thumb_image" alt="" style="height: 200px;">
                         <!-- <img :src="'/'+product.thumb_image" alt="" class="primary"> -->
                         <!-- <img :src="'/'+product.image[0].name" alt="" class="secondary"> -->
                     </a>

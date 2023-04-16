@@ -20,7 +20,7 @@
             </a>
             <ul class="">
                 <li>
-                    <a href="{{ route('admin_user_index') }}"><i class="zmdi zmdi-dot-circle-alt"></i>Index</a>
+                    <a href="{{ route('admin_user_index') }}"><i class="zmdi zmdi-dot-circle-alt"></i>User</a>
                 </li>
                 <li>
                     <a href="{{ route('admin_user_role_index') }}"><i class="zmdi zmdi-dot-circle-alt"></i>User Role</a>

@@ -349,7 +349,7 @@
 
     @push('ccss')
         <link href="/contents/admin/assets/plugins/select2/css/select2.min.css" rel="stylesheet" />
-        <link href="/contents/admin/assets/plugins/select2/css/select2-bootstrap4.css" rel="stylesheet" />
+        <link href="/contents/admin/assets/plugins/select2/css/select2-boostrap4.css" rel="stylesheet" />
         <link rel="stylesheet" href="{{ asset('contents/admin') }}/assets/plugins/summernote/dist/summernote-bs4.css" />
     @endpush
 

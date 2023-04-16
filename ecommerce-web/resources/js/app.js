@@ -30,6 +30,10 @@ import productHeaderCart from './components/productComponents/productHeaderCart.
 import cartDetails from './components/productComponents/cartDetails.vue';
 import checkOut from './components/productComponents/checkOut.vue';
 import categoryProduct from './components/productComponents/categoryProduct.vue';
+import invoice from './components/productComponents/invoice.vue';
+import banner from './components/frontend/banner.vue';
+app.component('banner', banner);
+app.component('invoice', invoice);
 app.component('category-product', categoryProduct);
 app.component('check-out', checkOut);
 app.component('cart-details', cartDetails);
@@ -40,6 +44,7 @@ app.component('example-component', ExampleComponent);
 
 import * as pagination from 'laravel-vue-pagination';
 import Paginate from "vuejs-paginate-next";
+// import carousel from 'vue-owl-carousel2'
 
 
 
@@ -69,6 +74,7 @@ app.use(mapMutations);
 app.use(Vue);
 app.use(store);
 app.use(vuex);
+// app.use(carousel);
 app.use(pagination);
 app.use(Paginate);
 app.mount('#app');

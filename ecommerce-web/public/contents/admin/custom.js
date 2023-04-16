@@ -1,22 +1,48 @@
-
-
 $(function(){
-    $('.delete_btn').on('click', function(e){
-        e.preventDefault();
-        if(confirm('Sure want to delete?')){
-            $.ajax({
-                url: $(this).attr('href'),
-                type:'delete',
-                success:(res)=>{
-                    $(this).parents('tr').remove();
-                    Toast.fire({
-                        icon:'success',
-                        title:'data deleted'
-                    })
-                }
-            })
-        }
-    });
+
+    // $('.delete_btn').on('click', function(e){
+    //     e.preventDefault();
+    //     if(confirm('Sure want to delete?')){
+    //         $.ajax({
+    //             url: $(this).attr('href'),
+    //             type:'delete',
+    //             success:(res)=>{
+    //                 $(this).parents('tr').remove();
+    //                 Toast.fire({
+    //                     icon:'success',
+    //                     title:'data deleted'
+    //                 })
+    //             }
+    //         })
+    //     }
+    // });
+
+    // remover action on navbar dropdown menu
+    $('.has-arrow').on('click',(e)=>e.preventDefault());
+
+    // rerender delete function on ajax load html
+    const init_delete_function = () => {
+        $('.delete_btn').off().on('click',function(e){
+            e.preventDefault();
+            if(confirm('sure want to delete')){
+                $.ajax({
+                    url:$(this).attr('href'),
+                    type:'delete',
+                    success:(res)=>{
+                        $(this).parents($(this).data('parent')).remove();
+                        $(this).parents('tr').remove();
+                        $(this).parents('li').remove();
+                        Toast.fire({
+                            icon: 'success',
+                            title: 'data deleted'
+                        })
+                    }
+                })
+            }
+        });
+    }
+
+    init_delete_function();
 
     // remove alert on foucus input fields
     $('input').on('focus',function(e){
@@ -26,43 +52,43 @@ $(function(){
     $('select').on('focus',function(e){
         $(this).siblings('span').html('');
     });
-    
+
     $('textarea').on('focus',function(e){
         $(this).siblings('span').html('');
     });
 
-   // all insert form ajax
-   $('.insert_form').on('submit',function(e){
-    e.preventDefault();
-    let formData = new FormData($(this)[0]);
-    $.ajax({
-        url: $(this).attr('action'),
-        type: 'POST',
-        data: formData,
-        success: (res)=>{
-            console.log(res);
-            $(this).trigger('reset');
-            $('.product_insert_form select').val('').trigger('change')
-            $('.note-editable').html('');
-            $('.preloader').hide();
-            toaster('success','data inserted successfully.');
-        },
-        error: (err)=>{
-            // console.log(err.responseJSON.errors);
-            let errors = err.responseJSON.errors;
-            for (const key in errors) {
-                if (Object.hasOwnProperty.call(errors, key)) {
-                    const element = errors[key];
-                    $(`.${key}`).text(element);
+    // all insert form ajax
+    $('.insert_form').on('submit',function(e){
+        e.preventDefault();
+        let formData = new FormData($(this)[0]);
+        $.ajax({
+            url: $(this).attr('action'),
+            type: 'POST',
+            data: formData,
+            success: (res)=>{
+                console.log(res);
+                $(this).trigger('reset');
+                $('.product_insert_form select').val('').trigger('change')
+                $('.note-editable').html('');
+                $('.preloader').hide();
+                toaster('success','data inserted successfully.');
+            },
+            error: (err)=>{
+                // console.log(err.responseJSON.errors);
+                let errors = err.responseJSON.errors;
+                for (const key in errors) {
+                    if (Object.hasOwnProperty.call(errors, key)) {
+                        const element = errors[key];
+                        $(`.${key}`).text(element);
+                    }
                 }
+                toaster('error','check below for errors');
+                $('.preloader').hide();
+            },
+            beforeSend:()=>{
+                $('.preloader').show();
             }
-            toaster('error','check below for errors');
-            $('.preloader').hide();
-        },
-        beforeSend:()=>{
-            $('.preloader').show();
-        }
-    })
+        })
     });
 
     // all update form ajax
@@ -181,8 +207,8 @@ $(function(){
         $.get(control_url+'/'+value,(res)=>{
             $('.'+control_class).html(res);
         })
-    });
-    
+    })
+
     // load option form modal component select
     $('.load_options').on('click',function(e){
         e.preventDefault();
@@ -195,6 +221,8 @@ $(function(){
             }
         });
     });
+
+    // file manager ajax
 
     const get_all_image = () =>{
         $.get('/file-manager/get-files',(res)=>{
@@ -286,6 +314,4 @@ $(function(){
     })
 
 
-
 })
-

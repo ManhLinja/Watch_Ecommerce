@@ -25,7 +25,7 @@
                                             </thead>
                                             <tbody>
                                                 @foreach ($collection as $key=>$item)
-                                                    <tr>
+                                                    <tr class="abc">
                                                         <td scope="row">{{ $key+1 }}</td>
                                                         <td scope="row">{{ $item->name }}</td>
                                                         <td scope="row"></td>
@@ -37,7 +37,7 @@
                                                                 <a type="button" href="{{ route('size.edit',$item->id) }}" class="btn btn-warning waves-effect waves-light m-1">
                                                                     <i class="fa fa-pencil"></i> <span>Edit</span> 
                                                                </a>
-                                                               <a type="button" href="{{ route('size.destroy',$item->id) }}"
+                                                               <a type="button" href="{{ route('size.destroy',$item->id) }}" data-parent=".abc"
                                                                 class="delete_btn btn btn-danger waves-effect waves-light m-1">
                                                                 <i class="fa fa-trash-o"></i> <span>delete</span>
                                                                 </a>

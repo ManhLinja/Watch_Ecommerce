@@ -87,6 +87,8 @@
                             <b>Order Notes</b>
                             <textarea name="#" id="#" cols="30" rows="10" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
                         </div>
+                        <a class="btn btn-success btn-sm" href="/checkout_success" @click="start_checkout">Checkout</a>
+                        <!-- <button class="btn btn-success" @click.prevent="checout_confirm">Checkout</button> -->
                     </div>
                 </div>
             </div>
@@ -159,6 +161,39 @@ export default {
         ...mapMutations([
             'set_billing_address',
         ]),
+
+        start_checkout: function(){
+            this.set_billing_address(this.billing_address);
+        },
+
+        
+
+        // checout_confirm: function(){
+        //     this.set_billing_address(this.billing_address);
+
+        //     // var stripe = Stripe("pk_test_51ImMYLL8CFL5l5NjFUVCtEZrritkVCduYkv3iXK0RnfxjpSHmo6pu9wMdA7CgBLsy2FEndolqr6n0iCUx6Cy1smn000d51tPbc");
+
+        //     axios.post("/checkout_success")
+        //     .then(function (response) {
+        //         return response.data;
+        //     })
+        //     // .then(function (session) {
+        //     //     // console.log('hi');
+        //     //     return stripe.redirectToCheckout({ sessionId: session.id });
+        //     // })
+        //     // .then(function (result) {
+        //     //     // If redirectToCheckout fails due to a browser or network
+        //     //     // error, you should display the localized error message to your
+        //     //     // customer using error.message.
+
+        //     //     if (result.error) {
+        //     //         alert(result.error.message);
+        //     //     }
+        //     // })
+        //     // .catch(function (error) {
+        //     //     console.error("Error:", error);
+        //     // });
+        // }
     },
     computed: {
         ...mapGetters([
