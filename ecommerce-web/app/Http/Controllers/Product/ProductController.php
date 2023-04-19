@@ -30,6 +30,26 @@ class ProductController extends Controller
         $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'publication', 'size', 'unit', 'vendor', 'writer'])
                                 ->orderBy('id','DESC')->paginate(10);
         // $collection = Product::all();
+        if($key = request()->key){
+            $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'publication', 'size', 'unit', 'vendor', 'writer'])
+            ->orderBy('id','DESC')->where('name','like','%'.$key.'%')->paginate(10);
+        }
+        elseif(isset($_GET['sort_by'])){
+            $sort_by = $_GET['sort_by'];
+            if($sort_by == 'highest_to_lowest'){
+                $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'publication', 'size', 'unit', 'vendor', 'writer'])
+                ->orderBy('price','DESC')->paginate(10);
+            }
+            elseif($sort_by == 'lowest_to_highest'){
+                $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'publication', 'size', 'unit', 'vendor', 'writer'])
+                ->orderBy('price','ASC')->paginate(10);
+            }
+        }else{
+            $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'publication', 'size', 'unit', 'vendor', 'writer'])
+                                ->orderBy('id','DESC')->paginate(10);
+        }
+
+
         return view('admin.product.index',compact('collection'));
     }
 

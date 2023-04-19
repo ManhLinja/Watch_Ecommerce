@@ -341,6 +341,19 @@
   <script src="{{ asset('contents/admin/assets') }}/js/jquery.loading-indicator.html"></script> --}}
   <!-- Custom scripts -->
   <script src="{{ asset('contents/admin/assets') }}/js/app-script.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+        $('#sort').on('change', function(){
+            var url = $(this).val();
+            // alert(url);
+            if(url){
+                window.location = url;
+            }
+            return false;
+        });
+    });
+
+  </script>
 
     <!-- Mirrored from codervent.com/dashtremev3/pages-blank-page.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Jul 2020 09:42:04 GMT -->
     @stack('cjs')

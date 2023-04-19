@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="row">
-            {{-- <div class="col-xl-3 col-lg-3 col-md-12 col-12">
+            <div class="col-xl-3 col-lg-3 col-md-12 col-12">
                 <!-- categories-area start -->
                 <div class="categories-area box-shadow bg-fff">
                     <div class="product-title home2-bg-1 text-uppercase home2-product-title">
@@ -87,14 +87,93 @@
                         </ul>
                     </div>
                 </div>
-            </div> --}}
-            <!-- product-vew area start -->
-            {{-- <div class="col-xl-9 col-lg-9 col-md-12 col-12">
-                <div class="tab-area">
+            </div>
 
+            <!-- product-vew area start -->
+            <div class="col-xl-9 col-lg-9 col-md-12 col-12 product-grid">
+                <div class="tab-area">
+                    <div class="row">
+                        <form action="" class="form-inline">
+                            <div class="form-group">
+                                <input class="form-control ps-5" name="key" placeholder="Search Product...">
+                            </div>
+                            <button type="submit" class="btn" style="background-color: #97744B; color:#fff; border-color:#97744B"><i class="fa fa-search"></i></button>
+                        </form>
+                        <div style="margin-left:20px">
+
+                            <select name="sort_product" id="sort_product" class="form-control">
+                                <option value="{{Request::url()}}?sort_by=none">Filter</option>
+                                <option value="{{Request::url()}}?sort_by=highest_to_lowest">Highest to Lowest</option>
+                                <option value="{{Request::url()}}?sort_by=lowest_to_highest">Lowest to Highest</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top:25px;">
+                        @foreach ($collection as $item)
+                        <div class="col-md-3" >
+                            
+                            
+                                                        <div class="product-wrapper">
+                                                            <div class="product-img">
+                                                                <div class="discount_amount" >
+                                                                    <span>-{{ $item->discount }}%</span>
+                                                                </div>
+                                                                <a href="#">
+                                                                    <img src="/{{ $item->thumb_image }}" alt="" style="height:190px;">
+                                                                </a>
+                                                                <div class="product-icon c-fff home3-hover-bg">
+                                                                    <ul>
+                                                                        <li><a href="#" data-toggle="tooltip" title="" data-original-title="Add to cart"><i class="fa fa-shopping-cart"></i></a></li>
+                                                                        <li><a href="#" data-toggle="tooltip" title="" data-original-title="Wishlist"><i class="fa fa-heart-o"></i></a></li>
+                                                                        <li><a href="#" data-toggle="tooltip" title="" data-original-title="Compare"><i class="fa fa-comments"></i></a></li>
+                                                                        <li><a href="#" data-toggle="tooltip" @click.prevent="showModal(product)"  title="" data-original-title="view product details"><i class="fa fa-search"></i></a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="product-content home3-hover">
+                                                                <h3><a href="/product-details/{{ $item->id }}">{{ $item->name }}</a></h3>
+                                                                <ul>
+                                                                    <li><i class="fa fa-star"></i></li>
+                                                                    <li><i class="fa fa-star"></i></li>
+                                                                    <li><i class="fa fa-star"></i></li>
+                                                                    <li><i class="fa fa-star"></i></li>
+                                                                    <li><i class="fa fa-star"></i></li>
+                                                                </ul>
+                                                                <div class="d-flex justify-content-between">
+                                                                    <span>
+                                                                        <del>${{ $item->price }} </del>
+                                                                    </span>
+                                                                    <span >${{ $item->discount_price }}</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                    
+                                                    </div>
+                                                    @endforeach
+                                                    <div class="modal fade"  id="productViewModal" style="z-index: 999;" tabindex="-1" aria-labelledby="productViewModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog modal-xl">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="productViewModalLabel">Details</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <product-details></product-details>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                            </div>
+                            <div class="row">
+                                {{ $collection->appends(request()->all())->links() }}
+                            </div>
                 </div>
-            </div> --}}
-            <category-product />
+            </div>
+            {{-- <category-product /> --}}
+
         </div>
     </div>
 </div>

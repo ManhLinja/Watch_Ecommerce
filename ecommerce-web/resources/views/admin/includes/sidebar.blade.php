@@ -52,7 +52,7 @@
             <li>
                 <a href="{{ route('sub_category.index') }}"><i class="zmdi zmdi-dot-circle-alt"></i>Sub Category</a>
             </li>   
-            <li>
+            {{-- <li>
                 <a href="{{ route('color.index') }}"><i class="zmdi zmdi-dot-circle-alt"></i>Color</a>
             </li>   
             <li>
@@ -69,7 +69,7 @@
             </li>   
             <li>
                 <a href="{{ route('status.index') }}"><i class="zmdi zmdi-dot-circle-alt"></i>Status</a>
-            </li>  
+            </li>   --}}
         </ul>
     </li>
 

@@ -30,7 +30,7 @@
                                     </thead>
                                     <tbody>
                                         @foreach ($collection as $key=>$item)
-                                            <tr>
+                                            <tr class="admin_vendor_individual_body">
                                                 <td scope="row">{{ $key+1 }}</td>
                                                 <td scope="row">{{ $item->name }}</td>
                                                 <td scope="row">{{ $item->description }}</td>
@@ -49,7 +49,7 @@
                                                         <a type="button" href="{{ route('vendor.edit',$item->id) }}" class="btn btn-warning waves-effect waves-light m-1">
                                                             <i class="fa fa-pencil"></i> <span>edit</span>
                                                         </a>
-                                                        <a type="button" href="{{ route('vendor.destroy',$item->id) }}"
+                                                        <a type="button" href="{{ route('vendor.destroy',$item->id) }}" data-parent=".admin_vendor_individual_body"
                                                             class="delete_btn btn btn-danger waves-effect waves-light m-1">
                                                             <i class="fa fa-trash-o"></i> <span>delete</span>
                                                         </a>

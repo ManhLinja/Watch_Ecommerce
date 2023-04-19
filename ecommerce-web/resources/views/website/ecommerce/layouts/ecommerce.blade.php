@@ -175,7 +175,7 @@
                                         <img src="{{ asset('contents/website') }}/img/logo/9.png" alt="" style="margin-left: 50px;"/>
                                     </div>
                                     <div class="footer-content">
-                                        <p>OneClick is a premium Wordpress theme with advanced admin module. It's extremely customizable, easy to use and</p>
+                                        <p>PGM Web Shop is a world for modernity and class. We offer the world's finest clock products.</p>
                                         <ul>
                                             <li>
                                                 <a href="#" data-toggle="tooltip" title="Facebook"><i class="fa fa-facebook"></i></a>
@@ -206,7 +206,7 @@
                                                     <i class="fa fa-map-marker"></i>
                                                 </div>
                                                 <div class="contuct-info">
-                                                    <span>75, Avenue Anatole France, Paris</span>
+                                                    <span>Bac Tu Liem, Ha Noi, Viet Nam</span>
                                                 </div>
                                             </div>
                                         </li>
@@ -226,7 +226,7 @@
                                                     <i class="fa fa-envelope"></i>
                                                 </div>
                                                 <div class="contuct-info">
-                                                    <span>hasib.me1995@gmail.com</span>
+                                                    <span>PGM@gmail.com</span>
                                                 </div>
                                             </div>
                                         </li>
@@ -330,6 +330,19 @@
         <script src="{{ asset('contents/website') }}/js/plugins.js"></script>
         <!-- Main js file that contents all jQuery plugins activation. -->
         <script src="{{ asset('contents/website') }}/js/main.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#sort_product').on('change', function(){
+                    var url = $(this).val();
+                    // alert(url);
+                    if(url){
+                        window.location = url;
+                    }
+                    return false;
+                });
+            });
+        
+          </script>
         
         @stack('custom_js')
         

@@ -93,7 +93,7 @@ Route::group([
 
 Route::group([
     'prefix'=>'admin', 
-    'middleware'=>['auth'], 
+    'middleware'=>['auth','check_user_is_active','super_admin'], 
     'namespace'=>'Admin'
     ], function(){
         Route::get('/', [AdminController::class, 'index'])->name('admin_index');
@@ -103,7 +103,7 @@ Route::group([
 //User management
 Route::group([
     'prefix'=>'user', 
-    'middleware'=>['auth','check_user_is_active','super_admin'], 
+    'middleware'=>['auth'], 
     'namespace'=>'Admin'
     ], function(){
 

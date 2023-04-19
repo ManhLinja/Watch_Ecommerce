@@ -1,6 +1,6 @@
 <template>
     <div id="main-banner">
-        <h1>Make your banner</h1>
+        <h1></h1>
     </div>
 </template>
 

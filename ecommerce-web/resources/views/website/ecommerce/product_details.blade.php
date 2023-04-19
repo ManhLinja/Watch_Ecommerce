@@ -652,7 +652,7 @@
             </div>
             <div class="col-xl-3 col-lg-3 col-md-12 col-12">
                 <!-- categories-area start -->
-                <div class="categories-area box-shadow bg-fff">
+                {{-- <div class="categories-area box-shadow bg-fff">
                     <div class="product-title home2-bg-1 text-uppercase home2-product-title">
                         <i class="fa fa-bookmark icon bg-4"></i>
                         <h3>categories</h3>
@@ -667,7 +667,7 @@
                             <li><a href="#">Women's</a><span> (14)</span></li>
                         </ul>
                     </div>
-                </div>
+                </div> --}}
                 <!-- featured-area start -->
                 {{-- <div class="featured-area bg-fff box-shadow mb-30">
                     <div class="product-title home2-bg-1 text-uppercase home2-product-title">

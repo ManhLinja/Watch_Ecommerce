@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Product;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\SubCategory;
 use App\Models\MainCategory;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;

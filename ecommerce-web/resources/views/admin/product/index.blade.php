@@ -16,14 +16,26 @@
                                             <a href="{{ route('product.create') }}" class="btn btn-light mb-3 mb-lg-0"><i class="bx bxs-plus-square"></i>New Product</a>
                                         </div>
                                         <div class="col-lg-9 col-xl-10">
-                                            <form class="float-lg-end">
+                                            <form action="" class="float-lg-end">
+                                                @csrf
+
                                                 <div class="row row-cols-lg-auto g-2">
                                                     <div class="col-12 d-flex flex-wrap justify-content-end align-items-center">
                                                         <div class="position-relative mx-3">
-                                                            <input type="text" class="form-control ps-5" placeholder="Search Product..." /> <span class="position-absolute top-50 product-show translate-middle-y"><i class="bx bx-search"></i></span>
+                                                            {{-- <input type="text" class="form-control ps-5" placeholder="Search Product..." /> <span class="position-absolute top-50 product-show translate-middle-y"><i class="bx bx-search"></i></span> --}}
+                                                            {{-- <form action="" class="form-inline" > --}}
+                                                                {{-- <div class="form-group ps-5" > --}}
+                                                                    <input class="form-control ps-5" name="key" placeholder="Search Product...">
+                                                                {{-- </div> --}}
+                                                                {{-- <button type="submit" class="btn btn-light">
+                                                                    Search
+                                                                </button> --}}
+
+                                                            {{-- </form> --}}
                                                         </div>
                                                         <div class="btn-group mx-3" role="group" aria-label="Button group with nested dropdown">
-                                                            <button type="button" class="btn btn-light">Sort By</button>
+                                                            <button type="submit" class="btn btn-light">Search</button>
+                                                            {{-- <button type="button" class="btn btn-light">Sort By</button>
                                                             <div class="btn-group" role="group">
                                                                 <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle dropdown-toggle-nocaret px-1" data-bs-toggle="dropdown" aria-expanded="false">
                                                                     <i class="bx bx-chevron-down"></i>
@@ -32,7 +44,17 @@
                                                                     <li><a class="dropdown-item" href="#">Dropdown link</a></li>
                                                                     <li><a class="dropdown-item" href="#">Dropdown link</a></li>
                                                                 </ul>
-                                                            </div>
+                                                            </div> --}}
+                                                            {{-- <label for="amount">Sort by</label> --}}
+                                                            {{-- <form action=""> --}}
+                                                                <select name="sort" id="sort" class="form-control">
+                                                                    <option value="{{Request::url()}}?sort_by=none">Filter</option>
+                                                                    <option value="{{Request::url()}}?sort_by=lowest_to_highest">Lowest To Highest</option>
+                                                                    <option value="{{Request::url()}}?sort_by=highest_to_lowest">Highest To Lowest</option>
+                                                                    {{-- <option value="{{Request::url()}}?sort_by=a_z">a-z</option> --}}
+
+                                                                </select>
+                                                            {{-- </form> --}}
                                                         </div>
                                                         <div class="btn-group mx-3" role="group" aria-label="Button group with nested dropdown">
                                                             <button type="button" class="btn btn-light">Collection Type</button>
@@ -73,13 +95,13 @@
                             {{-- @include('admin.product.components.product_single_body',[
                                 'product' => $item
                             ]) --}}
-                            <div class="col admin_product_individual_body">
+                            <div class="col admin_product_individual_body" >
                                 <div class="card position-relative">
-                                    <img src="/{{ $item->thumb_image }}" class="card-img-top" alt="product image {{ $item->thumb_image }}" />
+                                    <img src="/{{ $item->thumb_image }}" class="card-img-top" alt="product image {{ $item->thumb_image }}" width="240px" height="280px" />
                                     <div class="">
                                         <div class="product-discount"><span class="">-{{ $item->discount }}%</span></div>
                                     </div>
-                                    <div class="card-body">
+                                    <div class="card-body" style="box-sizing: border-box;">
                                         <h6 class="card-title cursor-pointer d-block">{{ $item->name }}</h6>
                                         <div class="clearfix d-flex justify-content-between">
                                             <p class="mb-0 "><strong>134</strong> Sales</p>
@@ -116,6 +138,9 @@
                                 {{ $collection->links() }}
                             </div>
                         </div> --}}
+                        <div class="cart-footer">
+                            {{ $collection->appends(request()->all())->links() }}
+                        </div>
                     </div>
                 </div>
             </div>

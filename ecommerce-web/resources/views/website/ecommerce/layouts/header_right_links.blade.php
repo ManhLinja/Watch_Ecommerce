@@ -1,5 +1,5 @@
 <div class="header-top-right" style="display: flex; align-items:center; justify-content:space-between;">
-    <p class="pull-left h2-color mtb-10 d-none d-md-block">Wellcome to Oneclick store!</p>
+    <p class="pull-left h2-color mtb-10 d-none d-md-block">Wellcome to PGM Web Shop!</p>
     <div class="account-menu text-right pull-right home3-hover">
         <ul>
             {{-- <li><a href="#">My Account</a></li>

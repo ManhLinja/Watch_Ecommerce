@@ -45,7 +45,7 @@
 
 </template>
 
-<script>
+<script >
 import { mapGetters, mapActions, mapMutations } from 'vuex';
 export default {
     created: function(){

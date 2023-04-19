@@ -30,11 +30,11 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach ($collection as $item)
+                                                @foreach ($collection as $key=>$item)
                                                     
                                                 
                                                 <tr>
-                                                    <th scope="row">1</th>
+                                                    <th scope="row">{{$key+1}}</th>
                                                     <td>{{ $item->first_name }}</td>
                                                     <td>{{ $item->last_name }}</td>
                                                     <td>{{ $item->username }}</td>

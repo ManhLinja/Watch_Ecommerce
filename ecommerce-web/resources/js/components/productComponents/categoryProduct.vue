@@ -173,7 +173,7 @@
                             <div class="col-xl-12 col-lg-12 col-md-12 col-12" style="margin-bottom: 30px;">
                                 <!-- <pagination :data="products" @pagination-change-page="get_product"></pagination> -->
                                 <paginate
-                                :page-count="3"
+                                :page-count="products"
                                 :click-handler="get_product"
                                 :prev-text="'Prev'"
                                 :next-text="'Next'"
@@ -282,7 +282,7 @@ import productDetails from './productDetails.vue';
                     min_price = res.min_price;
                     max_price = res.max_price;
                     min_price = 120;
-                    max_price = 50000;
+                    max_price = 1000;
 
                     $("#slider-range").slider({
                         range: true,

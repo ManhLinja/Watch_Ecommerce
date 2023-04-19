@@ -26,7 +26,7 @@
                                             </thead>
                                             <tbody>
                                                 @foreach ($collection as $key=>$item)
-                                                    <tr>
+                                                    <tr class="admin_category_individual_body">
                                                         <td scope="row">{{ $key+1 }}</td>
                                                         <td scope="row">{{ $item->name }}</td>
                                                         <td scope="row">{{ $item->main_category_info ? $item->main_category_info->name : '' }}</td>
@@ -39,7 +39,7 @@
                                                                 <a type="button" href="{{ route('category.edit',$item->id) }}" class="btn btn-warning waves-effect waves-light m-1">
                                                                     <i class="fa fa-pencil"></i> <span>Edit</span> 
                                                                </a>
-                                                               <a type="button" href="{{ route('category.destroy',$item->id) }}"
+                                                               <a type="button" href="{{ route('category.destroy',$item->id) }}" data-parent=".admin_category_individual_body"
                                                                 class="delete_btn btn btn-danger waves-effect waves-light m-1">
                                                                 <i class="fa fa-trash-o"></i> <span>delete</span>
                                                                 </a>

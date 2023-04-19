@@ -21,7 +21,27 @@ class WebsiteController extends Controller
 
     public function products()
     {
-        return view('website.ecommerce.products');
+        $collection = $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'publication', 'size', 'unit', 'vendor', 'writer'])
+        ->orderBy('id','DESC')->paginate(8);
+        if($key = request()->key){
+            $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'publication', 'size', 'unit', 'vendor', 'writer'])
+            ->orderBy('id','DESC')->where('name','like','%'.$key.'%')->paginate(8);
+        }
+        elseif(isset($_GET['sort_by'])){
+            $sort_by = $_GET['sort_by'];
+            if($sort_by == 'highest_to_lowest'){
+                $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'publication', 'size', 'unit', 'vendor', 'writer'])
+                ->orderBy('price','DESC')->paginate(8);
+            }
+            elseif($sort_by == 'lowest_to_highest'){
+                $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'publication', 'size', 'unit', 'vendor', 'writer'])
+                ->orderBy('price','ASC')->paginate(8);
+            }
+        }else{
+            $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'publication', 'size', 'unit', 'vendor', 'writer'])
+                                ->orderBy('id','DESC')->paginate(8);
+        }
+        return view('website.ecommerce.products', compact('collection'));
     }
 
     public function main_category_products($main_category)
