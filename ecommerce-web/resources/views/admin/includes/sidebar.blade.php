@@ -15,7 +15,7 @@
     @if (Auth::user()->role_id == 1)
         <li>
             <a class="has-arrow" href="javascript:void();">
-                <div class="parent-icon"><i class="zmdi zmdi-view-dashboard"></i></div>
+                <div class="parent-icon"><i class="fa fa-user-o"></i></div>
                 <div class="menu-title">User management</div>
             </a>
             <ul class="">

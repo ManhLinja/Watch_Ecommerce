@@ -90,10 +90,19 @@ Route::group([
 
 
 // Route::get('/admin', [AdminController::class, 'index'])->name('admin_index')->middleware('auth');
+// Route::group([
+//     'prefix'=>'', 
+//     'middleware'=>['auth','check_user_is_active','user'],
+//     'namespace'=>''
+//     ], function(){
+//         // Route::get('/', [AdminController::class, 'index'])->name('admin_index');
+//         Route::get('/', [WebsiteController::class, 'index'])->name('website_index');
+
+// });
 
 Route::group([
     'prefix'=>'admin', 
-    'middleware'=>['auth','check_user_is_active','super_admin'], 
+    'middleware'=>['auth','check_user_is_active','super_admin'],
     'namespace'=>'Admin'
     ], function(){
         Route::get('/', [AdminController::class, 'index'])->name('admin_index');
