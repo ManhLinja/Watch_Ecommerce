@@ -9,6 +9,7 @@ use App\Models\OrderProduct;
 class Order extends Model
 {
     use HasFactory;
+    protected $guarded = [];
     public function order_products()
     {
         return $this->hasMany(OrderProduct::class,'order_id','id');

@@ -34,7 +34,7 @@
                                                             {{-- </form> --}}
                                                         </div>
                                                         <div class="btn-group mx-3" role="group" aria-label="Button group with nested dropdown">
-                                                            <button type="submit" class="btn btn-light">Search</button>
+                                                            <button type="submit" class="btn btn-light"><i class="fa fa-search"></i></button>
                                                             {{-- <button type="button" class="btn btn-light">Sort By</button>
                                                             <div class="btn-group" role="group">
                                                                 <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle dropdown-toggle-nocaret px-1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -47,17 +47,11 @@
                                                             </div> --}}
                                                             {{-- <label for="amount">Sort by</label> --}}
                                                             {{-- <form action=""> --}}
-                                                                <select name="sort" id="sort" class="form-control">
-                                                                    <option value="{{Request::url()}}?sort_by=none">Filter</option>
-                                                                    <option value="{{Request::url()}}?sort_by=lowest_to_highest">Lowest To Highest</option>
-                                                                    <option value="{{Request::url()}}?sort_by=highest_to_lowest">Highest To Lowest</option>
-                                                                    {{-- <option value="{{Request::url()}}?sort_by=a_z">a-z</option> --}}
-
-                                                                </select>
+                                                                
                                                             {{-- </form> --}}
                                                         </div>
                                                         <div class="btn-group mx-3" role="group" aria-label="Button group with nested dropdown">
-                                                            <button type="button" class="btn btn-light">Collection Type</button>
+                                                            {{-- <button type="button" class="btn btn-light">Collection Type</button>
                                                             <div class="btn-group" role="group">
                                                                 <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle dropdown-toggle-nocaret px-1" data-bs-toggle="dropdown" aria-expanded="false">
                                                                     <i class="bx bxs-category"></i>
@@ -66,7 +60,14 @@
                                                                     <li><a class="dropdown-item" href="#">Dropdown link</a></li>
                                                                     <li><a class="dropdown-item" href="#">Dropdown link</a></li>
                                                                 </ul>
-                                                            </div>
+                                                            </div> --}}
+                                                            <select name="sort" id="sort" class="form-control">
+                                                                <option value="{{Request::url()}}?sort_by=none">Filter</option>
+                                                                <option value="{{Request::url()}}?sort_by=lowest_to_highest">Lowest To Highest</option>
+                                                                <option value="{{Request::url()}}?sort_by=highest_to_lowest">Highest To Lowest</option>
+                                                                {{-- <option value="{{Request::url()}}?sort_by=a_z">a-z</option> --}}
+
+                                                            </select>
                                                         </div>
                                                         <div class="btn-group mx-3" role="group">
                                                             <button type="button" class="btn btn-light">Price Range</button>

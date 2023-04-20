@@ -25,6 +25,7 @@
         <link href="{{ asset('contents/admin/assets') }}/css/icons.css" rel="stylesheet" type="text/css" />
         <!-- Metismenu CSS-->
         <link href="{{ asset('contents/admin/assets') }}/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
         @stack('ccss')
         <!-- Custom Style-->
         <link href="{{ asset('contents/admin/assets') }}/css/app-style.css" rel="stylesheet" />
@@ -339,6 +340,7 @@
   <script src="{{ asset('contents/admin/assets') }}/plugins/metismenu/js/metisMenu.min.js"></script>
   {{-- <!-- loader scripts -->
   <script src="{{ asset('contents/admin/assets') }}/js/jquery.loading-indicator.html"></script> --}}
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
   <!-- Custom scripts -->
   <script src="{{ asset('contents/admin/assets') }}/js/app-script.js"></script>
   <script type="text/javascript">
@@ -352,8 +354,25 @@
             return false;
         });
     });
-
   </script>
+  <script type="text/javascript">
+    $(function() {
+        $("#datepicker").datepicker({
+            // prevText:"Thang truoc",
+            // nextText:"Thang sau",
+            dateFormat: "yy-mm-dd",
+            // dayNamesMin: [""],
+            duration: "slow"
+        });
+        $("#datepicker2").datepicker({
+            // prevText:"Thang truoc",
+            // nextText:"Thang sau",
+            dateFormat: "yy-mm-dd",
+            // dayNamesMin: [""],
+            duration: "slow"
+        });
+    });
+</script>
 
     <!-- Mirrored from codervent.com/dashtremev3/pages-blank-page.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Jul 2020 09:42:04 GMT -->
     @stack('cjs')
