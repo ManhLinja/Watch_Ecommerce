@@ -31,6 +31,7 @@
         <link href="{{ asset('contents/admin/assets') }}/css/app-style.css" rel="stylesheet" />
         <link rel="stylesheet" href="{{ asset('contents/admin') }}/custom.css">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
         <script src="{{ asset('contents/admin/assets') }}/js/jquery.min.js"></script>
         {{-- <script src="{{ asset('contents/admin') }}/axios.js"></script> --}}
         <script>
@@ -210,13 +211,13 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" data-toggle="dropdown" href="javascript:void();">
-                                <span class="user-profile"><img src="{{ asset('contents/admin/assets') }}/images/avatars/avatar-13.png" class="img-circle" alt="user avatar" /></span>
+                                <span class="user-profile"><img src="{{ asset('contents/admin/assets') }}/images/avatars/{{ Auth::user()->photo }}" class="img-circle" alt="user avatar" /></span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-right">
                                 <li class="dropdown-item user-details">
                                     <a href="javaScript:void();">
                                         <div class="media">
-                                            <div class="avatar"><img class="align-self-start mr-3" src="{{ asset('contents/admin/assets') }}/images/avatars/avatar-13.png" alt="user avatar" /></div>
+                                            <div class="avatar"><img class="align-self-start mr-3" src="{{ asset('contents/admin/assets') }}/images/avatars/{{ Auth::user()->photo }}" alt="user avatar" /></div>
                                             <div class="media-body">
                                                 <h6 class="mt-2 user-title">Sarajhon Mccoy</h6>
                                                 <p class="user-subtitle">mccoy@example.com</p>
@@ -248,13 +249,13 @@
             <!--End Back To Top Button-->
 
             <!--Start footer-->
-            <footer class="footer">
+            {{-- <footer class="footer">
                 <div class="container">
                     <div class="text-center">
                         Copyright © 2020 Dashtreme Admin
                     </div>
                 </div>
-            </footer>
+            </footer> --}}
             <!--End footer-->
 
             <!--start color switcher-->
@@ -341,6 +342,8 @@
   {{-- <!-- loader scripts -->
   <script src="{{ asset('contents/admin/assets') }}/js/jquery.loading-indicator.html"></script> --}}
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
   <!-- Custom scripts -->
   <script src="{{ asset('contents/admin/assets') }}/js/app-script.js"></script>
   <script type="text/javascript">
@@ -373,6 +376,39 @@
         });
     });
 </script>
+    {{-- <script type="text/javascript">
+    $(document).ready(function(){
+        var chart = new Morris.Area({
+            element: 'myfirstchart',
+            parseTime: false,
+            // data: [
+            //     { year: '2008', value: 20 },
+            //     { year: '2009', value: 10 },
+            //     { year: '2010', value: 5 },
+            //     { year: '2011', value: 5 },
+            //     { year: '2012', value: 20 }
+            // ],
+            xkey: 'invoice_date',
+            ykeys: ['total'],
+            labels: ['Revenue']
+        });
+
+        $('#btn-dashboard-filter').click(function(){
+            // var _token = $('input[name="_token"]').val();
+            var from_date = $('#datepicker').val();
+            var to_date = $('#datepicker2').val();
+            $.ajax({
+                url: "{{ url('/filter-by-date') }}",
+                method: "POST",
+                dataType: "JSON",
+                data: {from_date: from_date, to_date: to_date,},
+                success:function(data){
+                    chart.setData(data);
+                }
+            });
+        });
+    });
+    </script> --}}
 
     <!-- Mirrored from codervent.com/dashtremev3/pages-blank-page.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Jul 2020 09:42:04 GMT -->
     @stack('cjs')

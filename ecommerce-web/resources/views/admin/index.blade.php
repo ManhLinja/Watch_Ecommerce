@@ -18,7 +18,7 @@
                                 <div class="card-body card-block p-3" style="position: relative;">
                                     <div class="media align-items-center">
                                         <div class="media-body text-left">
-                                            <p class="text-white mb-0">Orders</p>
+                                            <p class="text-white mb-0">Total Orders</p>
                                             <h5 class="text-white mb-0">{{ $order_count }}</h5>
                                         </div>
                                         <div class="w-icon"><i class="zmdi zmdi-shopping-basket text-white"></i></div>
@@ -159,7 +159,7 @@
                                     <div class="media align-items-center">
                                         <div class="media-body text-left">
                                             <p class="text-white mb-0">Customers</p>
-                                            <h5 class="text-white mb-0">72,854</h5>
+                                            <h5 class="text-white mb-0">{{ $customer }}</h5>
                                         </div>
                                         <div class="w-icon"><i class="zmdi zmdi-accounts-alt text-white"></i></div>
                                     </div>
@@ -298,7 +298,7 @@
                                 <div class="card-body card-block p-3" style="position: relative;">
                                     <div class="media align-items-center">
                                         <div class="media-body text-left">
-                                            <p class="text-white mb-0">Revenue</p>
+                                            <p class="text-white mb-0">Total Revenue</p>
                                             <h5 class="text-white mb-0">${{ $revenue }}</h5>
                                         </div>
                                         <div class="w-icon"><i class="zmdi zmdi-balance-wallet text-white"></i></div>
@@ -575,7 +575,9 @@
                         </div>
                     </div>
                     <div class="row">
+
                         <form autocomplete="off" method="GET" action="" class="form-inline">
+                            {{-- @csrf --}}
                             <div>
                                 From: <input type="text" id="datepicker" name="date_from" class="form-control">
                             </div>
@@ -583,10 +585,20 @@
                                 To: <input type="text" id="datepicker2" name="date_to" class="form-control">
                             </div>
                             <div class="btn-group mx-3">
-                                <button type="submit" class="btn btn-light">Filter</button>
+                                <button type="submit" id="btn-dashboard-filter" class="btn btn-light">Filter</button>
                             </div>
-                            
+                            <div class=" mx-3">
+                                @if ($count_order)
+                                    Order: {{ $count_order }}
+                                @endif
+                            </div>
+                            <div class=" mx-3">
+                                @if ($revenue_from_to)
+                                    Revenue: {{ $revenue_from_to }}
+                                @endif
+                            </div>
                         </form>
+                        {{-- <div id="myfirstchart" style="height: 250px;"></div> --}}
                     </div>
                     <div class="row mt-4">
                         <div class="col-lg-12">
@@ -599,8 +611,10 @@
                                                 <tr>
                                                     <th scope="col">#</th>
                                                     <th scope="col">Invoice ID</th>
+                                                    <th scope="col">User Name</th>
                                                     <th scope="col">Total</th>
                                                     <th scope="col">Invoice Date</th>
+                                                    <th class="text-right" scope="col">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -610,8 +624,16 @@
                                                 <tr>
                                                     <th scope="row">{{ $item->id }}</th>
                                                     <td>{{ $item->invoice_id }}</td>
+                                                    <td>{{ $item->cus->username}}</td>
                                                     <td>${{ $item->total }}</td>
                                                     <td>{{ $item->invoice_date }}</td>
+                                                    <td>
+                                                        <div class="text-right">
+                                                            <a type="button" href="{{ route('admin_view',$item->id) }}" class="btn btn-light waves-effect waves-light m-1">
+                                                                <i class="fa fa-eye"></i> <span>View</span> 
+                                                           </a>
+                                                        </div>
+                                                    </td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>

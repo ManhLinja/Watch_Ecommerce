@@ -91,12 +91,12 @@
                         </div>
                     </div>
 
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5 product-grid">
-                        @foreach ($collection as $item)
+                    {{-- <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5 product-grid"> --}}
+                        
                             {{-- @include('admin.product.components.product_single_body',[
                                 'product' => $item
                             ]) --}}
-                            <div class="col admin_product_individual_body" >
+                            {{-- <div class="col admin_product_individual_body" >
                                 <div class="card position-relative">
                                     <img src="/{{ $item->thumb_image }}" class="card-img-top" alt="product image {{ $item->thumb_image }}" width="240px" height="280px" />
                                     <div class="">
@@ -130,9 +130,59 @@
                                         </ul>
                                     </div>
                                 </div>
+                            </div> --}}
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Responsive Table</h5>
+                                            <div class="table-responsive">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col">#</th>
+                                                            <th scope="col">Product Name</th>
+                                                            <th scope="col">Image</th>
+                                                            <th scope="col">Code</th>
+                                                            {{-- <th scope="col">Sku</th> --}}
+                                                            <th scope="col">Stock</th>
+                                                            <th scope="col">Price</th>
+                                                            <th scope="col">Discount</th>
+                                                            <th scope="col" class="text-right">Action</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach ($collection as $key=>$item)
+                                                        <tr class="admin_product_individual_body">
+                                                            <th scope="row">{{{$key+1}}}</th>
+                                                            <td>{{ $item->name }}</td>
+                                                            <td>
+                                                                <img src="/{{ $item->thumb_image }}" width="50px" height="50px">
+                                                            </td>
+                                                            <td>{{ $item->code }}</td>
+                                                            {{-- <td>{{ $item->sku }}</td> --}}
+                                                            <td>{{ $item->stock }}</td>
+                                                            <td>{{ $item->price }}</td>
+                                                            <td>{{ $item->discount }}%</td>
+                                                            <td>
+                                                                <div class="text-right">
+                                                                    <a href="{{ route('product.edit',$item->id) }}" class="btn btn-sm btn-success ml-2">Edit</a>
+                                                                    <a href="{{ route('product.show',$item->id) }}" class="btn btn-sm btn-warning ml-2">View</a>
+                                                                    <a href="{{ route('product.destroy',$item->id) }}" data-parent=".admin_product_individual_body" class="btn delete_btn btn-sm btn-danger ml-2">Delete</a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        @endforeach
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
                             </div>
-                        @endforeach
-                    </div>
+                        
+                    {{-- </div> --}}
                     <div class="row">
                         {{-- <div class="col-12">
                             <div aria-label="Page navigation example" class="navigation_body">

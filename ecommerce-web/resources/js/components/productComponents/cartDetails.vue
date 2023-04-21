@@ -77,10 +77,11 @@
                         </div>
                         <div class="table-content table-responsive mb-30">
                             <table>
-                                <tbody><tr>
+                                <tbody>
+                                <!-- <tr>
                                     <td><strong>Subtotal</strong></td>
                                     <td><b>$ {{get_sub_total}}</b></td>
-                                </tr>
+                                </tr> -->
                                 <tr>
                                     <td><strong>Total</strong></td>
                                     <td><b>$ {{get_sub_total}}</b></td>

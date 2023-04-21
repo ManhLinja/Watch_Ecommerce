@@ -106,9 +106,11 @@ Route::group([
     'namespace'=>'Admin'
     ], function(){
         Route::get('/', [AdminController::class, 'index'])->name('admin_index');
+        Route::get('/view/{id}', [AdminController::class, 'view'])->name('admin_view');
+        
 
 });
-
+// Route::post('/filter-by-date', [AdminController::class, 'filter_by_date'])->name('filter_by_date');
 //User management
 Route::group([
     'prefix'=>'user', 

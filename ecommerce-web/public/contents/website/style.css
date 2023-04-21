@@ -640,7 +640,7 @@ a#scrollUp,
 }
 .cart-content a.cart-remove:hover {
   background: #AE895D;
-  color: #fff !important;
+  color: #AE895D !important;
 }
 .total {
   margin-bottom: 10px;

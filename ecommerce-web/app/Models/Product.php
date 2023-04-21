@@ -106,5 +106,9 @@ class Product extends Model
     {
         return $this->belongsToMany(Writer::class)->withTimestamps();
     }
+    public function products_order()
+    {
+        return $this->hasMany(OrderProduct::class);
+    }
     
 }

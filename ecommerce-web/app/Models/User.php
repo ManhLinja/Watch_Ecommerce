@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\UserRole;
+use App\Models\Order;
 
 class User extends Authenticatable
 {
@@ -53,5 +54,10 @@ class User extends Authenticatable
     public function role_information()
     {
         return $this->belongsTo(UserRole::class,'role_id','id');
+    }
+
+    public function order_list()
+    {
+        return $this->hasMany(Order::class,'user_id','id');
     }
 }

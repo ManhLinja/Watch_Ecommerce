@@ -6,7 +6,7 @@
         </a>
         <ul class="">
             <li>
-                <a href="#"><i class="zmdi zmdi-dot-circle-alt"></i> eCommerce v1</a>
+                <a href="{{ route('admin_index') }}"><i class="zmdi zmdi-dot-circle-alt"></i> Ecommerce v1</a>
             </li>
             
         </ul>
@@ -73,7 +73,7 @@
         </ul>
     </li>
 
-    <li>
+    {{-- <li>
         <a class="has-arrow" href="javascript:void();">
             <div class="parent-icon"><i class="zmdi zmdi-view-dashboard"></i></div>
             <div class="menu-title">Blank Pages</div>
@@ -90,7 +90,7 @@
             </li>
             
         </ul>
-    </li>
+    </li> --}}
 
 
     <li class="menu-label">Extra</li>

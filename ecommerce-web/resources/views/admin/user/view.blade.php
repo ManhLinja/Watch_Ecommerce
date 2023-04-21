@@ -18,7 +18,7 @@
                                         <td style="width: 40%">Photo</td>
                                         <td>:</td>
                                         <td>
-                                            <img src="/{{ $user->photo}}" height="60">
+                                            <img src="/contents/admin/assets/images/avatars/{{ $user->photo}}" height="60">
                                         </td>
                                     </tr>
                                     <tr>
