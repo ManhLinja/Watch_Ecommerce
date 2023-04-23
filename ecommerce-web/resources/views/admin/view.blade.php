@@ -8,7 +8,7 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header d-flex justify-content-between">
-                            <h5 class="card-title">Invoice of {{ $username->cus->username }}</h5>
+                            <h5 class="card-title">Hóa đơn của {{ $username->cus->username }}</h5>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">#{{ $username->invoice_id }}</h5>
@@ -17,11 +17,11 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">#</th>
-                                            <th scope="col">Product Name</th>
-                                            <th scope="col">Quantity</th>
-                                            <th scope="col">Color</th>
+                                            <th scope="col">Tên sản phẩm</th>
+                                            <th scope="col">Số lượng</th>
+                                            <th scope="col">Màu sắc</th>
                                             <th scope="col">Size</th>
-                                            <th scope="col">Price per one</th>
+                                            <th scope="col">Giá/1 sản phẩm</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -56,7 +56,7 @@
                                                     <span>XL</span>                                         
                                                 @endif
                                             </td>
-                                            <td>{{$item->price}}</td>
+                                            <td>${{$item->price}}</td>
                                         </tr>
                                         @endforeach
                                     </tbody>

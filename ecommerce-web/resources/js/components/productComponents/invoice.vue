@@ -1,6 +1,6 @@
 <template>
     <div class="card card-body printableArea mb-4">
-        <h3><b>INVOICE</b> <span class="pull-right">#{{get_invoice_id}}</span></h3>
+        <h3><b>HÓA ĐƠN</b> <span class="pull-right">#{{get_invoice_id}}</span></h3>
         <hr>
         <div class="row">
             <div class="col-md-12">
@@ -24,11 +24,11 @@
                             {{get_billing_address.address}}, <br>
                             {{get_billing_address.address2}}, <br>
                             {{get_billing_address.town}}, <br>
-                            {{get_billing_address.state}}, <br>
+                            <!-- {{get_billing_address.state}}, <br> -->
                             {{get_billing_address.phone}}, <br>
                         </p>
                         <p class="m-t-30">
-                            <b>Invoice Date : </b>
+                            <b>Ngày thanh toán : </b>
                             <br>
                             <i class="fa fa-calendar"></i>
                             {{get_invoice_date}}
@@ -42,10 +42,10 @@
                         <thead>
                             <tr>
                                 <th class="text-center">#</th>
-                                <th>Description</th>
-                                <th class="text-right">Quantity</th>
-                                <th class="text-right">Unit Cost</th>
-                                <th class="text-right">Total</th>
+                                <th>Sản phẩm</th>
+                                <th class="text-right">Số lượng</th>
+                                <th class="text-right">Đơn giá</th>
+                                <th class="text-right">Tổng tiền</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -62,15 +62,15 @@
             </div>
             <div class="col-md-12">
                 <div class="pull-right m-t-30 text-right">
-                    <p>Sub-Total amount: TK. {{ get_latest_saved_cart.subtotal }}</p>
+                    <!-- <p>Sub-Total amount: TK. {{ get_latest_saved_cart.subtotal }}</p> -->
                     <hr>
-                    <h3><b>Total :</b> TK. {{ get_latest_saved_cart.total }}</h3>
+                    <h3><b>Tổng tiền :</b> TK. {{ get_latest_saved_cart.total }}</h3>
                 </div>
                 <div class="clearfix"></div>
                 <hr>
                 <div class="text-right">
                     <button id="print" class="btn btn-default btn-outline" type="button">
-                        <span><i class="fa fa-print"></i> Print</span>
+                        <span><i class="fa fa-print"></i> In hóa đơn</span>
                     </button>
                 </div>
             </div>

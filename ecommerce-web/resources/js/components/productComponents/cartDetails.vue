@@ -7,22 +7,22 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th class="product-remove">Action</th>
-                                    <th class="product-thumbnail">Image</th>
-                                    <th class="product-name">Product</th>
-                                    <th class="product-price">Price</th>
-                                    <th class="product-quantity">Quantity</th>
-                                    <th class="product-subtotal">Total</th>
+                                    <th class="product-remove">Chức năng</th>
+                                    <th class="product-thumbnail">Ảnh</th>
+                                    <th class="product-name">Sản phẩm</th>
+                                    <th class="product-price">Giá tiền</th>
+                                    <th class="product-quantity">Số lượng</th>
+                                    <th class="product-subtotal">Tổng tiền</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="cart-item" v-for="(cart,index) in get_carts" :key="index">
                                     <td class="product-remove" style="width:165px;">
                                         <a href="#" @click.prevent="remove_product_form_carts(cart)" class="btn btn-danger btn-sm my-1" title="Remove this item">
-                                            <i class="fa fa-trash"></i> delete item
+                                            <i class="fa fa-trash"></i> Xóa
                                         </a>
                                         <a href="#" @click.prevent="showModal(cart)" class="btn btn-warning btn-sm my-1" title="Remove this item">
-                                            <i class="fa fa-pencil"></i> Edit Cart
+                                            <i class="fa fa-pencil"></i> Sửa
                                         </a>
                                     </td>
                                     <td class="product-thumbnail">
@@ -72,7 +72,7 @@
                     <div class="col-xl-6 col-lg-6 col-md-12 col-12">
                         <div class="cart_totals">
                             <div class="cart-total-taitle mb-30 text-uppercase">
-                                <h3>Cart Totals</h3>
+                                <h3>Tổng Giỏ Hàng</h3>
                             </div>
                         </div>
                         <div class="table-content table-responsive mb-30">
@@ -83,7 +83,7 @@
                                     <td><b>$ {{get_sub_total}}</b></td>
                                 </tr> -->
                                 <tr>
-                                    <td><strong>Total</strong></td>
+                                    <td><strong>Tổng Tiền</strong></td>
                                     <td><b>$ {{get_sub_total}}</b></td>
                                 </tr>
                             </tbody></table>

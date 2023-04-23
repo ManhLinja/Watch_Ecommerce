@@ -4,7 +4,7 @@
 
     <div class="content-wrapper">
         <div class="container-fluid">
-            @include('admin.includes.bread_crumb',['title'=>'All'])
+            @include('admin.includes.bread_crumb',['title'=>'TẤT CẢ SẢN PHẨM'])
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row">
@@ -13,7 +13,7 @@
                                 <div class="card-body">
                                     <div class="row align-items-center">
                                         <div class="col-lg-3 col-xl-2">
-                                            <a href="{{ route('product.create') }}" class="btn btn-light mb-3 mb-lg-0"><i class="bx bxs-plus-square"></i>New Product</a>
+                                            <a href="{{ route('product.create') }}" class="btn btn-light mb-3 mb-lg-0"><i class="bx bxs-plus-square"></i>Thêm sản phẩm</a>
                                         </div>
                                         <div class="col-lg-9 col-xl-10">
                                             <form action="" class="float-lg-end">
@@ -25,7 +25,7 @@
                                                             {{-- <input type="text" class="form-control ps-5" placeholder="Search Product..." /> <span class="position-absolute top-50 product-show translate-middle-y"><i class="bx bx-search"></i></span> --}}
                                                             {{-- <form action="" class="form-inline" > --}}
                                                                 {{-- <div class="form-group ps-5" > --}}
-                                                                    <input class="form-control ps-5" name="key" placeholder="Search Product...">
+                                                                    <input class="form-control ps-5" name="key" placeholder="Tìm kiếm sản phẩm">
                                                                 {{-- </div> --}}
                                                                 {{-- <button type="submit" class="btn btn-light">
                                                                     Search
@@ -62,15 +62,15 @@
                                                                 </ul>
                                                             </div> --}}
                                                             <select name="sort" id="sort" class="form-control">
-                                                                <option value="{{Request::url()}}?sort_by=none">Filter</option>
-                                                                <option value="{{Request::url()}}?sort_by=lowest_to_highest">Lowest To Highest</option>
-                                                                <option value="{{Request::url()}}?sort_by=highest_to_lowest">Highest To Lowest</option>
+                                                                <option value="{{Request::url()}}?sort_by=none">Lọc theo giá</option>
+                                                                <option value="{{Request::url()}}?sort_by=lowest_to_highest">Tăng dần</option>
+                                                                <option value="{{Request::url()}}?sort_by=highest_to_lowest">Giảm dần</option>
                                                                 {{-- <option value="{{Request::url()}}?sort_by=a_z">a-z</option> --}}
 
                                                             </select>
                                                         </div>
                                                         <div class="btn-group mx-3" role="group">
-                                                            <button type="button" class="btn btn-light">Price Range</button>
+                                                            {{-- <button type="button" class="btn btn-light">Price Range</button>
                                                             <div class="btn-group" role="group">
                                                                 <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle dropdown-toggle-nocaret px-1" data-bs-toggle="dropdown" aria-expanded="false">
                                                                     <i class="bx bx-slider"></i>
@@ -79,7 +79,7 @@
                                                                     <li><a class="dropdown-item" href="#">Dropdown link</a></li>
                                                                     <li><a class="dropdown-item" href="#">Dropdown link</a></li>
                                                                 </ul>
-                                                            </div>
+                                                            </div> --}}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -135,20 +135,20 @@
                                 <div class="col-lg-12">
                                     <div class="card">
                                         <div class="card-body">
-                                            <h5 class="card-title">Responsive Table</h5>
+                                            <h5 class="card-title">Bảng sản phẩm</h5>
                                             <div class="table-responsive">
                                                 <table class="table">
                                                     <thead>
                                                         <tr>
                                                             <th scope="col">#</th>
-                                                            <th scope="col">Product Name</th>
-                                                            <th scope="col">Image</th>
+                                                            <th scope="col">Tên sản phẩm</th>
+                                                            <th scope="col">Ảnh minh họa</th>
                                                             <th scope="col">Code</th>
                                                             {{-- <th scope="col">Sku</th> --}}
-                                                            <th scope="col">Stock</th>
-                                                            <th scope="col">Price</th>
-                                                            <th scope="col">Discount</th>
-                                                            <th scope="col" class="text-right">Action</th>
+                                                            <th scope="col">Hàng trong kho</th>
+                                                            <th scope="col">Giá</th>
+                                                            <th scope="col">giảm giá</th>
+                                                            <th scope="col" class="text-right">Chức năng</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -166,9 +166,9 @@
                                                             <td>{{ $item->discount }}%</td>
                                                             <td>
                                                                 <div class="text-right">
-                                                                    <a href="{{ route('product.edit',$item->id) }}" class="btn btn-sm btn-success ml-2">Edit</a>
-                                                                    <a href="{{ route('product.show',$item->id) }}" class="btn btn-sm btn-warning ml-2">View</a>
-                                                                    <a href="{{ route('product.destroy',$item->id) }}" data-parent=".admin_product_individual_body" class="btn delete_btn btn-sm btn-danger ml-2">Delete</a>
+                                                                    <a href="{{ route('product.show',$item->id) }}" class="btn btn-sm btn-warning ml-2">Xem chi tiết</a>
+                                                                    <a href="{{ route('product.edit',$item->id) }}" class="btn btn-sm btn-success ml-2">Sửa</a>
+                                                                    <a href="{{ route('product.destroy',$item->id) }}" data-parent=".admin_product_individual_body" class="btn delete_btn btn-sm btn-danger ml-2">Xóa</a>
                                                                 </div>
                                                             </td>
                                                         </tr>

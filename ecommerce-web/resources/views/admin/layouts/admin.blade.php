@@ -84,7 +84,7 @@
                             <div class="input-group-prepend search-arrow-back">
                                 <button class="btn btn-search-back" type="button"><i class="zmdi zmdi-long-arrow-left"></i></button>
                             </div>
-                            <input type="text" class="form-control" placeholder="search" />
+                            <input type="text" class="form-control" placeholder="Tìm kiếm" />
                             <div class="input-group-append">
                                 <button class="btn btn-search" type="button"><i class="zmdi zmdi-search"></i></button>
                             </div>
@@ -97,7 +97,7 @@
                                 <i class="zmdi zmdi-search align-middle"></i>
                             </a>
                         </li>
-                        <li class="nav-item dropdown dropdown-lg">
+                        {{-- <li class="nav-item dropdown dropdown-lg">
                             <a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" data-toggle="dropdown" href="javascript:void();">
                                 <i class="zmdi zmdi-comment-outline align-middle"></i><span class="bg-danger text-white badge-up">12</span>
                             </a>
@@ -155,8 +155,8 @@
                                     <li class="list-group-item text-center"><a href="javaScript:void();">See All Messages</a></li>
                                 </ul>
                             </div>
-                        </li>
-                        <li class="nav-item dropdown dropdown-lg">
+                        </li> --}}
+                        {{-- <li class="nav-item dropdown dropdown-lg">
                             <a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" data-toggle="dropdown" href="javascript:void();">
                                 <i class="zmdi zmdi-notifications-active align-middle"></i><span class="bg-info text-white badge-up">14</span>
                             </a>
@@ -199,15 +199,15 @@
                                     <li class="list-group-item text-center"><a href="javaScript:void();">See All Notifications</a></li>
                                 </ul>
                             </div>
-                        </li>
+                        </li> --}}
                         <li class="nav-item dropdown language">
                             <a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" data-toggle="dropdown" href="javascript:void();"><i class="flag-icon flag-icon-vn align-middle"></i></a>
-                            <ul class="dropdown-menu dropdown-menu-right">
+                            {{-- <ul class="dropdown-menu dropdown-menu-right">
                                 <li class="dropdown-item"><i class="flag-icon flag-icon-gb mr-3"></i>English</li>
                                 <li class="dropdown-item"><i class="flag-icon flag-icon-fr mr-3"></i>French</li>
-                                {{-- <li class="dropdown-item"><i class="flag-icon flag-icon-cn mr-3"></i>Chinese</li> --}}
+                                <li class="dropdown-item"><i class="flag-icon flag-icon-cn mr-3"></i>Chinese</li>
                                 <li class="dropdown-item"><i class="flag-icon flag-icon-de mr-3"></i>German</li>
-                            </ul>
+                            </ul> --}}
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" data-toggle="dropdown" href="javascript:void();">
@@ -219,20 +219,20 @@
                                         <div class="media">
                                             <div class="avatar"><img class="align-self-start mr-3" src="{{ asset('contents/admin/assets') }}/images/avatars/{{ Auth::user()->photo }}" alt="user avatar" /></div>
                                             <div class="media-body">
-                                                <h6 class="mt-2 user-title">Sarajhon Mccoy</h6>
-                                                <p class="user-subtitle">mccoy@example.com</p>
+                                                <h6 class="mt-2 user-title">Supper Admin</h6>
+                                                <p class="user-subtitle">Supperadmin@gmail.com</p>
                                             </div>
                                         </div>
                                     </a>
                                 </li>
-                                <li class="dropdown-divider"></li>
+                                {{-- <li class="dropdown-divider"></li>
                                 <li class="dropdown-item"><i class="zmdi zmdi-comments mr-3"></i>Inbox</li>
                                 <li class="dropdown-divider"></li>
                                 <li class="dropdown-item"><i class="zmdi zmdi-balance-wallet mr-3"></i>Account</li>
                                 <li class="dropdown-divider"></li>
                                 <li class="dropdown-item"><i class="zmdi zmdi-settings mr-3"></i>Setting</li>
                                 <li class="dropdown-divider"></li>
-                                <li class="dropdown-item"><i class="zmdi zmdi-power mr-3"></i>Logout</li>
+                                <li class="dropdown-item"><i class="zmdi zmdi-power mr-3"></i>Logout</li> --}}
                             </ul>
                         </li>
                     </ul>

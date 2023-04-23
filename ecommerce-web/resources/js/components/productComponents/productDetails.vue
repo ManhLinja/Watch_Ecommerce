@@ -26,7 +26,7 @@
                         <li><i class="fa fa-star"></i></li>
                         <li><i class="fa fa-star"></i></li>
                     </ul>
-                    <a href="#">(3 customer reviews)</a><br />
+                    <!-- <a href="#">(3 customer reviews)</a><br /> -->
                     <div class="d-flex justify-content-between" style="width:120px;">
                         <span v-if="product.discount_price > 0">
                             <del>$ {{product.price}}</del>
@@ -43,13 +43,13 @@
                     <form action="#" class="row">
                         <div class="col-md-4">
                             <div class="form-group d-flex justify-content-between">
-                                <label for="" style="margin-right: 10px; font-weight:bold;">QTY: </label>
+                                <label for="" style="margin-right: 10px; font-weight:bold;">Số lượng: </label>
                                 <input class="form-control" min="1" v-model="qty" :max="product.stock - product.minimum_amount" name="quantity" type="number" >
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group d-flex">
-                                <label for="" style="margin-right: 10px; font-weight:bold;">Color: </label>
+                                <label for="" style="margin-right: 10px; font-weight:bold;">Màu sắc: </label>
                                 <select name="" v-model="color" class="form-control" id="">
                                     <option v-for="(color) in product.color" :key="color.id" :value="color.id" > {{color.name}}</option>
                                 </select>
@@ -64,7 +64,7 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <button @click.prevent="add_to_cart(product)" @click="notify" type="button">Add to cart</button>
+                            <button @click.prevent="add_to_cart(product)" @click="notify" type="button">Thêm vào giỏ hàng</button>
                         </div>
                     </form>
                 </div>
@@ -83,15 +83,15 @@
                     <br>
                     <b>SKU:</b> <span> {{ product.sku }} </span>
                     <div class="category mb-10">
-                        <b>Categories:</b>
+                        <b>Danh mục:</b>
                        <a href="#" v-for="(category) in product.category" :key="category.id"> {{ category.name }}, </a>
                     </div>
                     <div class="single-blog-tag category bb pb-10">
-                        <b>Tags:</b>
-                        <a href="#">fashion, style, men, child</a>
+                        <!-- <b>Tags:</b>
+                        <a href="#">fashion, style, men, child</a> -->
                     </div>
                     <div class="footer-content pt-15 text-uppercase">
-                        <p>Share this product</p>
+                        <p>Chia sẻ</p>
                         <ul>
                             <li>
                                 <a href="#" data-toggle="tooltip" title="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a>

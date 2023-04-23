@@ -20,7 +20,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="account-title mtb-20 text-center">
-                            <h1>Cart</h1>
+                            <h1>Giỏ hàng</h1>
                         </div>
                     </div>
                 </div>

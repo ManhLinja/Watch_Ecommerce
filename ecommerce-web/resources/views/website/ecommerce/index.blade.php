@@ -29,7 +29,7 @@
                             <div class="product box-shadow bg-fff">
                                 <div class="product-title home3-bg text-uppercase">
                                     <i class="fa fa-paper-plane-o icon home3-bg2"></i>
-                                    <h3>New Products</h3>
+                                    <h3>Sản phẩm mới</h3>
                                 </div>
                                 <div class="left left-right-angle">
                                     {{-- <div class="product-wrapper bl">
@@ -276,7 +276,7 @@
                             <div class="tab-area box-shadow bg-fff">
                                 <div class="product-title home3-bg text-uppercase">
                                     <i class="fa fa-check-square-o icon home3-bg2"></i>
-                                    <h3>Recent Product</h3>
+                                    <h3>Sản phẩm gần đây</h3>
                                     <div class="tab-menu home3-tab-menu floatright hidden-xs">
                                         {{-- <ul class="nav">
                                             <li><a href="#" class="active">Electronics</a></li>
@@ -1449,14 +1449,14 @@
                             <div class="modal-dialog modal-xl">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="productViewModalLabel">Details</h5>
+                                        <h5 class="modal-title" id="productViewModalLabel">Chi tiết sản phẩm</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
                                     </div>
                                     <div class="modal-body">
                                         <product-details></product-details>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
                                     </div>
                                 </div>
                             </div>

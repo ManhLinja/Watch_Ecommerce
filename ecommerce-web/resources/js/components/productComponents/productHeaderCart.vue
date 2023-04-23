@@ -1,9 +1,9 @@
 <template>
     <div>
-        <div class="cart">
+        <div class="cart" >
             <i class="icofont icofont-bag"></i>
             <a href="#">
-                {{ get_carts.length }} Items - <strong>$ {{ get_sub_total }} </strong>
+                {{ get_carts.length }} Mặt Hàng - <strong>$ {{ get_sub_total }} </strong>
                 <i class="icofont icofont-rounded-down"></i>
             </a>
         </div>
@@ -28,12 +28,12 @@
                         </div>
                     </div>
                     <div class="total mt-10">
-                        <span class="pull-left">Subtotal:</span>
+                        <span class="pull-left">Tổng tiền:</span>
                         <span class="pull-right">$ {{ get_sub_total }}</span>
                     </div>
-                    <div class="cart-btn mb-20">
-                        <a href="/cart">view cart</a>
-                        <a href="/checkout">Checkout</a>
+                    <div class="cart-btn mb-20" style="display: flex;">
+                        <a href="/cart">Giỏ hàng</a>
+                        <a href="/checkout">Thanh toán</a>
                     </div>
                 </div>
             </li>

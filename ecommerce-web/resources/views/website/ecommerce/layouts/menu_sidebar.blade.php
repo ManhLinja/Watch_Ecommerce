@@ -1,6 +1,6 @@
 <div class="categories-menu text-uppercase home3-bg2 home3-categories-menu click">
     <i class="fa fa-list-ul"></i>
-    <span>All Categories</span>
+    <span>Danh Mục</span>
 </div>
 <div class="menu-container home3-menu-container home3-hover toggole" style="{{isset($_SERVER['PATH_INFO'])?'display: none':''}}">
     <ul>

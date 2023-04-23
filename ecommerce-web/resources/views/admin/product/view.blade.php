@@ -15,14 +15,14 @@
                         <div class="card-body">
                             <table class="table table-bordered table-hover table-striped">
                                 <tr>
-                                    <td style="width: 40%">Name</td>
+                                    <td style="width: 40%">Tên sản phẩm</td>
                                     <td>:</td>
                                     <td>
                                         {{ $product->name }}
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 40%">Brand</td>
+                                    <td style="width: 40%">Thương hiệu</td>
                                     <td>:</td>
                                     <td>
                                         {{ $product->brand_info?$product->brand_info->name:'' }}
@@ -36,84 +36,84 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 40%">Tax</td>
+                                    <td style="width: 40%">Thuế</td>
                                     <td>:</td>
                                     <td>
                                         {{ $product->tax }}
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 40%">Price</td>
+                                    <td style="width: 40%">Giá</td>
                                     <td>:</td>
                                     <td>
                                         {{ $product->price }}
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 40%">Sku</td>
+                                    <td style="width: 40%">Mã kho</td>
                                     <td>:</td>
                                     <td>
                                         {{ $product->sku }}
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 40%">Stock</td>
+                                    <td style="width: 40%">Hàng trong kho</td>
                                     <td>:</td>
                                     <td>
                                         {{ $product->stock }}
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 40%">discount</td>
+                                    <td style="width: 40%">Giảm giá</td>
                                     <td>:</td>
                                     <td>
                                         {{ $product->discount }}
                                     </td>
                                 </tr>
-                                <tr>
+                                {{-- <tr>
                                     <td style="width: 40%">Expiration Date</td>
                                     <td>:</td>
                                     <td>
                                         {{ $product->expiration_date }}
                                     </td>
-                                </tr>
-                                <tr>
+                                </tr> --}}
+                                {{-- <tr>
                                     <td style="width: 40%">Minimum Amount</td>
                                     <td>:</td>
                                     <td>
                                         {{ $product->minimum_amount }}
                                     </td>
-                                </tr>
+                                </tr> --}}
                                 <tr>
-                                    <td style="width: 40%">Free Delivery</td>
+                                    <td style="width: 40%">Giao hàng miễn phí</td>
                                     <td>:</td>
                                     <td>
                                         {{ $product->free_delivery }}
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 40%">Total View</td>
+                                    <td style="width: 40%">Tổng lượt xem</td>
                                     <td>:</td>
                                     <td>
                                         {{ $product->total_view }}
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 40%">Description</td>
+                                    <td style="width: 40%">Mô tả</td>
                                     <td>:</td>
                                     <td>
                                         {!! $product->description !!}
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 40%">Thumb Image</td>
+                                    <td style="width: 40%">Ảnh minh họa</td>
                                     <td>:</td>
                                     <td>
                                         <img style="height: 50px;" src="/{{ $product->thumb_image }}" alt="">
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 40%">Related Image</td>
+                                    <td style="width: 40%">Hình ảnh liên quan</td>
                                     <td>:</td>
                                     <td>
                                         <ul class="d-flex">
@@ -124,7 +124,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 40%">Category</td>
+                                    <td style="width: 40%">Danh mục</td>
                                     <td>:</td>
                                     <td>
                                         <ul class="d-flex">
@@ -135,7 +135,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 40%">Sub Category</td>
+                                    <td style="width: 40%">Danh mục phụ</td>
                                     <td>:</td>
                                     <td>
                                         <ul class="d-flex">
@@ -146,7 +146,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 40%">Main Category</td>
+                                    <td style="width: 40%">danh mục chính</td>
                                     <td>:</td>
                                     <td>
                                         <ul class="d-flex">
@@ -157,7 +157,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 40%">Color</td>
+                                    <td style="width: 40%">Màu sắc</td>
                                     <td>:</td>
                                     <td>
                                         <ul class="d-flex">
@@ -168,7 +168,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 40%">Publication</td>
+                                    <td style="width: 40%">Nhà sản xuất</td>
                                     <td>:</td>
                                     <td>
                                         <ul class="d-flex">
@@ -189,7 +189,7 @@
                                         </ul>
                                     </td>
                                 </tr>
-                                <tr>
+                                {{-- <tr>
                                     <td style="width: 40%">Unit</td>
                                     <td>:</td>
                                     <td>
@@ -199,8 +199,8 @@
                                             @endforeach
                                         </ul>
                                     </td>
-                                </tr>
-                                <tr>
+                                </tr> --}}
+                                {{-- <tr>
                                     <td style="width: 40%">Vendor</td>
                                     <td>:</td>
                                     <td>
@@ -210,9 +210,9 @@
                                             @endforeach
                                         </ul>
                                     </td>
-                                </tr>
+                                </tr> --}}
                                 <tr>
-                                    <td style="width: 40%">Writer</td>
+                                    <td style="width: 40%">Người đăng bài</td>
                                     <td>:</td>
                                     <td>
                                         <ul class="d-flex">
@@ -223,21 +223,21 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 40%">Created at</td>
+                                    <td style="width: 40%">Ngày tạo</td>
                                     <td>:</td>
                                     <td>
                                         {{ $product->created_at->format('d F Y h:i:s a') }}
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 40%">Updated at</td>
+                                    <td style="width: 40%">Ngày sửa</td>
                                     <td>:</td>
                                     <td>
                                         {{ $product->updated_at->format('d F Y h:i:s a') }}
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="width: 40%">Creator</td>
+                                    <td style="width: 40%">Người tạo</td>
                                     <td>:</td>
                                     <td>
                                         {{ $product->creator_info ? $product->creator_info->username : '' }}

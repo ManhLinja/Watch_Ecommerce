@@ -17,9 +17,9 @@
                                             <thead>
                                                 <tr>
                                                     <th scope="col">#</th>
-                                                    <th scope="col">Name</th>
-                                                    <th scope="col">Products</th>
-                                                    <th class="text-right" scope="col">Action</th>
+                                                    <th scope="col">Tên thương hiệu</th>
+                                                    <th scope="col"></th>
+                                                    <th class="text-right" scope="col">Chức năng</th>
                                                     
                                                 </tr>
                                             </thead>
@@ -31,15 +31,15 @@
                                                         <td scope="row"></td>
                                                         <td scope="row">
                                                             <div class="text-right">
-                                                                <a type="button" href="" class="btn btn-light waves-effect waves-light m-1">
-                                                                     <i class="fa fa-eye"></i> <span>View</span> 
-                                                                </a>
+                                                                {{-- <a type="button" href="" class="btn btn-light waves-effect waves-light m-1">
+                                                                     <i class="fa fa-eye"></i> <span>Xem</span> 
+                                                                </a> --}}
                                                                 <a type="button" href="{{ route('brand.edit',$item->id) }}" class="btn btn-warning waves-effect waves-light m-1">
-                                                                    <i class="fa fa-pencil"></i> <span>Edit</span> 
+                                                                    <i class="fa fa-pencil"></i> <span>Sửa</span> 
                                                                </a>
                                                                <a type="button" href="{{ route('brand.destroy',$item->id) }}" data-parent=".admin_brand_individual_body"
                                                                 class="delete_btn btn btn-danger waves-effect waves-light m-1">
-                                                                <i class="fa fa-trash-o"></i> <span>delete</span>
+                                                                <i class="fa fa-trash-o"></i> <span>Xóa</span>
                                                                 </a>
                                                                 
                                                             </div>

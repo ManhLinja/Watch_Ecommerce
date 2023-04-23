@@ -3,12 +3,12 @@
 @section('content')
             <div class="content-wrapper">
                 <div class="container-fluid">
-                    @include('admin.includes.bread_crumb', ['title' => 'User Role Management'])
+                    @include('admin.includes.bread_crumb', ['title' => 'Quản lý quyền người dùng'])
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header d-flex justify-content-between">
-                                    <h5 class="card-title">All User Roles</h5>
+                                    <h5 class="card-title">Tất cả các quyền</h5>
                                     {{-- <a href="{{ route('admin_user_role_create') }}" class="btn btn-warning waves-effect waves-light m-1">
                                         <i class="fa fa-plus"></i> <span>Add New</span> 
                                    </a> --}}
@@ -20,10 +20,10 @@
                                             <thead>
                                                 <tr>
                                                     <th scope="col">#</th>
-                                                    <th scope="col">Name</th>
-                                                    <th scope="col">Serial</th>
-                                                    <th scope="col">created at</th>
-                                                    <th scope="col">Action</th>
+                                                    <th scope="col">Tên</th>
+                                                    <th scope="col">STT</th>
+                                                    <th scope="col">Ngày tạo</th>
+                                                    <th scope="col">Chức năng</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -45,7 +45,7 @@
                                                             data-serial="{{ $item->serial }}"
                                                             href="" 
                                                             class="role_update_btn btn btn-warning waves-effect waves-light m-1">
-                                                                <i class="fa fa-pencil"></i> <span>Edit</span> 
+                                                                <i class="fa fa-pencil"></i> <span>Sửa</span> 
                                                            </a>
                                                            {{-- <a type="button" href="" class="btn btn-danger waves-effect waves-light m-1">
                                                             <i class="fa fa-trash-o"></i> <span>Delete</span> 
@@ -73,7 +73,7 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="updateModalTitle">Update</h5>
+                            <h5 class="modal-title" id="updateModalTitle">Sửa</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -94,8 +94,8 @@
                             
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                            <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
                         </div>
                     </form>
                     </div>

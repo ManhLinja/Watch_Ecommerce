@@ -9,14 +9,14 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <div class="card-title">Edit Product</div>
+                            <div class="card-title">Sửa sản phẩm</div>
                             <hr />
                             <form class="update_form product_insert_form row" method="POST" action="{{route('product.update',$product->id)}}" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
                                 <div class="preloader"></div>
                                 <div class="form-group col-md-6 col-xl-4">
-                                    <label for="" class=" col-form-label">Name</label>
+                                    <label for="" class=" col-form-label">Tên sản phẩm</label>
                                     @include('admin.product.components.input',[
                                         'name' => 'product_name',
                                         'type' => 'text',
@@ -25,7 +25,7 @@
                                 </div>
 
                                 <div class="form-group col-md-6  col-xl-4">
-                                    <label for="" class="col-form-label">Brand</label>
+                                    <label for="" class="col-form-label">Thương hiệu</label>
                                     @include('admin.product.components.select',[
                                         'name' => 'brand',
                                         'attributes' => '',
@@ -41,7 +41,7 @@
                                 </div>
 
                                 <div class="form-group col-md-6  col-xl-4">
-                                    <label for="" class="col-form-label">Main Category</label>
+                                    <label for="" class="col-form-label">Danh mục chính</label>
                                     @include('admin.product.components.select',[
                                         'name' => 'product_main_category_id',
                                         'attributes' => '',
@@ -57,7 +57,7 @@
                                 </div>
 
                                 <div class="form-group col-md-6  col-xl-4">
-                                    <label for="" class="col-form-label">Category</label>
+                                    <label for="" class="col-form-label">Danh mục</label>
                                     @include('admin.product.components.select',[
                                         'name' => 'product_category_id',
                                         'attributes' => 'multiple',
@@ -74,7 +74,7 @@
                                 </div>
 
                                 <div class="form-group col-md-6  col-xl-4">
-                                    <label for="" class="col-form-label">Sub Category</label>
+                                    <label for="" class="col-form-label">Danh mục phụ</label>
                                     @include('admin.product.components.select',[
                                         'name' => 'product_sub_category_id',
                                         'attributes' => 'multiple',
@@ -105,7 +105,7 @@
                                 </div>
 
                                 <div class="form-group col-md-6  col-xl-4">
-                                    <label for="" class="col-form-label">Writer</label>
+                                    <label for="" class="col-form-label">Người đăng bài</label>
                                     @include('admin.product.components.select',[
                                         'name' => 'writer_id',
                                         'attributes' => 'multiple',
@@ -122,7 +122,7 @@
                                 </div>
 
                                 <div class="form-group col-md-6  col-xl-4">
-                                    <label for="" class="col-form-label">Publication</label>
+                                    <label for="" class="col-form-label">Nhà sản xuất</label>
                                     @include('admin.product.components.select',[
                                         'name' => 'publication_id',
                                         'attributes' => 'multiple',
@@ -139,7 +139,7 @@
                                 </div>
 
                                 <div class="form-group col-md-6  col-xl-4">
-                                    <label for="" class="col-form-label">Color</label>
+                                    <label for="" class="col-form-label">Màu sắc</label>
                                     @include('admin.product.components.select',[
                                         'name' => 'color_id',
                                         'attributes' => 'multiple',
@@ -169,7 +169,7 @@
                                 </div>
 
                                 <div class="form-group col-md-6  col-xl-4">
-                                    <label for="" class="col-form-label">Unit</label>
+                                    <label for="" class="col-form-label">Đơn vị</label>
                                     @include('admin.product.components.select',[
                                         'name' => 'unit_id',
                                         'attributes' => 'multiple',
@@ -204,7 +204,7 @@
                                 </div>
 
                                 <div class="form-group col-md-6 col-xl-4">
-                                    <label for="" class=" col-form-label">Price</label>
+                                    <label for="" class=" col-form-label">Giá cả</label>
                                     @include('admin.product.components.input',[
                                         'name' => 'price',
                                         'type' => 'number',
@@ -214,7 +214,7 @@
                                 </div>
 
                                 <div class="form-group col-md-6 col-xl-4">
-                                    <label for="" class=" col-form-label">Tax</label>
+                                    <label for="" class=" col-form-label">Thuế</label>
                                     @include('admin.product.components.input',[
                                         'name' => 'tax',
                                         'type' => 'number',
@@ -223,7 +223,7 @@
                                 </div>
 
                                 <div class="form-group col-md-6 col-xl-4">
-                                    <label for="" class=" col-form-label">Discount</label>
+                                    <label for="" class=" col-form-label">Giảm giá</label>
                                     @include('admin.product.components.input',[
                                         'name' => 'discount',
                                         'type' => 'text',
@@ -232,7 +232,7 @@
                                 </div>
 
                                 <div class="form-group col-md-6 col-xl-4">
-                                    <label for="" class=" col-form-label">Expiration Date</label>
+                                    <label for="" class=" col-form-label">Hạn giảm giá</label>
                                     @include('admin.product.components.input',[
                                         'name' => 'expiration_date',
                                         'type' => 'date',
@@ -241,7 +241,7 @@
                                 </div>
 
                                 <div class="form-group col-md-6 col-xl-4">
-                                    <label for="" class=" col-form-label">Stock</label>
+                                    <label for="" class=" col-form-label">Hàng trong kho</label>
                                     @include('admin.product.components.input',[
                                         'name' => 'stock',
                                         'type' => 'number',
@@ -250,7 +250,7 @@
                                 </div>
 
                                 <div class="form-group col-md-6 col-xl-4">
-                                    <label for="" class=" col-form-label">Alert Quantity</label>
+                                    <label for="" class=" col-form-label">Cảnh báo số lượng</label>
                                     @include('admin.product.components.input',[
                                         'name' => 'alert_quantity',
                                         'type' => 'number',
@@ -261,7 +261,7 @@
                                 <div class="col-12"></div>
 
                                 <div class="form-group col-md-6 col-xl-6">
-                                    <label for="" class=" col-form-label">Description</label>
+                                    <label for="" class=" col-form-label">Mô tả</label>
                                     <div class="">
                                         {{-- <input type="number" class="form-control"  placeholder="Alert" /> --}}
                                         <textarea name="description" class="form-control" id="mytextarea1" cols="30" rows="10">{!! $product->description !!}</textarea>
@@ -270,7 +270,7 @@
                                 </div>
 
                                 <div class="form-group col-md-6 col-xl-6">
-                                    <label for="" class=" col-form-label">Features</label>
+                                    <label for="" class=" col-form-label">Đặc trưng</label>
                                     <div class="">
                                         {{-- <input type="number" class="form-control"  placeholder="Alert" /> --}}
                                         <textarea name="features" class="form-control" id="mytextarea2" cols="30" rows="10">{!! $product->features !!}</textarea>
@@ -279,7 +279,7 @@
                                 </div>
 
                                 <div class="form-group col-md-6 col-xl-6">
-                                    <label for="" class=" col-form-label">Thumb Image</label>
+                                    <label for="" class=" col-form-label">Ảnh minh họa</label>
                                     @include('admin.product.components.input',[
                                         'name' => 'thumb_image',
                                         'type' => 'file',
@@ -289,7 +289,7 @@
                                 </div>
 
                                 <div class="form-group col-md-6 col-xl-6">
-                                    <label for="" class=" col-form-label">Related Image</label>
+                                    <label for="" class=" col-form-label">Hình ảnh liên quan</label>
                                     @php
                                         $value_ids = [];
                                         foreach ($product->image as $key => $item) {
@@ -306,7 +306,7 @@
 
 
                                 <div class="form-group col-md-6  col-xl-4">
-                                    <label for="" class="col-form-label">Staus</label>
+                                    <label for="" class="col-form-label">Trạng thái</label>
                                     <div class="">
                                         <select name="status"  class="form-control">
                                             @foreach ($status as $item)
@@ -317,7 +317,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group col-md-6  col-xl-4">
-                                    <label for="" class="col-form-label">Free Delivery</label>
+                                    <label for="" class="col-form-label">Miễn phí giao hàng</label>
                                     <div class="">
                                         <select name="free_delivery"  class="form-control">
                                             <option {{ $product->free_delivery == 'false' ? 'selected' : '' }} value="false">Off</option>
@@ -330,7 +330,7 @@
                                 <div class="form-group col-12">
                                     <label class="col-form-label"></label>
                                     <div class="">
-                                        <button type="submit" class="btn btn-white px-5"><i class="icon-lock"></i> Update</button>
+                                        <button type="submit" class="btn btn-white px-5"><i class="icon-lock"></i> Cập nhật</button>
                                     </div>
                                 </div>
                             </form>

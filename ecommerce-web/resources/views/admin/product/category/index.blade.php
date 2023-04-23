@@ -3,13 +3,13 @@
 @section('content')
             <div class="content-wrapper">
                 <div class="container-fluid">
-                    @include('admin.includes.bread_crumb', ['title' => 'ALL Categories']);
+                    @include('admin.includes.bread_crumb', ['title' => 'Danh mục']);
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-header d-flex justify-content-between">
-                                    <h5 class="card-title">Categories</h5>
-                                    <a href="{{ route('category.create') }}" class="btn btn-warning"><i class="fa fa-plus"></i>Add</a>
+                                    <h5 class="card-title">Danh mục</h5>
+                                    <a href="{{ route('category.create') }}" class="btn btn-warning"><i class="fa fa-plus"></i>Thêm mới</a>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
@@ -17,10 +17,10 @@
                                             <thead>
                                                 <tr>
                                                     <th scope="col">#</th>
-                                                    <th scope="col">Name</th>
-                                                    <th scope="col">Main Category</th>
-                                                    <th scope="col">Products</th>
-                                                    <th class="text-right" scope="col">Action</th>
+                                                    <th scope="col">Tên danh mục</th>
+                                                    <th scope="col">Danh mục chính</th>
+                                                    <th scope="col"></th>
+                                                    <th class="text-right" scope="col">Chức năng</th>
                                                     
                                                 </tr>
                                             </thead>
@@ -33,15 +33,15 @@
                                                         <td scope="row"></td>
                                                         <td scope="row">
                                                             <div class="text-right">
-                                                                <a type="button" href="" class="btn btn-light waves-effect waves-light m-1">
+                                                                {{-- <a type="button" href="" class="btn btn-light waves-effect waves-light m-1">
                                                                      <i class="fa fa-eye"></i> <span>View</span> 
-                                                                </a>
+                                                                </a> --}}
                                                                 <a type="button" href="{{ route('category.edit',$item->id) }}" class="btn btn-warning waves-effect waves-light m-1">
-                                                                    <i class="fa fa-pencil"></i> <span>Edit</span> 
+                                                                    <i class="fa fa-pencil"></i> <span>Sửa</span> 
                                                                </a>
                                                                <a type="button" href="{{ route('category.destroy',$item->id) }}" data-parent=".admin_category_individual_body"
                                                                 class="delete_btn btn btn-danger waves-effect waves-light m-1">
-                                                                <i class="fa fa-trash-o"></i> <span>delete</span>
+                                                                <i class="fa fa-trash-o"></i> <span>Xóa</span>
                                                                 </a>
                                                                 
                                                             </div>

@@ -3,7 +3,7 @@
         <div class="col-sm-12">
             <div class="product-title home3-bg text-uppercase">
                 <i class="fa fa-history icon home3-bg2"></i>
-                <h3>latest deals</h3>
+                <h3>Ưu đãi mới nhất</h3>
             </div>
         </div>
     </div>

@@ -122,8 +122,8 @@
                                     <span class="fa fa-plane"></span>
                                 </div>
                                 <div class="order-content">
-                                    <h5>World-Wide Shipping</h5>
-                                    <span>On order over $100</span>
+                                    <h5>Giao hàng quốc tế</h5>
+                                    <span>với đơn hàng trên $100</span>
                                 </div>
                             </div>
                         </div>
@@ -133,8 +133,8 @@
                                     <span class="fa fa-refresh"></span>
                                 </div>
                                 <div class="order-content">
-                                    <h5>30 Days Return</h5>
-                                    <span>Moneyback guarantee</span>
+                                    <h5>30 Ngày hoàn trả</h5>
+                                    <span>Đảm bảo hoàn tiền</span>
                                 </div>
                             </div>
                         </div>
@@ -144,8 +144,8 @@
                                     <span class="fa fa-umbrella"></span>
                                 </div>
                                 <div class="order-content">
-                                    <h5>SUPPORT 24/7</h5>
-                                    <span>Call us: ( +123 ) 456 789</span>
+                                    <h5>Hỗ trợ 24/7</h5>
+                                    <span>Liên hệ: ( +84 ) 456 789</span>
                                 </div>
                             </div>
                         </div>
@@ -155,8 +155,8 @@
                                     <span class="fa fa-user"></span>
                                 </div>
                                 <div class="order-content">
-                                    <h5>MEMBER DISCOUNT</h5>
-                                    <span>10% on order over $200</span>
+                                    <h5>Giảm giá thành viên</h5>
+                                    <span>10% với đơn trên $200</span>
                                 </div>
                             </div>
                         </div>
@@ -175,7 +175,7 @@
                                         <img src="{{ asset('contents/website') }}/img/logo/9.png" alt="" style="margin-left: 50px;"/>
                                     </div>
                                     <div class="footer-content">
-                                        <p>PGM Web Shop is a world for modernity and class. We offer the world's finest clock products.</p>
+                                        <p>PGM Web Shop là sàn thương mại điện tử lớn nhất và uy tín nhất về các mặt hàng đồng hồ. Đem đến cho khách hàng những sản phẩm chính hãng với chất lượng cao nhất.</p>
                                         <ul>
                                             <li>
                                                 <a href="#" data-toggle="tooltip" title="Facebook"><i class="fa fa-facebook"></i></a>
@@ -198,7 +198,7 @@
                             </div>
                             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
                                 <div class="footer-widget">
-                                    <h3 class="footer-title bb mb-20 pb-15">About Us</h3>
+                                    <h3 class="footer-title bb mb-20 pb-15">Về chúng tôi</h3>
                                     <ul>
                                         <li>
                                             <div class="contuct-content">
@@ -235,39 +235,39 @@
                             </div>
                             <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-12">
                                 <div class="footer-widget">
-                                    <h3 class="footer-title bb mb-20 pb-15">Information</h3>
+                                    <h3 class="footer-title bb mb-20 pb-15">Thông tin</h3>
                                     <div class="footer-menu home3-hover">
                                         <ul>
-                                            <li><a href="blog.html">Our Blog</a></li>
-                                            <li><a href="shop.html">About Our Shop</a></li>
-                                            <li><a href="#">Secure Shopping</a></li>
-                                            <li><a href="#">Privacy Policy</a></li>
+                                            <li><a href="blog.html">Blog</a></li>
+                                            <li><a href="shop.html">Về cửa hàng</a></li>
+                                            <li><a href="#">Mua sắm an toàn</a></li>
+                                            <li><a href="#">Chính sách bảo mật</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-12">
                                 <div class="footer-widget">
-                                    <h3 class="footer-title bb mb-20 pb-15">My account</h3>
+                                    <h3 class="footer-title bb mb-20 pb-15">Tài khoản</h3>
                                     <div class="footer-menu home3-hover">
                                         <ul>
-                                            <li><a href="account.html">My Account</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
-                                            <li><a href="cart.html">Shopping Cart</a></li>
-                                            <li><a href="wishlist.html">Wishlist</a></li>
+                                            <li><a href="account.html">Tài khoản</a></li>
+                                            <li><a href="checkout.html">Thanh toán</a></li>
+                                            <li><a href="cart.html">Giỏ hàng</a></li>
+                                            <li><a href="wishlist.html">Yêu thích</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-2 col-lg-2 col-md-2 col-sm-4 col-12">
                                 <div class="footer-widget">
-                                    <h3 class="footer-title bb mb-20 pb-15">Our services</h3>
+                                    <h3 class="footer-title bb mb-20 pb-15">Dịch vụ</h3>
                                     <div class="footer-menu">
                                         <ul>
-                                            <li><a href="#">Shipping & Returns</a></li>
-                                            <li><a href="#">Secure Shopping</a></li>
-                                            <li><a href="#">International Shipping</a></li>
-                                            <li><a href="#">Affiliates</a></li>
+                                            <li><a href="#">Giao hàng và hoàn trả</a></li>
+                                            <li><a href="#">Mua sắm an toàn</a></li>
+                                            <li><a href="#">Giao hàng quốc tế</a></li>
+                                            <li><a href="#">Chi nhánh</a></li>
                                         </ul>
                                     </div>
                                 </div>

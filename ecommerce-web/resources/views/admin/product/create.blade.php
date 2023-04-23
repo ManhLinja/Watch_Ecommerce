@@ -3,18 +3,18 @@
 @section('content')
             <div class="content-wrapper">
                 <div class="container-fluid">
-                    @include('admin.includes.bread_crumb', ['title' => 'Product Create'])
+                    @include('admin.includes.bread_crumb', ['title' => 'THÊM MỚI SẢN PHẨM'])
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <div class="card-title">Add Product</div>
+                                    <div class="card-title">THÊM SẢN PHẨM</div>
                                     <hr />
                                     <form class="insert_form row" method="POST" action="{{ route('product.store') }}" enctype="multipart/form-data">
                                         @csrf
                                         <div class="preloader"></div>
                                         <div class="form-group col-md-6 col-xl-4">
-                                            <label for="" class="col-form-label">Name</label>
+                                            <label for="" class="col-form-label">Tên sản phẩm</label>
                                             {{-- <div class="">
                                                 <input type="text" name="name" class="form-control" id="" placeholder="Name" />
                                                 <span class="text-danger name "></span>
@@ -26,7 +26,7 @@
                                         </div>
 
                                         <div class="form-group col-md-6 col-xl-4">
-                                            <label for="" class=" col-form-label">Brand</label>
+                                            <label for="" class=" col-form-label">Thương hiệu</label>
                                             {{-- <div class="">
                                                 <select name="brand" id="" class="form-control">
                                                     @foreach ($brands as $key=>$item)
@@ -49,7 +49,7 @@
                                         </div>
 
                                         <div class="form-group col-md-6  col-xl-4">
-                                            <label for="" class="col-form-label">Main Category</label>
+                                            <label for="" class="col-form-label">Danh mục chính</label>
                                             {{-- <div class="">
                                                 <select name="main_category_id" id="" class="form-control">
                                                     @foreach ($maincategories as $key=>$item)
@@ -72,7 +72,7 @@
                                         </div>
 
                                         <div class="form-group col-md-6  col-xl-4">
-                                            <label for="" class="col-form-label">Category</label>
+                                            <label for="" class="col-form-label">Danh mục</label>
                                             {{-- <div class="">
                                                 <select name="category_id" id="" multiple class="form-control multiple-select">
                                                     @foreach ($categories as $key=>$item)
@@ -96,7 +96,7 @@
                                         </div>
 
                                         <div class="form-group col-md-6  col-xl-4">
-                                            <label for="" class="col-form-label">Sub Category</label>
+                                            <label for="" class="col-form-label">Danh mục phụ</label>
                                             {{-- <div class="">
                                                 <select name="sub_category_id" id="" multiple class="form-control multiple-select">
                                                     @foreach ($sub_categories as $key=>$item)
@@ -134,7 +134,7 @@
                                         </div>
 
                                         <div class="form-group col-md-6  col-xl-4">
-                                            <label for="" class="col-form-label">Writer</label>
+                                            <label for="" class="col-form-label">Người đăng bài</label>
                                             {{-- <div class="">
                                                 <select name="sub_category_id" id="" multiple class="form-control multiple-select">
                                                     <option value="">Select</option>
@@ -159,7 +159,7 @@
                                         </div>
 
                                         <div class="form-group col-md-6  col-xl-4">
-                                            <label for="" class="col-form-label">Publication</label>
+                                            <label for="" class="col-form-label">Nhà sản xuất</label>
                                             {{-- <div class="">
                                                 <select name="sub_category_id" id="" multiple class="form-control multiple-select">
                                                     <option value="">Select</option>
@@ -184,7 +184,7 @@
                                         </div>
 
                                         <div class="form-group col-md-6  col-xl-4">
-                                            <label for="" class="col-form-label">Color</label>
+                                            <label for="" class="col-form-label">Màu sắc</label>
                                             {{-- <div class="">
                                                 <select name="color_id" id="" class="form-control multiple-select" multiple>
                                                     @foreach ($colors as $key=>$item)
@@ -227,7 +227,7 @@
                                         </div>
                                         
                                         <div class="form-group col-md-6  col-xl-4">
-                                            <label for="" class="col-form-label">Unit</label>
+                                            <label for="" class="col-form-label">Đơn vị</label>
                                             {{-- <div class="">
                                                 <select name="unit_id" id="" class="form-control multiple-select" multiple>
                                                     @foreach ($units as $key=>$item)
@@ -268,7 +268,7 @@
                                         </div>
 
                                         <div class="form-group col-md-6 col-xl-4">
-                                            <label for="" class="col-form-label">Price</label>
+                                            <label for="" class="col-form-label">Giá</label>
                                             {{-- <div class="">
                                                 <input type="text" name="price" class="form-control" id="" placeholder="Price" />
                                                 <span class="text-danger price" style="font-size: 15px;"></span>
@@ -281,7 +281,7 @@
                                         </div>
 
                                         <div class="form-group col-md-6 col-xl-4">
-                                            <label for="" class=" col-form-label">Tax</label>
+                                            <label for="" class=" col-form-label">Thuế</label>
                                             @include('admin.product.components.input',[
                                                 'name' => 'tax',
                                                 'type' => 'number'
@@ -289,7 +289,7 @@
                                         </div>
 
                                         <div class="form-group col-md-6 col-xl-4">
-                                            <label for="" class="col-form-label">Discount</label>
+                                            <label for="" class="col-form-label">Giảm giá</label>
                                             {{-- <div class="">
                                                 <input type="text" class="form-control" name="discount" id="" placeholder="discount" />
                                                 <span class="text-danger discount"></span>
@@ -301,7 +301,7 @@
                                         </div>
 
                                         <div class="form-group col-md-6 col-xl-4">
-                                            <label for="" class="col-form-label">Expiration Date</label>
+                                            <label for="" class="col-form-label">Hạn giảm giá</label>
                                             {{-- <div class="">
                                                 <input type="date" name="expiration_date" class="form-control" id="" placeholder="discount" />
                                                 <span class="text-danger expiration_date"></span>
@@ -313,7 +313,7 @@
                                         </div>
 
                                         <div class="form-group col-md-6 col-xl-4">
-                                            <label for="" class="col-form-label">Stock</label>
+                                            <label for="" class="col-form-label">Hàng trong kho</label>
                                             {{-- <div class="">
                                                 <input type="number" name="stock" class="form-control" id="" placeholder="stock" />
                                                 <span class="text-danger stock"></span>
@@ -325,7 +325,7 @@
                                         </div>
 
                                         <div class="form-group col-md-6 col-xl-4">
-                                            <label for="" class="col-form-label">Alert Quantity</label>
+                                            <label for="" class="col-form-label">Cảnh báo số lượng</label>
                                             {{-- <div class="">
                                                 <input type="number" name="alert_quantity" class="form-control" id="" placeholder="Alert" />
                                                 <span class="text-danger alert_quantity"></span>
@@ -339,7 +339,7 @@
                                         <div class="col-12"></div>
 
                                         <div class="form-group col-md-6 col-xl-6">
-                                            <label for="" class="col-form-label">Description</label>
+                                            <label for="" class="col-form-label">Mô tả</label>
                                             <div class="">
                                                 {{-- <input type="number" class="form-control" id="" placeholder="Alert" /> --}}
                                                 <textarea name="description" class="form-control" id="mytextarea1" cols="30" rows="10"></textarea>
@@ -348,7 +348,7 @@
                                         </div>
 
                                         <div class="form-group col-md-6 col-xl-6">
-                                            <label for="" class="col-form-label">Features</label>
+                                            <label for="" class="col-form-label">Đặc trưng</label>
                                             <div class="">
                                                 {{-- <input type="number" class="form-control" id="" placeholder="Alert" /> --}}
                                                 <textarea name="features" class="form-control" id="mytextarea2" cols="30" rows="10"></textarea>
@@ -357,7 +357,7 @@
                                         </div>
 
                                         <div class="form-group col-md-6 col-xl-6">
-                                            <label for="" class="col-form-label">Thumb Image</label>
+                                            <label for="" class="col-form-label">Ảnh minh họa</label>
                                             {{-- <div class="">
                                                 <input type="file" name="thumb_image" class="form-control" id="" placeholder="Alert" />
                                                 <span class="text-danger thumb_image"></span>
@@ -370,7 +370,7 @@
                                         </div>
 
                                         <div class="form-group col-md-6 col-xl-6">
-                                            <label for="" class="col-form-label">Related Image</label>
+                                            <label for="" class="col-form-label">Hình ảnh liên quan</label>
                                             {{-- <div class="">
                                                 <input type="file" multiple name="related_images[]" class="form-control" id="" placeholder="Alert" />
                                                 <span class="text-danger related_images"></span>
@@ -383,7 +383,7 @@
                                         </div>
                                         
                                         <div class="form-group col-md-6  col-xl-4">
-                                            <label for="" class="col-form-label">Status</label>
+                                            <label for="" class="col-form-label">Trạng thái</label>
                                             {{-- <div class="">
                                                 <select name="status" id="" class="form-control">
                                                     <option value="draft">Draft</option>
@@ -402,7 +402,7 @@
                                         </div>
 
                                         <div class="form-group col-md-6  col-xl-4">
-                                            <label for="" class="col-form-label">Free Delivery</label>
+                                            <label for="" class="col-form-label">Miễn phí giao hàng</label>
                                             <div class="">
                                                 <select name="free_delivery"  class="form-control">
                                                     <option value="0">Off</option>
@@ -415,7 +415,7 @@
                                         <div class="form-group col-12">
                                             <label class="col-form-label"></label>
                                             <div class="">
-                                                <button type="submit" class="btn btn-white px-5"><i class="icon-lock"></i> Upload</button>
+                                                <button type="submit" class="btn btn-white px-5"><i class="icon-lock"></i> Thêm mới</button>
                                             </div>
                                         </div>
                                     </form>

@@ -15,28 +15,28 @@
                             <div class="card-body">
                                 <table class="table table-bordered table-hover table-striped">
                                     <tr>
-                                        <td style="width: 40%">Photo</td>
+                                        <td style="width: 40%">Ảnh đại diện</td>
                                         <td>:</td>
                                         <td>
                                             <img src="/contents/admin/assets/images/avatars/{{ $user->photo}}" height="60">
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="width: 40%">First Name</td>
+                                        <td style="width: 40%">Họ</td>
                                         <td>:</td>
                                         <td>
                                             {{ $user->first_name }}
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="width: 40%">Last Name</td>
+                                        <td style="width: 40%">Tên</td>
                                         <td>:</td>
                                         <td>
                                             {{ $user->last_name }}
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="width: 40%">User Name</td>
+                                        <td style="width: 40%">Tên người dùng</td>
                                         <td>:</td>
                                         <td>
                                             {{ $user->username }}
@@ -50,14 +50,14 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="width: 40%">Role Name</td>
+                                        <td style="width: 40%">Quyền người dùng</td>
                                         <td>:</td>
                                         <td>
                                             {{ $user->role_id }}
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="width: 40%">Create At</td>
+                                        <td style="width: 40%">Ngày tạo</td>
                                         <td>:</td>
                                         <td>
                                             {{ $user->created_at }}

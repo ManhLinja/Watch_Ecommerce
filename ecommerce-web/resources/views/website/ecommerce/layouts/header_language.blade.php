@@ -1,5 +1,5 @@
 <div class="language-menu dropdown home3-hover">
-    <ul>
+    {{-- <ul>
         <li>
             <a href="#">eng <i class="fa fa-angle-down"></i></a>
             <ul>
@@ -16,5 +16,5 @@
                 <li><a href="#">INR - Indian Rupee</a></li>
             </ul>
         </li>
-    </ul>
+    </ul> --}}
 </div>

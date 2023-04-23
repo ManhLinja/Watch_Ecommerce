@@ -20,13 +20,13 @@
                                             <thead>
                                                 <tr>
                                                     <th scope="col">#</th>
-                                                    <th scope="col">first name</th>
-                                                    <th scope="col">last name</th>
-                                                    <th scope="col">username</th>
+                                                    <th scope="col">Họ</th>
+                                                    <th scope="col">Tên</th>
+                                                    <th scope="col">Tên người dùng</th>
                                                     <th scope="col">email</th>
-                                                    <th scope="col">role name</th>
-                                                    <th scope="col">created at</th>
-                                                    <th scope="col">Action</th>
+                                                    <th scope="col">Quyền người dùng</th>
+                                                    <th scope="col">Ngày tạo</th>
+                                                    <th scope="col">Chức năng</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -45,10 +45,10 @@
                                                     <td>
                                                         <div>
                                                             <a type="button" href="{{ route('admin_user_view',$item->id) }}" class="btn btn-light waves-effect waves-light m-1">
-                                                                 <i class="fa fa-eye"></i> <span>View</span> 
+                                                                 <i class="fa fa-eye"></i> <span>Xem</span> 
                                                             </a>
                                                             <a type="button" href="{{ route('admin_user_edit',$item->id) }}" class="btn btn-warning waves-effect waves-light m-1">
-                                                                <i class="fa fa-pencil"></i> <span>Edit</span> 
+                                                                <i class="fa fa-pencil"></i> <span>Sửa</span> 
                                                            </a>
                                                            {{-- <a type="button" href="" data-toggle="modal" data-target="#deleteModal" 
                                                             onclick="return (modal_delete_form.action='{{ route('admin_user_delete') }}', modal_delete_form.id.value='{{ $item->id }}')"
@@ -58,7 +58,7 @@
                                                             <a type="button" href="#" 
                                                             onclick="return (confirm('Do you sure want to delete?') && $.post('{{ route('admin_user_delete',['id'=>$item->id])}}',(res)=>{console.log(res,$(this).parents('tr').remove())}))"
                                                             class="btn btn-danger waves-effect waves-light m-1">
-                                                            <i class="fa fa-trash-o"></i> <span>Delete</span> 
+                                                            <i class="fa fa-trash-o"></i> <span>Xóa</span> 
                                                             </a>
                                                         </div>
                                                     </td>

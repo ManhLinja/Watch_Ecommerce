@@ -20,7 +20,7 @@
                 <div class="categories-area box-shadow bg-fff">
                     <div class="product-title home2-bg-1 text-uppercase home2-product-title">
                         <i class="fa fa-bookmark icon bg-4"></i>
-                        <h3>categories</h3>
+                        <h3>Danh mục</h3>
                     </div>
                     <div class="shop-categories-menu p-20">
                         <ul>
@@ -59,16 +59,16 @@
                 <div class="filter-by-price-area mtb-30 bg-fff box-shadow">
                     <div class="product-title home2-bg-1 text-uppercase home2-product-title">
                         <i class="fa fa-bookmark icon bg-4"></i>
-                        <h3>Filter by price</h3>
+                        <h3>Lọc theo giá</h3>
                     </div>
                     <div class="filter-by-price p-20-15">
-                        <p>price: <input type="text" id="amount" /></p>
+                        <p>Giá: <input type="text" id="amount" /></p>
                         <div id="slider-range" class="ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
                             <div class="ui-slider-range ui-corner-all ui-widget-header" style="left: 0.4%; width: 99.6%;"></div>
                             <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 0.4%;"></span><span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default" style="left: 100%;"></span>
                         </div>
                         <div class="filter">
-                            <button>filter</button>
+                            <button>Lọc</button>
                         </div>
                     </div>
                 </div>
@@ -95,16 +95,16 @@
                     <div class="row">
                         <form action="" class="form-inline">
                             <div class="form-group">
-                                <input class="form-control ps-5" name="key" placeholder="Search Product...">
+                                <input class="form-control ps-5" name="key" placeholder="Tìm kiếm sản phẩm">
                             </div>
                             <button type="submit" class="btn" style="background-color: #97744B; color:#fff; border-color:#97744B"><i class="fa fa-search"></i></button>
                         </form>
                         <div style="margin-left:20px">
 
                             <select name="sort_product" id="sort_product" class="form-control">
-                                <option value="{{Request::url()}}?sort_by=none">Filter</option>
-                                <option value="{{Request::url()}}?sort_by=highest_to_lowest">Highest to Lowest</option>
-                                <option value="{{Request::url()}}?sort_by=lowest_to_highest">Lowest to Highest</option>
+                                <option value="{{Request::url()}}?sort_by=none">Lọc sản phẩm</option>
+                                <option value="{{Request::url()}}?sort_by=highest_to_lowest">Giá giảm dần</option>
+                                <option value="{{Request::url()}}?sort_by=lowest_to_highest">Giá tăng dần</option>
                             </select>
                         </div>
                     </div>

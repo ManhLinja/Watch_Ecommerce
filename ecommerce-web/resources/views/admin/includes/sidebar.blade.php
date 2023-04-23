@@ -2,11 +2,11 @@
     <li>
         <a class="has-arrow" href="javascript:void();">
             <div class="parent-icon"><i class="zmdi zmdi-view-dashboard"></i></div>
-            <div class="menu-title">Dashboard</div>
+            <div class="menu-title">Bảng điều khiển</div>
         </a>
         <ul class="">
             <li>
-                <a href="{{ route('admin_index') }}"><i class="zmdi zmdi-dot-circle-alt"></i> Ecommerce v1</a>
+                <a href="{{ route('admin_index') }}"><i class="zmdi zmdi-dot-circle-alt"></i> PGM Web Shop</a>
             </li>
             
         </ul>
@@ -16,14 +16,14 @@
         <li>
             <a class="has-arrow" href="javascript:void();">
                 <div class="parent-icon"><i class="fa fa-user-o"></i></div>
-                <div class="menu-title">User management</div>
+                <div class="menu-title">Quản lý người dùng</div>
             </a>
             <ul class="">
                 <li>
-                    <a href="{{ route('admin_user_index') }}"><i class="zmdi zmdi-dot-circle-alt"></i>User</a>
+                    <a href="{{ route('admin_user_index') }}"><i class="zmdi zmdi-dot-circle-alt"></i>Người dùng</a>
                 </li>
                 <li>
-                    <a href="{{ route('admin_user_role_index') }}"><i class="zmdi zmdi-dot-circle-alt"></i>User Role</a>
+                    <a href="{{ route('admin_user_role_index') }}"><i class="zmdi zmdi-dot-circle-alt"></i>Quyền người dùng</a>
                 </li>
             </ul>
         </li>
@@ -31,26 +31,26 @@
     <li>
         <a class="has-arrow" href="javascript:void();">
             <div class="parent-icon"><i class="fa fa-shopping-cart"></i></div>
-            <div class="menu-title">Product Management</div>
+            <div class="menu-title">Quản lý sản phẩm</div>
         </a>
         <ul class="">
             <li>
-                <a href="{{ route('product.index') }}"><i class="zmdi zmdi-dot-circle-alt"></i>All product</a>
+                <a href="{{ route('product.index') }}"><i class="zmdi zmdi-dot-circle-alt"></i>Sản phẩm</a>
             </li>     
             <li>
-                <a href="{{ route('product.create') }}"><i class="zmdi zmdi-dot-circle-alt"></i>Add product</a>
+                <a href="{{ route('product.create') }}"><i class="zmdi zmdi-dot-circle-alt"></i>Thêm sản phẩm</a>
             </li>     
             <li>
-                <a href="{{ route('brand.index') }}"><i class="zmdi zmdi-dot-circle-alt"></i>Brands</a>
+                <a href="{{ route('brand.index') }}"><i class="zmdi zmdi-dot-circle-alt"></i>Thương hiệu</a>
             </li>   
             <li>
-                <a href="{{ route('main_category.index') }}"><i class="zmdi zmdi-dot-circle-alt"></i>Main Category</a>
+                <a href="{{ route('main_category.index') }}"><i class="zmdi zmdi-dot-circle-alt"></i>Danh mục chính</a>
             </li>   
             <li>
-                <a href="{{ route('category.index') }}"><i class="zmdi zmdi-dot-circle-alt"></i>Category</a>
+                <a href="{{ route('category.index') }}"><i class="zmdi zmdi-dot-circle-alt"></i>Danh mục</a>
             </li>   
             <li>
-                <a href="{{ route('sub_category.index') }}"><i class="zmdi zmdi-dot-circle-alt"></i>Sub Category</a>
+                <a href="{{ route('sub_category.index') }}"><i class="zmdi zmdi-dot-circle-alt"></i>Danh mục phụ</a>
             </li>   
             {{-- <li>
                 <a href="{{ route('color.index') }}"><i class="zmdi zmdi-dot-circle-alt"></i>Color</a>
@@ -104,7 +104,7 @@
         <a href="{{ route('logout') }}"
         onclick="event.preventDefault(); confirm('Sure!') && document.getElementById('logout-form').submit();">
             <div class="parent-icon"><i class="fa fa-sign-out"></i></div>
-            <div class="menu-title">Logout</div>
+            <div class="menu-title">Đăng xuất</div>
         </a>
     </li>
 

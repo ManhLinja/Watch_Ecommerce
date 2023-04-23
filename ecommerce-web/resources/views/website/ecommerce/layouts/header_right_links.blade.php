@@ -1,5 +1,5 @@
 <div class="header-top-right" style="display: flex; align-items:center; justify-content:space-between;">
-    <p class="pull-left h2-color mtb-10 d-none d-md-block">Wellcome to PGM Web Shop!</p>
+    <p class="pull-left h2-color mtb-10 d-none d-md-block"></p>
     <div class="account-menu text-right pull-right home3-hover">
         <ul>
             {{-- <li><a href="#">My Account</a></li>
@@ -20,13 +20,13 @@
             @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Đăng nhập') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Đăng ký') }}</a>
                                 </li>
                             @endif
                         @else
@@ -37,13 +37,13 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="">
+                                    {{-- <a class="dropdown-item" href="">
                                         My Order
-                                    </a>
+                                    </a> --}}
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      confirm('Sure!') && document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Đăng xuất') }}
                                     </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf

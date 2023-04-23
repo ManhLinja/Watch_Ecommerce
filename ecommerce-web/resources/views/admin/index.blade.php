@@ -3,7 +3,7 @@
 @section('content')
             <div class="content-wrapper">
                 <div class="container-fluid">
-                    @include('admin.includes.bread_crumb', ['title' => 'DASHBOARD'])
+                    @include('admin.includes.bread_crumb', ['title' => 'BẢNG ĐIỀU KHIỂN'])
                     {{-- <div class="row">
                         <div class="col-lg-12">
                             <div style="height: 600px;">
@@ -18,7 +18,7 @@
                                 <div class="card-body card-block p-3" style="position: relative;">
                                     <div class="media align-items-center">
                                         <div class="media-body text-left">
-                                            <p class="text-white mb-0">Total Orders</p>
+                                            <p class="text-white mb-0">Tổng Đơn hàng</p>
                                             <h5 class="text-white mb-0">{{ $order_count }}</h5>
                                         </div>
                                         <div class="w-icon"><i class="zmdi zmdi-shopping-basket text-white"></i></div>
@@ -158,7 +158,7 @@
                                 <div class="card-body card-block p-3" style="position: relative;">
                                     <div class="media align-items-center">
                                         <div class="media-body text-left">
-                                            <p class="text-white mb-0">Customers</p>
+                                            <p class="text-white mb-0">Khách hàng</p>
                                             <h5 class="text-white mb-0">{{ $customer }}</h5>
                                         </div>
                                         <div class="w-icon"><i class="zmdi zmdi-accounts-alt text-white"></i></div>
@@ -298,7 +298,7 @@
                                 <div class="card-body card-block p-3" style="position: relative;">
                                     <div class="media align-items-center">
                                         <div class="media-body text-left">
-                                            <p class="text-white mb-0">Total Revenue</p>
+                                            <p class="text-white mb-0">Doanh số</p>
                                             <h5 class="text-white mb-0">${{ $revenue }}</h5>
                                         </div>
                                         <div class="w-icon"><i class="zmdi zmdi-balance-wallet text-white"></i></div>
@@ -438,7 +438,7 @@
                                 <div class="card-body card-block p-3" style="position: relative;">
                                     <div class="media align-items-center">
                                         <div class="media-body text-left">
-                                            <p class="text-white mb-0">Growth</p>
+                                            <p class="text-white mb-0">Tăng trưởng</p>
                                             <h5 class="text-white mb-0">41.86%</h5>
                                         </div>
                                         <div class="w-icon"><i class="zmdi zmdi-chart-donut text-white"></i></div>
@@ -576,25 +576,25 @@
                     </div>
                     <div class="row">
 
-                        <form autocomplete="off" method="GET" action="" class="form-inline">
+                        <form autocomplete="off" method="GET" action="" class="form-inline" style="margin-left:15px;">
                             {{-- @csrf --}}
                             <div>
-                                From: <input type="text" id="datepicker" name="date_from" class="form-control">
+                                Từ ngày: <input type="text" id="datepicker" name="date_from" class="form-control">
                             </div>
-                            <div>
-                                To: <input type="text" id="datepicker2" name="date_to" class="form-control">
+                            <div style="margin-left:15px;">
+                                Đến ngày: <input type="text" id="datepicker2" name="date_to" class="form-control">
                             </div>
                             <div class="btn-group mx-3">
-                                <button type="submit" id="btn-dashboard-filter" class="btn btn-light">Filter</button>
+                                <button type="submit" id="btn-dashboard-filter" class="btn btn-light">Lọc dữ liệu</button>
                             </div>
                             <div class=" mx-3">
                                 @if ($count_order)
-                                    Order: {{ $count_order }}
+                                    Số đơn hàng: {{ $count_order }}
                                 @endif
                             </div>
                             <div class=" mx-3">
                                 @if ($revenue_from_to)
-                                    Revenue: {{ $revenue_from_to }}
+                                    Doanh thu: {{ $revenue_from_to }}
                                 @endif
                             </div>
                         </form>
@@ -604,17 +604,17 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Invoice Table</h5>
+                                    <h5 class="card-title">Bảng thống kê hóa đơn</h5>
                                     <div class="table-responsive">
                                         <table class="table">
                                             <thead>
                                                 <tr>
                                                     <th scope="col">#</th>
-                                                    <th scope="col">Invoice ID</th>
-                                                    <th scope="col">User Name</th>
-                                                    <th scope="col">Total</th>
-                                                    <th scope="col">Invoice Date</th>
-                                                    <th class="text-right" scope="col">Action</th>
+                                                    <th scope="col">Mã hóa đơn</th>
+                                                    <th scope="col">Người mua</th>
+                                                    <th scope="col">Tổng tiền</th>
+                                                    <th scope="col">Ngày xuất hóa đơn</th>
+                                                    <th class="text-right" scope="col">Chức năng</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -630,7 +630,7 @@
                                                     <td>
                                                         <div class="text-right">
                                                             <a type="button" href="{{ route('admin_view',$item->id) }}" class="btn btn-light waves-effect waves-light m-1">
-                                                                <i class="fa fa-eye"></i> <span>View</span> 
+                                                                <i class="fa fa-eye"></i> <span>Xem chi tiết</span> 
                                                            </a>
                                                         </div>
                                                     </td>
