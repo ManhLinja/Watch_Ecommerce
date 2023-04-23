@@ -21,24 +21,24 @@ class WebsiteController extends Controller
 
     public function products()
     {
-        $collection = $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'publication', 'size', 'unit', 'vendor', 'writer'])
+        $collection = $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'publication', 'size'])
         ->orderBy('id','DESC')->paginate(8);
         if($key = request()->key){
-            $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'publication', 'size', 'unit', 'vendor', 'writer'])
+            $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'publication', 'size'])
             ->orderBy('id','DESC')->where('name','like','%'.$key.'%')->paginate(8);
         }
         elseif(isset($_GET['sort_by'])){
             $sort_by = $_GET['sort_by'];
             if($sort_by == 'highest_to_lowest'){
-                $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'publication', 'size', 'unit', 'vendor', 'writer'])
+                $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'publication', 'size'])
                 ->orderBy('price','DESC')->paginate(8);
             }
             elseif($sort_by == 'lowest_to_highest'){
-                $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'publication', 'size', 'unit', 'vendor', 'writer'])
+                $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'publication', 'size'])
                 ->orderBy('price','ASC')->paginate(8);
             }
         }else{
-            $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'publication', 'size', 'unit', 'vendor', 'writer'])
+            $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'publication', 'size'])
                                 ->orderBy('id','DESC')->paginate(8);
         }
         return view('website.ecommerce.products', compact('collection'));
@@ -80,8 +80,8 @@ class WebsiteController extends Controller
                     'image',
                     'publication',
                     'size',
-                    'unit',
-                    'writer',
+                    // 'unit',
+                    // 'writer',
                 ])->orderBy('price', 'DESC')->paginate(16);
             }
             else if($request->has('size')){
@@ -94,8 +94,8 @@ class WebsiteController extends Controller
                     'image',
                     'publication',
                     'size',
-                    'unit',
-                    'writer',
+                    // 'unit',
+                    // 'writer',
                 ])->whereExists(function ($query) {
                     $query->select(DB::raw(1))
                         ->from('product_size')
@@ -114,8 +114,8 @@ class WebsiteController extends Controller
                     'image',
                     'publication',
                     'size',
-                    'unit',
-                    'writer',
+                    // 'unit',
+                    // 'writer',
                 ])->whereExists(function ($query) {
                     $query->select(DB::raw(1))
                         ->from('color_product')
@@ -132,8 +132,8 @@ class WebsiteController extends Controller
                     'image',
                     'publication',
                     'size',
-                    'unit',
-                    'writer',
+                    // 'unit',
+                    // 'writer',
                 ])->orderBy('id', 'DESC')->paginate(8);
 
                 $sizes = Size::where('status',1)->select(['name','id'])->get();
@@ -193,8 +193,8 @@ class WebsiteController extends Controller
                     'image',
                     'publication',
                     'size',
-                    'unit',
-                    'writer',
+                    // 'unit',
+                    // 'writer',
                 ])->orderBy('price', 'DESC')->paginate(16);
             }
             else if($request->has('size')){
@@ -207,8 +207,8 @@ class WebsiteController extends Controller
                     'image',
                     'publication',
                     'size',
-                    'unit',
-                    'writer',
+                    // 'unit',
+                    // 'writer',
                 ])->whereExists(function ($query) {
                     $query->select(DB::raw(1))
                         ->from('product_size')
@@ -226,8 +226,8 @@ class WebsiteController extends Controller
                     'image',
                     'publication',
                     'size',
-                    'unit',
-                    'writer',
+                    // 'unit',
+                    // 'writer',
                 ])->whereExists(function ($query) {
                     $query->select(DB::raw(1))
                         ->from('color_product')
@@ -244,8 +244,8 @@ class WebsiteController extends Controller
                     'image',
                     'publication',
                     'size',
-                    'unit',
-                    'writer',
+                    // 'unit',
+                    // 'writer',
                 ])->orderBy('id', 'DESC')->paginate(6);
 
                 $sizes = Size::where('status',1)->select(['name','id'])->get();
@@ -303,8 +303,8 @@ class WebsiteController extends Controller
                     'image',
                     'publication',
                     'size',
-                    'unit',
-                    'writer',
+                    // 'unit',
+                    // 'writer',
                 ])->orderBy('price', 'DESC')->paginate(16);
             }
             else if($request->has('size')){
@@ -317,8 +317,8 @@ class WebsiteController extends Controller
                     'image',
                     'publication',
                     'size',
-                    'unit',
-                    'writer',
+                    // 'unit',
+                    // 'writer',
                 ])->whereExists(function ($query) {
                     $query->select(DB::raw(1))
                         ->from('product_size')
@@ -335,8 +335,8 @@ class WebsiteController extends Controller
                     'image',
                     'publication',
                     'size',
-                    'unit',
-                    'writer',
+                    // 'unit',
+                    // 'writer',
                 ])->orderBy('id', 'DESC')->paginate(16);
             }
             return $products;
@@ -376,9 +376,9 @@ class WebsiteController extends Controller
         $product['color'] = $product->color()->get();
         $product['publication'] = $product->publication()->get();
         $product['size'] = $product->size()->get();
-        $product['unit'] = $product->unit()->get();
-        $product['vendor'] = $product->vendor()->get();
-        $product['writer'] = $product->writer()->get();
+        // $product['unit'] = $product->unit()->get();
+        // $product['vendor'] = $product->vendor()->get();
+        // $product['writer'] = $product->writer()->get();
 
         // echo $product->discount_price;
         return $product;
@@ -424,9 +424,10 @@ class WebsiteController extends Controller
                 'main_category',
                 'color', 'image',
                 'publication',
-                'size', 'unit',
-                'vendor',
-                'writer',
+                'size'
+                // 'unit',
+                // 'vendor',
+                // 'writer',
             ])
             ->orderBy('id', 'DESC')->paginate(8);
         return $collection;
@@ -442,9 +443,9 @@ class WebsiteController extends Controller
         $product['color'] = $product->color()->get();
         $product['publication'] = $product->publication()->get();
         $product['size'] = $product->size()->get();
-        $product['unit'] = $product->unit()->get();
-        $product['vendor'] = $product->vendor()->get();
-        $product['writer'] = $product->writer()->get();
+        // $product['unit'] = $product->unit()->get();
+        // $product['vendor'] = $product->vendor()->get();
+        // $product['writer'] = $product->writer()->get();
 
         return view('website.ecommerce.product_details', compact('product'));
     }

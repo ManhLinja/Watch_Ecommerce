@@ -133,8 +133,8 @@
                                             ])
                                         </div>
 
-                                        <div class="form-group col-md-6  col-xl-4">
-                                            <label for="" class="col-form-label">Người đăng bài</label>
+                                        {{-- <div class="form-group col-md-6  col-xl-4">
+                                            <label for="" class="col-form-label">Người đăng bài</label> --}}
                                             {{-- <div class="">
                                                 <select name="sub_category_id" id="" multiple class="form-control multiple-select">
                                                     <option value="">Select</option>
@@ -144,7 +144,7 @@
                                                 </select>
                                                 <span class="text-danger sub_category_id"></span>
                                             </div> --}}
-                                            @include('admin.product.components.select',[
+                                            {{-- @include('admin.product.components.select',[
                                                 'name' => 'writer_id',
                                                 'attributes' => 'multiple',
                                                 'class' => 'multiple-select',
@@ -155,8 +155,8 @@
                                                     ['name' => 'description','type' => 'textarea'],
                                                     ['name' => 'image','type' => 'file'],
                                                 ]
-                                            ])
-                                        </div>
+                                            ]) --}}
+                                        {{-- </div> --}}
 
                                         <div class="form-group col-md-6  col-xl-4">
                                             <label for="" class="col-form-label">Nhà sản xuất</label>
@@ -226,8 +226,8 @@
                                             ])
                                         </div>
                                         
-                                        <div class="form-group col-md-6  col-xl-4">
-                                            <label for="" class="col-form-label">Đơn vị</label>
+                                        {{-- <div class="form-group col-md-6  col-xl-4">
+                                            <label for="" class="col-form-label">Đơn vị</label> --}}
                                             {{-- <div class="">
                                                 <select name="unit_id" id="" class="form-control multiple-select" multiple>
                                                     @foreach ($units as $key=>$item)
@@ -236,7 +236,7 @@
                                                 </select>
                                                 <span class="text-danger unit_id"></span>
                                             </div> --}}
-                                            @include('admin.product.components.select',[
+                                            {{-- @include('admin.product.components.select',[
                                                 'name' => 'unit_id',
                                                 'attributes' => 'multiple',
                                                 'class' => 'multiple-select',
@@ -245,12 +245,12 @@
                                                 'fields' => [
                                                     ['name' => 'name', 'type' => 'text'],
                                                 ]
-                                            ])
-                                        </div>
+                                            ]) --}}
+                                        {{-- </div> --}}
 
-                                        <div class="form-group col-md-6  col-xl-4">
-                                            <label for="" class="col-form-label">Vendor</label>
-                                            @include('admin.product.components.select',[
+                                        {{-- <div class="form-group col-md-6  col-xl-4">
+                                            <label for="" class="col-form-label">Vendor</label> --}}
+                                            {{-- @include('admin.product.components.select',[
                                                 'name' => 'vendor_id',
                                                 'attributes' => 'multiple',
                                                 'class' => 'multiple-select',
@@ -264,8 +264,8 @@
                                                     ['name' => 'address', 'type' => 'textarea'],
                                                     ['name' => 'description', 'type' => 'textarea'],
                                                 ]
-                                            ])
-                                        </div>
+                                            ]) --}}
+                                        {{-- </div> --}}
 
                                         <div class="form-group col-md-6 col-xl-4">
                                             <label for="" class="col-form-label">Giá</label>
@@ -280,13 +280,13 @@
                                             ])
                                         </div>
 
-                                        <div class="form-group col-md-6 col-xl-4">
-                                            <label for="" class=" col-form-label">Thuế</label>
-                                            @include('admin.product.components.input',[
+                                        {{-- <div class="form-group col-md-6 col-xl-4">
+                                            <label for="" class=" col-form-label">Thuế</label> --}}
+                                            {{-- @include('admin.product.components.input',[
                                                 'name' => 'tax',
                                                 'type' => 'number'
-                                            ])
-                                        </div>
+                                            ]) --}}
+                                        {{-- </div> --}}
 
                                         <div class="form-group col-md-6 col-xl-4">
                                             <label for="" class="col-form-label">Giảm giá</label>
@@ -324,17 +324,17 @@
                                             ])
                                         </div>
 
-                                        <div class="form-group col-md-6 col-xl-4">
-                                            <label for="" class="col-form-label">Cảnh báo số lượng</label>
+                                        {{-- <div class="form-group col-md-6 col-xl-4">
+                                            <label for="" class="col-form-label">Cảnh báo số lượng</label> --}}
                                             {{-- <div class="">
                                                 <input type="number" name="alert_quantity" class="form-control" id="" placeholder="Alert" />
                                                 <span class="text-danger alert_quantity"></span>
                                             </div> --}}
-                                            @include('admin.product.components.input',[
+                                            {{-- @include('admin.product.components.input',[
                                                 'name' => 'alert_quantity',
                                                 'type' => 'number'
-                                            ])
-                                        </div>
+                                            ]) --}}
+                                        {{-- </div> --}}
 
                                         <div class="col-12"></div>
 

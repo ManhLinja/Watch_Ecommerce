@@ -80,7 +80,7 @@ class CheckOutController extends Controller
             $order_product->customer_id = Auth::user()->id;
             $order_product->order_id = $order->id;
             $order_product->product_id = $product_info->id;
-            $order_product->product_code = $product_info->code;
+            // $order_product->product_code = $product_info->code;
             $order_product->product_name = $product_info->name;
             $order_product->qty = $cart->qty;
             $order_product->color = $cart->color;

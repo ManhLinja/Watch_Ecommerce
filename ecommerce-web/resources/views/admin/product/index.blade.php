@@ -143,7 +143,7 @@
                                                             <th scope="col">#</th>
                                                             <th scope="col">Tên sản phẩm</th>
                                                             <th scope="col">Ảnh minh họa</th>
-                                                            <th scope="col">Code</th>
+                                                            {{-- <th scope="col">Code</th> --}}
                                                             {{-- <th scope="col">Sku</th> --}}
                                                             <th scope="col">Hàng trong kho</th>
                                                             <th scope="col">Giá</th>
@@ -159,7 +159,7 @@
                                                             <td>
                                                                 <img src="/{{ $item->thumb_image }}" width="50px" height="50px">
                                                             </td>
-                                                            <td>{{ $item->code }}</td>
+                                                            {{-- <td>{{ $item->code }}</td> --}}
                                                             {{-- <td>{{ $item->sku }}</td> --}}
                                                             <td>{{ $item->stock }}</td>
                                                             <td>{{ $item->price }}</td>

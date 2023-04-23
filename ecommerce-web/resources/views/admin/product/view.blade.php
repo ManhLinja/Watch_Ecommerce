@@ -28,20 +28,20 @@
                                         {{ $product->brand_info?$product->brand_info->name:'' }}
                                     </td>
                                 </tr>
-                                <tr>
+                                {{-- <tr>
                                     <td style="width: 40%">code</td>
                                     <td>:</td>
                                     <td>
                                         {{ $product->code }}
                                     </td>
-                                </tr>
-                                <tr>
+                                </tr> --}}
+                                {{-- <tr>
                                     <td style="width: 40%">Thuế</td>
                                     <td>:</td>
                                     <td>
                                         {{ $product->tax }}
                                     </td>
-                                </tr>
+                                </tr> --}}
                                 <tr>
                                     <td style="width: 40%">Giá</td>
                                     <td>:</td>
@@ -49,13 +49,13 @@
                                         {{ $product->price }}
                                     </td>
                                 </tr>
-                                <tr>
+                                {{-- <tr>
                                     <td style="width: 40%">Mã kho</td>
                                     <td>:</td>
                                     <td>
                                         {{ $product->sku }}
                                     </td>
-                                </tr>
+                                </tr> --}}
                                 <tr>
                                     <td style="width: 40%">Hàng trong kho</td>
                                     <td>:</td>
@@ -91,13 +91,13 @@
                                         {{ $product->free_delivery }}
                                     </td>
                                 </tr>
-                                <tr>
+                                {{-- <tr>
                                     <td style="width: 40%">Tổng lượt xem</td>
                                     <td>:</td>
                                     <td>
                                         {{ $product->total_view }}
                                     </td>
-                                </tr>
+                                </tr> --}}
                                 <tr>
                                     <td style="width: 40%">Mô tả</td>
                                     <td>:</td>
@@ -211,7 +211,7 @@
                                         </ul>
                                     </td>
                                 </tr> --}}
-                                <tr>
+                                {{-- <tr>
                                     <td style="width: 40%">Người đăng bài</td>
                                     <td>:</td>
                                     <td>
@@ -221,7 +221,7 @@
                                             @endforeach
                                         </ul>
                                     </td>
-                                </tr>
+                                </tr> --}}
                                 <tr>
                                     <td style="width: 40%">Ngày tạo</td>
                                     <td>:</td>

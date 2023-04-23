@@ -104,7 +104,7 @@
                                     ])
                                 </div>
 
-                                <div class="form-group col-md-6  col-xl-4">
+                                {{-- <div class="form-group col-md-6  col-xl-4">
                                     <label for="" class="col-form-label">Người đăng bài</label>
                                     @include('admin.product.components.select',[
                                         'name' => 'writer_id',
@@ -119,7 +119,7 @@
                                             ['name' => 'image','type' => 'file'],
                                         ]
                                     ])
-                                </div>
+                                </div> --}}
 
                                 <div class="form-group col-md-6  col-xl-4">
                                     <label for="" class="col-form-label">Nhà sản xuất</label>
@@ -168,7 +168,7 @@
                                     ])
                                 </div>
 
-                                <div class="form-group col-md-6  col-xl-4">
+                                {{-- <div class="form-group col-md-6  col-xl-4">
                                     <label for="" class="col-form-label">Đơn vị</label>
                                     @include('admin.product.components.select',[
                                         'name' => 'unit_id',
@@ -181,9 +181,9 @@
                                             ['name' => 'name', 'type' => 'text'],
                                         ]
                                     ])
-                                </div>
+                                </div> --}}
 
-                                <div class="form-group col-md-6  col-xl-4">
+                                {{-- <div class="form-group col-md-6  col-xl-4">
                                     <label for="" class="col-form-label">Vendor</label>
                                     @include('admin.product.components.select',[
                                         'name' => 'vendor_id',
@@ -201,10 +201,10 @@
                                             ['name' => 'description', 'type' => 'textarea'],
                                         ]
                                     ])
-                                </div>
+                                </div> --}}
 
                                 <div class="form-group col-md-6 col-xl-4">
-                                    <label for="" class=" col-form-label">Giá cả</label>
+                                    <label for="" class=" col-form-label">Giá</label>
                                     @include('admin.product.components.input',[
                                         'name' => 'price',
                                         'type' => 'number',
@@ -213,14 +213,14 @@
                                     ])
                                 </div>
 
-                                <div class="form-group col-md-6 col-xl-4">
+                                {{-- <div class="form-group col-md-6 col-xl-4">
                                     <label for="" class=" col-form-label">Thuế</label>
                                     @include('admin.product.components.input',[
                                         'name' => 'tax',
                                         'type' => 'number',
                                         'value' => $product->tax,
                                     ])
-                                </div>
+                                </div> --}}
 
                                 <div class="form-group col-md-6 col-xl-4">
                                     <label for="" class=" col-form-label">Giảm giá</label>
@@ -249,14 +249,14 @@
                                     ])
                                 </div>
 
-                                <div class="form-group col-md-6 col-xl-4">
+                                {{-- <div class="form-group col-md-6 col-xl-4">
                                     <label for="" class=" col-form-label">Cảnh báo số lượng</label>
                                     @include('admin.product.components.input',[
                                         'name' => 'alert_quantity',
                                         'type' => 'number',
                                         'value' => $product->minimum_amount,
                                     ])
-                                </div>
+                                </div> --}}
 
                                 <div class="col-12"></div>
 

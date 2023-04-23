@@ -44,7 +44,7 @@
                         <div class="col-md-4">
                             <div class="form-group d-flex justify-content-between">
                                 <label for="" style="margin-right: 10px; font-weight:bold;">Số lượng: </label>
-                                <input class="form-control" min="1" v-model="qty" :max="product.stock - product.minimum_amount" name="quantity" type="number" >
+                                <input class="form-control" min="1" v-model="qty" :max="product.stock" name="quantity" type="number" >
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -79,9 +79,9 @@
                     </ul>
                 </div>
                 <div class="product_meta">
-                    <b>Code:</b> <span> {{ product.code }} </span>
+                    <!-- <b>Code:</b> <span> {{ product.code }} </span>
                     <br>
-                    <b>SKU:</b> <span> {{ product.sku }} </span>
+                    <b>SKU:</b> <span> {{ product.sku }} </span> -->
                     <div class="category mb-10">
                         <b>Danh mục:</b>
                        <a href="#" v-for="(category) in product.category" :key="category.id"> {{ category.name }}, </a>
