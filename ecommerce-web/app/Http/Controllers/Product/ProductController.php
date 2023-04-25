@@ -27,25 +27,25 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'publication', 'size'])
+        $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'size'])
                                 ->orderBy('id','DESC')->paginate(10);
         // $collection = Product::all();
         if($key = request()->key){
-            $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'publication', 'size'])
+            $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'size'])
             ->orderBy('id','DESC')->where('name','like','%'.$key.'%')->paginate(10);
         }
         elseif(isset($_GET['sort_by'])){
             $sort_by = $_GET['sort_by'];
             if($sort_by == 'highest_to_lowest'){
-                $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'publication', 'size'])
+                $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'size'])
                 ->orderBy('price','DESC')->paginate(10);
             }
             elseif($sort_by == 'lowest_to_highest'){
-                $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'publication', 'size'])
+                $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'size'])
                 ->orderBy('price','ASC')->paginate(10);
             }
         }else{
-            $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'publication', 'size'])
+            $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'size'])
                                 ->orderBy('id','DESC')->paginate(10);
         }
 
@@ -63,7 +63,7 @@ class ProductController extends Controller
         $sizes = Size::where('status', 1)->get();
         // $units = Unit::where('status', 1)->get();
         // $writers = Writer::where('status', 1)->get();
-        $publications = Publication::where('status', 1)->get();
+        // $publications = Publication::where('status', 1)->get();
         // $vendors = Vendor::where('status', 1)->get();
         $status = Status::where('status', 1)->get();
 
@@ -87,7 +87,7 @@ class ProductController extends Controller
             'categories',
             'sub_categories',
             // 'writers',
-            'publications',
+            // 'publications',
             // 'vendors',
             'status'
         ));
@@ -159,9 +159,9 @@ class ProductController extends Controller
         //     $product->writer()->attach($request->writer_id);
         // }
 
-        if ($request->has('publication_id')) {
-            $product->publication()->attach($request->publication_id);
-        }
+        // if ($request->has('publication_id')) {
+        //     $product->publication()->attach($request->publication_id);
+        // }
 
         if ($request->has('color_id')) {
             $product->color()->attach($request->color_id);
@@ -182,7 +182,7 @@ class ProductController extends Controller
         // if ($request->has('vendor_id')) {
         //     $product->vendor()->attach($request->vendor_id);
         // }
-        return Product::with(['category', 'sub_category', 'main_category', 'color', 'image', 'publication', 'size',])
+        return Product::with(['category', 'sub_category', 'main_category', 'color', 'image', 'size',])
                         ->latest()->first();
     }
 
@@ -205,7 +205,7 @@ class ProductController extends Controller
         $sizes = Size::where('status', 1)->get();
         // $units = Unit::where('status', 1)->get();
         // $writers = Writer::where('status', 1)->get();
-        $publications = Publication::where('status', 1)->get();
+        // $publications = Publication::where('status', 1)->get();
         // $vendors = Vendor::where('status', 1)->get();
         $status = Status::where('status', 1)->get();
 
@@ -230,7 +230,7 @@ class ProductController extends Controller
             'categories',
             'sub_categories',
             // 'writers',
-            'publications',
+            // 'publications',
             // 'vendors',
             'status'
         ));
@@ -296,9 +296,9 @@ class ProductController extends Controller
         //     $product->writer()->sync($request->writer_id);
         // }
 
-        if ($request->has('publication_id')) {
-            $product->publication()->sync($request->publication_id);
-        }
+        // if ($request->has('publication_id')) {
+        //     $product->publication()->sync($request->publication_id);
+        // }
 
         if ($request->has('color_id')) {
             $product->color()->sync($request->color_id);
@@ -320,7 +320,7 @@ class ProductController extends Controller
         //     $product->vendor()->sync($request->vendor_id);
         // }
 
-        return Product::where('id',$product->id)->with(['category', 'sub_category', 'main_category', 'color', 'image', 'publication', 'size'])
+        return Product::where('id',$product->id)->with(['category', 'sub_category', 'main_category', 'color', 'image', 'size'])
                         ->latest()->first();
 
     }

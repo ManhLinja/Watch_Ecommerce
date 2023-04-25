@@ -57,24 +57,24 @@
                                                 <div class="modal-dialog" role="document">
                                                   <div class="modal-content">
                                                     <div class="modal-header">
-                                                      <h5 class="modal-title" id="exampleModalLabel">Hủy đơn hàng</h5>
+                                                      <h5 class="modal-title" id="exampleModalLabel">Bạn muốn hủy đơn hàng?</h5>
                                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                       </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                      ...
+                                                      <p><textarea name="" id="" class="lydohuydon" required placeholder="Lý do hủy đơn hàng...(bắt buộc)" cols="69"></textarea></p>
                                                     </div>
                                                     <div class="modal-footer">
                                                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-                                                      <button type="button" id="{{ $item->invoice_id }}" onclick="Huydonhang(this.id)" class="btn btn-primary">Hủy</button>
+                                                      <button type="button" id="{{ $item->invoice_id }}" onclick="Huydonhang(this.id)" class="btn btn-danger">Hủy</button>
                                                     </div>
                                                   </div>
                                                 </div>
                                             </form>
                                               </div>
-                                            <a href="#" @click.prevent="showModal(cart)" class="btn btn-warning btn-sm my-1" title="Remove this item">
-                                                <i class="fa fa-pencil"></i> Xem
+                                            <a href="{{ route('xem_chi_tiet', $item->id) }}"  class="btn btn-warning btn-sm my-1">
+                                                <i class="fa fa-eye"></i> Xem
                                             </a>
                                         </td>
                                         <td>
@@ -100,6 +100,9 @@
                                 </tbody>
                             </table>
                         </div>
+                    </div>
+                    <div class="cart-footer" style="margin-bottom:15px;">
+                        {{ $order->appends(request()->all())->links() }}
                     </div>
                 </div>
             </div>

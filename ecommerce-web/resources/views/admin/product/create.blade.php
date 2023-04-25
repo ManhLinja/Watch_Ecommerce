@@ -158,8 +158,8 @@
                                             ]) --}}
                                         {{-- </div> --}}
 
-                                        <div class="form-group col-md-6  col-xl-4">
-                                            <label for="" class="col-form-label">Nhà sản xuất</label>
+                                        {{-- <div class="form-group col-md-6  col-xl-4">
+                                            <label for="" class="col-form-label">Nhà sản xuất</label> --}}
                                             {{-- <div class="">
                                                 <select name="sub_category_id" id="" multiple class="form-control multiple-select">
                                                     <option value="">Select</option>
@@ -169,7 +169,7 @@
                                                 </select>
                                                 <span class="text-danger sub_category_id"></span>
                                             </div> --}}
-                                            @include('admin.product.components.select',[
+                                            {{-- @include('admin.product.components.select',[
                                                 'name' => 'publication_id',
                                                 'attributes' => 'multiple',
                                                 'class' => 'multiple-select',
@@ -181,7 +181,7 @@
                                                     ['name' => 'description','type' => 'textarea'],
                                                 ]
                                             ])
-                                        </div>
+                                        </div> --}}
 
                                         <div class="form-group col-md-6  col-xl-4">
                                             <label for="" class="col-form-label">Màu sắc</label>

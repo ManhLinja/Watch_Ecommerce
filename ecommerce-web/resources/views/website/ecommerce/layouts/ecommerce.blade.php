@@ -333,13 +333,14 @@
         <script type="text/javascript">
             function Huydonhang(id){
                 var invoice_id = id;
+                var lydo = $('.lydohuydon').val();
                 // var status = 3;
                 var _token = $('input[name="_token"]').val();
                 
                 $.ajax({
                     url: '{{ url('/huy-don-hang')}}',
                     method:"POST",
-                    data:{invoice_id:invoice_id, _token:_token},
+                    data:{invoice_id:invoice_id, lydo:lydo, _token:_token},
                     success:function(data){
                         alert('Thanh cong');
                         location.reload();

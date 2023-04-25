@@ -167,7 +167,7 @@
                                         </ul>
                                     </td>
                                 </tr>
-                                <tr>
+                                {{-- <tr>
                                     <td style="width: 40%">Nhà sản xuất</td>
                                     <td>:</td>
                                     <td>
@@ -177,7 +177,7 @@
                                             @endforeach
                                         </ul>
                                     </td>
-                                </tr>
+                                </tr> --}}
                                 <tr>
                                     <td style="width: 40%">Size</td>
                                     <td>:</td>

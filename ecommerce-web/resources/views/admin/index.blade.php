@@ -615,6 +615,7 @@
                                                     <th scope="col">Tổng tiền</th>
                                                     <th scope="col">Ngày xuất hóa đơn</th>
                                                     <th scope="col">Tình trạng</th>
+                                                    <th scope="col">Lý do</th>
                                                     <th class="text-right" scope="col">Chức năng</th>
                                                 </tr>
                                             </thead>
@@ -636,6 +637,11 @@
                                                             <a class="text text-danger">Đã hủy</a> 
                                                         @elseif ($item->status ==3)
                                                         <a href="{{ route('update_status', $item->id) }}" onclick="return confirm('Thay đổi trạng thái thành Đã giao hàng?')" class="text text-warning">Đang xử lý</a>
+                                                        @endif
+                                                    </td>
+                                                    <td>
+                                                        @if ($item->status == 2)
+                                                            {{ $item->order_destroy }}
                                                         @endif
                                                     </td>
                                                     <td>
