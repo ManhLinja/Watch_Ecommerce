@@ -8,6 +8,9 @@
             <li>
                 <a href="{{ route('admin_index') }}"><i class="zmdi zmdi-dot-circle-alt"></i> PGM Web Shop</a>
             </li>
+            {{-- <li>
+                <a href="{{ route('admin.orders.index') }}"><i class="zmdi zmdi-dot-circle-alt"></i>Quan ly don hang</a>
+            </li> --}}
             
         </ul>
     </li>

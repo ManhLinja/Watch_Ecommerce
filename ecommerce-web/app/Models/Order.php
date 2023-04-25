@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\OrderProduct;
 use App\Models\User;
+use App\Models\Status;
 
 class Order extends Model
 {
@@ -18,5 +19,10 @@ class Order extends Model
     public function cus()
     {
         return $this->hasOne(User::class,'id', 'user_id');
+    }
+
+    public function status_information()
+    {
+        return $this->belongsTo(Status::class,'status','id');
     }
 }

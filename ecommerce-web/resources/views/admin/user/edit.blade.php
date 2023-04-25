@@ -13,6 +13,8 @@
                                     <form method="POST" 
                                     action="#" 
                                     {{-- onsubmit="return (confirm('Do you sure want to Update?') && $.post('{{ route('admin_user_update')}}',this,(res)=>{console.log(res)}))" --}}
+                                    name="updateForm"
+                                    class="updateForm"
                                     enctype="multipart/form-data"
                                     autocomplete="off" >
                                     
@@ -130,7 +132,12 @@
                                             <label class="col-sm-2 col-form-label"></label>
                                             <div class="col-sm-10">
                                                 <button type="button"
-                                                onclick="return (confirm('Do you sure want to Update?') && $.post('{{ route('admin_user_update')}}',new FormData($(this).parents('form')[0]),(res)=>{console.log('done')})"
+                                                onclick="return (
+                                                    confirm('hei, Do you sure want to Update.') &&
+                                                    $.post('{{route('admin_user_update')}}',
+                                                    new FormData($(this).parents('form')[0]),
+                                                    (res)=>{console.log('done')})
+                                                )"
                                                 {{-- onclick="return (confirm('Do you sure want to Update?') && console.log($(this).parents('form')[0]))" --}}
                                                  class="btn btn-white px-5"><i class="icon-lock"></i> Update</button>
                                             </div>

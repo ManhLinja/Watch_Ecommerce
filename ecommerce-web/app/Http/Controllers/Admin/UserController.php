@@ -72,7 +72,7 @@ class UserController extends Controller
     }
     public function update(Request $request)
     {
-        return $request->all();
+        // return $request->all();
         
         $this->validate($request,[
             'first_name' => ['required'],
@@ -139,7 +139,8 @@ class UserController extends Controller
         }
         // dd($request->all());
         // return redirect()->route('admin_user_view',$user->id);
-        return redirect()->back()->with('success','data updated');
+        // return redirect()->back()->with('success','data updated');
+        return $user;
     }
     public function delete(Request $request)
     {

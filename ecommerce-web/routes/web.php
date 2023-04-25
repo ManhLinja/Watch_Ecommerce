@@ -9,9 +9,11 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\UserRoleController;
 use App\Http\Controllers\Admin\FileManagerController;
+use App\Http\Controllers\Admin\OrderManagementController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\WebsiteController;
 use App\Http\Controllers\CheckOutController;
+use App\Http\Controllers\Ordercontroller;
 use App\Http\Controllers\Product\ProductController;
 use App\Http\Controllers\Product\BrandController;
 use App\Http\Controllers\Product\MainCategoryController;
@@ -69,6 +71,9 @@ Route::get('/get_latest_checkout_information',[CheckOutController::class, 'get_l
 Route::get('/wishlist', [WebsiteController::class, 'wishlist'])->name('website_wishlist');
 Route::get('/contact', [WebsiteController::class, 'contact'])->name('website_contact');
 
+Route::get('/history', [Ordercontroller::class, 'history'])->middleware('auth');
+Route::post('/huy-don-hang', [Ordercontroller::class, 'huy_don_hang']);
+
 Route::group([
     'prefix' => 'json',
 ], function () {
@@ -103,13 +108,25 @@ Route::group([
 Route::group([
     'prefix'=>'admin', 
     'middleware'=>['auth','check_user_is_active','super_admin'],
-    'namespace'=>'Admin'
+    'namespace'=>'Admin',
     ], function(){
         Route::get('/', [AdminController::class, 'index'])->name('admin_index');
         Route::get('/view/{id}', [AdminController::class, 'view'])->name('admin_view');
+        // Route::get('/edit/{id}',[AdminController::class, 'edit'])->name('admin_edit');
+        // Route::post('/update', [AdminController::class, 'update'])->name('admin_update');
+        // Route::resource('admin',AdminController::class);
+        // Route::post('/giao-hang', [AdminController::class, 'giao_hang']);
+        Route::get('/orders', [OrderManagementController::class, 'index'])->name('admin.orders.index');
+        // Route::post('/update-status/{id}', [OrderManagementController::class, 'updateStatus'])->name('admin.orders.update_status');
+        Route::get('/change-status/{id}', [OrderManagementController::class, 'changeStatus'])->name('change_status');
+        Route::get('/update-status/{id}', [AdminController::class, 'updateStatus'])->name('update_status');
         
 
 });
+// Route::post('/giao-hang', [AdminController::class, 'giao_hang'])->middleware('auth');
+// Route::post('/giaohang', [OrderManagementController::class, 'GiaoHang']);
+// Route::post('/change-status/{id}', [OrderManagementController::class, 'changeStatus']);
+
 // Route::post('/filter-by-date', [AdminController::class, 'filter_by_date'])->name('filter_by_date');
 //User management
 Route::group([

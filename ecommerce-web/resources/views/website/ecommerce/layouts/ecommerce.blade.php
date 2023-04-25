@@ -331,6 +331,23 @@
         <!-- Main js file that contents all jQuery plugins activation. -->
         <script src="{{ asset('contents/website') }}/js/main.js"></script>
         <script type="text/javascript">
+            function Huydonhang(id){
+                var invoice_id = id;
+                // var status = 3;
+                var _token = $('input[name="_token"]').val();
+                
+                $.ajax({
+                    url: '{{ url('/huy-don-hang')}}',
+                    method:"POST",
+                    data:{invoice_id:invoice_id, _token:_token},
+                    success:function(data){
+                        alert('Thanh cong');
+                        location.reload();
+                    }
+                });
+            }
+        </script>
+        <script type="text/javascript">
             $(document).ready(function(){
                 $('#sort_product').on('change', function(){
                     var url = $(this).val();

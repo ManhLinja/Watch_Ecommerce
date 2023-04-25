@@ -63,8 +63,29 @@
                                 </table>
                             </div>
                         </div>
+                        <div class="cart-footer">
+                            
+                        </div>
                     </div>
                 </div>  
         </div>
+        {{-- <div class="row col-12 col-md-6 col-lg-3 col-xl-3">
+            <form class="update_form product_insert_form row" method="POST" action="{{route('admin_update',$order->id)}}" enctype="multipart/form-data">
+                <div class="form-inline">Trạng thái:</div>
+                <select name="status" class="form-control" id="" style="margin-left: 15px;">
+                    @foreach ($status as $item)
+                        <option {{ $username->status == $item->serial ? 'selected' : '' }} value="{{ $item->serial }}">{{ $item->name }}</option>
+                    @endforeach
+                </select>
+
+                <div class="form-group col-12">
+                    <label class="col-form-label"></label>
+                    <div class="">
+                        <button type="submit" class="btn btn-white px-5"><i class="icon-lock"></i> Cập nhật</button>
+                    </div>
+                </div>
+            </form>
+            
+        </div> --}}
     </div>
 @endsection

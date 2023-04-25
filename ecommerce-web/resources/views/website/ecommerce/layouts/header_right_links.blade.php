@@ -37,9 +37,9 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    {{-- <a class="dropdown-item" href="">
-                                        My Order
-                                    </a> --}}
+                                    <a class="dropdown-item" href="/history">
+                                        Lịch sử mua hàng
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      confirm('Sure!') && document.getElementById('logout-form').submit();">

@@ -54,6 +54,23 @@
                 })
             }
         </script>
+        <script type="text/javascript">
+            function Giaohang(id){
+                        var invoice_id = id;
+                        // var status = 3;
+                        var _token = $('input[name="_token"]').val();
+                        
+                        $.ajax({
+                            url: '{{ url('/giaohang')}}',
+                            method:"POST",
+                            data:{invoice_id:invoice_id, _token:_token},
+                            success:function(data){
+                                alert('Thanh cong');
+                                location.reload();
+                            }
+                        });
+                    }
+          </script>
         <script src="{{ asset('contents/admin') }}/custom.js"></script>
     </head>
 
@@ -346,6 +363,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
   <!-- Custom scripts -->
   <script src="{{ asset('contents/admin/assets') }}/js/app-script.js"></script>
+  
   <script type="text/javascript">
     $(document).ready(function(){
         $('#sort').on('change', function(){
