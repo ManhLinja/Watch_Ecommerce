@@ -23,6 +23,6 @@ class Order extends Model
 
     public function status_information()
     {
-        return $this->belongsTo(Status::class,'status','id');
+        return $this->belongsTo(Status::class,'status','serial');
     }
 }

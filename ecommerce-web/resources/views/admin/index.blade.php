@@ -575,9 +575,42 @@
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Sản phẩm bán chạy nhất</h5>
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">Tên sản phẩm</th>
+                                                    <th scope="col">Hình ảnh</th>
+                                                    <th scope="col">Số lượng bán được</th>
+                                                    <th scope="col">Doanh số thu được</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ($topProducts as $key=>$topProduct)
+                                                <tr>
+                                                    <td>Top {{ $key+1 }} </td>
+                                                    <td>{{ $topProduct->name }}</td>
+                                                    <td><img src="/{{ $topProduct->thumb_image }}" width="50px" height="50px"></td>
+                                                    <td>{{ $topProduct->totalQty }}</td>
+                                                    <td>$ {{ $topProduct->totalQty * $topProduct->price * ((100-$topProduct->discount)/100) }}</td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- <div class="row">
 
                         <form autocomplete="off" method="GET" action="" class="form-inline" style="margin-left:15px;">
-                            {{-- @csrf --}}
+                            
                             <div>
                                 Từ ngày: <input type="text" id="datepicker" name="date_from" class="form-control">
                             </div>
@@ -594,13 +627,14 @@
                             </div>
                             <div class=" mx-3">
                                 @if ($revenue_from_to)
-                                    Doanh thu: {{ $revenue_from_to }}
+                                    Doanh số: ${{ $revenue_from_to }}
                                 @endif
                             </div>
+                            
                         </form>
-                        {{-- <div id="myfirstchart" style="height: 250px;"></div> --}}
-                    </div>
-                    <div class="row mt-4">
+                        
+                    </div> --}}
+                    {{-- <div class="row mt-4">
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-body">
@@ -630,7 +664,7 @@
                                                     <td>${{ $item->total }}</td>
                                                     <td>{{ $item->invoice_date }}</td>
                                                     <td>
-                                                        {{-- {{ $item->status_information ? $item->status_information->name : $item->status }} --}}
+                                                        
                                                         @if ($item->status == 1)
                                                         <a href="{{ route('update_status', $item->id) }}" onclick="return confirm('Thay đổi trạng thái thành Đang xử lý?')" class="text text-success">Đã giao hàng</a>
                                                         @elseif ($item->status ==2)
@@ -649,34 +683,7 @@
                                                             <a type="button" href="{{ route('admin_view',$item->id) }}" class="btn btn-light waves-effect waves-light m-1">
                                                                 <i class="fa fa-eye"></i> <span>Xem chi tiết</span> 
                                                            </a>
-                                                           {{-- <a type="button" href="{{ route('admin_edit',$item->id) }}" class="btn btn-warning waves-effect waves-light m-1">
-                                                            <i class="fa fa-pencil"></i> <span>Sửa</span>  --}}
-                                                            {{-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#giaohang">
-                                                                Giao hang
-                                                            </button>
-                                                            <div class="modal fade" id="giaohang" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                                <form action="">
-                                                                    @csrf
-                                                                <div class="modal-dialog" role="document">
-                                                                  <div class="modal-content">
-                                                                    <div class="modal-header">
-                                                                      <h5 class="modal-title" id="exampleModalLabel">Giao hang</h5>
-                                                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                      </button>
-                                                                    </div>
-                                                                    <div class="modal-body">
-                                                                      xac nhan giao hang
-                                                                    </div>
-                                                                    <div class="modal-footer">
-                                                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
-                                                                      <button type="button" id="{{ $item->invoice_id }}" onclick="Giaohang(this.id)" class="btn btn-primary">Giao hang</button>
-                                                                    </div>
-                                                                  </div>
-                                                                </div>
-                                                            </form>
-                                                              </div> --}}
-                                                       {{-- </a> --}}
+                                                           
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -692,7 +699,7 @@
                             </div>
                             
                         </div>
-                    </div>
+                    </div> --}}
                     
                     
                     <!--start overlay-->

@@ -66,8 +66,12 @@ class CheckOutController extends Controller
         $order->user_id = Auth::user()->id;
         $order->invoice_date = Carbon::now()->toDateTimeString();
         // $order->total_discount = ;
-        $order->subtotal = $request->sub_total;
+        // $order->subtotal = $request->sub_total;
         $order->total = $request->sub_total;
+        $order->address1 = $req_billing_address->address;
+        $order->address2 = $req_billing_address->address2;
+        $order->phone = $req_billing_address->phone;
+        $order->receiver = $req_billing_address->name;
         $order->created_at = Carbon::now()->toDateTimeString();
         $order->save();
         $order->invoice_id = 10000+$order->id;

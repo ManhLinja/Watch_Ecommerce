@@ -6,11 +6,11 @@
         </a>
         <ul class="">
             <li>
-                <a href="{{ route('admin_index') }}"><i class="zmdi zmdi-dot-circle-alt"></i> PGM Web Shop</a>
+                <a href="{{ route('admin_index') }}"><i class="zmdi zmdi-dot-circle-alt"></i> Trang chủ</a>
             </li>
-            {{-- <li>
-                <a href="{{ route('admin.orders.index') }}"><i class="zmdi zmdi-dot-circle-alt"></i>Quan ly don hang</a>
-            </li> --}}
+            <li>
+                <a href="{{ route('admin.orders.index') }}"><i class="zmdi zmdi-dot-circle-alt"></i>Quản lý đơn hàng</a>
+            </li>
             
         </ul>
     </li>
@@ -25,9 +25,9 @@
                 <li>
                     <a href="{{ route('admin_user_index') }}"><i class="zmdi zmdi-dot-circle-alt"></i>Người dùng</a>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="{{ route('admin_user_role_index') }}"><i class="zmdi zmdi-dot-circle-alt"></i>Quyền người dùng</a>
-                </li>
+                </li> --}}
             </ul>
         </li>
     @endif
@@ -40,9 +40,9 @@
             <li>
                 <a href="{{ route('product.index') }}"><i class="zmdi zmdi-dot-circle-alt"></i>Sản phẩm</a>
             </li>     
-            <li>
+            {{-- <li>
                 <a href="{{ route('product.create') }}"><i class="zmdi zmdi-dot-circle-alt"></i>Thêm sản phẩm</a>
-            </li>     
+            </li>      --}}
             <li>
                 <a href="{{ route('brand.index') }}"><i class="zmdi zmdi-dot-circle-alt"></i>Thương hiệu</a>
             </li>   

@@ -50,7 +50,7 @@
                                     </span>
                                     <span>
                                         <b>Address <span class="required">*</span></b>
-                                        <input v-model="billing_address.address" type="text" placeholder="Đại chỉ nhà">
+                                        <input v-model="billing_address.address" type="text" placeholder="Địa chỉ nhà">
                                     </span>
                                     <span>
                                         <input v-model="billing_address.address2" type="text" placeholder="Nơi làm việc">
@@ -87,7 +87,7 @@
                             <b>Ghi chú đặt hàng</b>
                             <textarea name="#" id="#" cols="30" rows="10" placeholder="Ghi chú thêm về đơn hàng của bạn"></textarea>
                         </div>
-                        <a class="btn btn-success btn-sm" href="/checkout_success" @click="start_checkout">Thanh toán</a>
+                        <a class="btn btn-success btn-sm" href="/checkout_success" @click="start_checkout">Đặt hàng</a>
                         <!-- <button class="btn btn-success" @click.prevent="checout_confirm">Checkout</button> -->
                     </div>
                 </div>

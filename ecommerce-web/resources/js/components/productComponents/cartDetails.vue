@@ -37,7 +37,7 @@
                                         <span class="amounte">${{ cart.product.discount_price || cart.product.price }}</span>
                                     </td>
                                     <td class="product-quantity">
-                                        <input :value="cart.qty" @change="change_product_qty($event,cart.product.id)" min="1" :max="product.stock" type="number">
+                                        <input :value="cart.qty" @change="change_product_qty($event,cart.product.id)" min="1" :max="cart.product.stock" type="number" style="width: 60px;">
                                     </td>
                                     <td class="product-subtotal">
                                         <span class="sub-total">${{ cart.product_price * cart.qty }}</span>
@@ -89,7 +89,7 @@
                             </tbody></table>
                         </div>
                         <div class="simple-product-form contuct-form mb-30">
-                                <a class="btn btn-success btn-sm" href="/checkout">Proceed to Checkout</a>
+                                <a class="btn btn-success btn-sm" href="/checkout">Đặt hàng</a>
                         </div>
                     </div>
                 </div>

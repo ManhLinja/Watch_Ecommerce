@@ -47,7 +47,7 @@
                                             </a> --}}
                                             @if ($item->status != 2 && $item->status !=1)
                                             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#huydon">
-                                                Hủy đơn hàng
+                                                Hủy đơn
                                               </button>
                                               @endif
                                               <!-- Modal -->

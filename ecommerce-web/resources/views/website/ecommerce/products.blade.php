@@ -22,7 +22,7 @@
                         <i class="fa fa-bookmark icon bg-4"></i>
                         <h3>Danh mục</h3>
                     </div>
-                    <div class="shop-categories-menu p-20">
+                    {{-- <div class="shop-categories-menu p-20">
                         <ul>
                             <li><a href="#">Accessories</a><span> (7)</span></li>
                             <li>
@@ -53,7 +53,7 @@
                                 </ul>
                             </li>
                         </ul>
-                    </div>
+                    </div> --}}
                 </div>
                 <!-- filter-by-price-area start -->
                 <div class="filter-by-price-area mtb-30 bg-fff box-shadow">

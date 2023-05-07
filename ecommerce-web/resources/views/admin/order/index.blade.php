@@ -3,7 +3,41 @@
 @section('content')
 <div class="content-wrapper">
     <div class="container-fluid">
-        @include('admin.includes.bread_crumb', ['title' => 'BẢNG ĐIỀU KHIỂN'])
+        @include('admin.includes.bread_crumb', ['title' => 'ĐƠN HÀNG'])
+        <div class="row">
+
+            <form autocomplete="off" method="GET" action="" class="form-inline" style="margin-left:15px;">
+                {{-- @csrf --}}
+                <div>
+                    Từ ngày: <input type="text" id="datepicker" name="date_from" class="form-control">
+                </div>
+                <div style="margin-left:15px;">
+                    Đến ngày: <input type="text" id="datepicker2" name="date_to" class="form-control">
+                </div>
+                <div class="btn-group mx-3">
+                    <button type="submit" id="btn-dashboard-filter" class="btn btn-light">Lọc dữ liệu</button>
+                </div>
+                <div class=" mx-3">
+                    @if ($count_order)
+                        Số đơn hàng: {{ $count_order }}
+                    @endif
+                </div>
+                <div class=" mx-3">
+                    @if ($revenue_from_to)
+                        Doanh số: ${{ $revenue_from_to }}
+                    @endif
+                </div>
+                {{-- @foreach ($topProducts as $topProduct)
+                <div class=" mx-3">
+                    
+                        {{ $topProduct->name }}
+                        {{ $topProduct->totalQty }}
+                        {{ $topProduct->totalQty * $topProduct->price * ((100-$topProduct->discount)/100) }}
+                </div>
+                @endforeach --}}
+            </form>
+            {{-- <div id="myfirstchart" style="height: 250px;"></div> --}}
+        </div>
         <div class="row mt-4">
             <div class="col-lg-12">
                 <div class="card">
@@ -51,15 +85,15 @@
                                         </td>
                                         <td>
                                             <div class="text-right">
-                                                <a type="button" href="{{ route('admin_view',$item->id) }}" class="btn btn-light waves-effect waves-light m-1">
+                                                <a type="button" href="{{ route('admin.orders.view',$item->id) }}" class="btn btn-light waves-effect waves-light m-1">
                                                     <i class="fa fa-eye"></i> <span>Xem chi tiết</span> 
                                                </a>
                                                {{-- <a type="button" href="{{ route('admin_edit',$item->id) }}" class="btn btn-warning waves-effect waves-light m-1">
                                                 <i class="fa fa-pencil"></i> <span>Sửa</span>  --}}
-                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#giaohang">
+                                                {{-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#giaohang">
                                                     Giao hang
-                                                </button>
-                                                <div class="modal fade" id="giaohang" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                </button> --}}
+                                                {{-- <div class="modal fade" id="giaohang" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                     <form action="">
                                                         @csrf
                                                     <div class="modal-dialog" role="document">
@@ -80,7 +114,7 @@
                                                       </div>
                                                     </div>
                                                 </form>
-                                                  </div>
+                                                  </div> --}}
                                            </a>
                                             </div>
                                         </td>

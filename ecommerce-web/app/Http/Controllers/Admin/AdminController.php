@@ -6,11 +6,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\OrderProduct;
+use App\Models\Product;
 use App\Models\User;
 use App\Models\Status;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use DB;
 
 
 class AdminController extends Controller
@@ -26,7 +28,17 @@ class AdminController extends Controller
         }
         $revenue_from_to = Order::where('status',1)->whereBetween('invoice_date',[request()->date_from,request()->date_to])->orderBy('invoice_date','ASC')->sum('total');
         $count_order = Order::where('status',1)->whereBetween('invoice_date',[request()->date_from,request()->date_to])->count();
-        return view('admin.index', compact('order_count','collection','revenue','customer','revenue_from_to','count_order'));
+        $top_sales = DB::table('products')->leftJoin('order_products','products.id','=','order_products.product_id')->selectRaw('products.id, SUM(order_products.qty) as total')->groupBy('products.id')->orderBy('total','desc')->take(3)->get();
+        $topProducts = [];
+        foreach($top_sales as $s){
+            $p = Product::findOrFail($s->id);
+            $p->totalQty = $s->total;
+            $topProducts[] = $p;
+
+        }
+
+        // $items = DB::table('order_products')->select('products.id', DB::raw('SUM(product_id) as count'))->groupBy('product_id')->orderBy('count','desc')->get();
+        return view('admin.index', compact('order_count','collection','revenue','customer','revenue_from_to','count_order','topProducts'));
     }
 
     public function view($id){
@@ -75,6 +87,8 @@ class AdminController extends Controller
     }
 
     public function updateStatus($id){
+        $order_product = OrderProduct::get();
+        $product = Product::get();
         $getStatus = Order::select('status')->where('id', $id)->first();
         if($getStatus->status == 3){
             $status = 1;
@@ -82,6 +96,31 @@ class AdminController extends Controller
             $status = 3;
         }
         Order::where('id', $id)->update(['status'=>$status]);
+        // if($getStatus->status == 1){
+        //     foreach($order_product as $key=>$item) {
+        //         // $product = Product::find($product_id);
+        //         // $product_stock = $product->stock;
+        //         // foreach($product as $key2=>$qty){
+        //         //     $sold_qty = $product_id->qty
+        //         //     if($key == $key2){
+        //         //         $pro_main = $product_stock - $sold_qty;
+        //         //         $product->stock = $pro_main;
+        //         //         $product->save();
+        //         //     }
+        //         // }
+        //         $sold_qty = $item->qty;
+        //         foreach($product as $key2=>$item1){
+        //             if($item->product_id == $item1->id){
+                        
+        //                 $product_stock = $item1->stock;
+        //                 $pro_main = $product_stock - $sold_qty;
+        //                 $product->stock = $pro_main;
+        //                 $product->save();
+        //             }
+        //         }
+
+        //     }
+        // }
         return redirect()->back();
     }
 

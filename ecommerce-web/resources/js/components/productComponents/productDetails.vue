@@ -44,7 +44,7 @@
                         <div class="col-md-4">
                             <div class="form-group d-flex justify-content-between">
                                 <label for="" style="margin-right: 10px; font-weight:bold;">Số lượng: </label>
-                                <input class="form-control" min="1" v-model="qty" :max="product.stock" name="quantity" type="number" >
+                                <input class="form-control" min="1" v-model="qty" :max="product.stock" name="quantity" type="number" style="width: 60px;">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -142,7 +142,7 @@ import { mapGetters, mapActions, mapMutations } from 'vuex';
         ]),
         add_to_cart: function(product){
             let cart = {
-                qty: this.qty,
+                qty: this.get_product_quatity,
                 color: this.color,
                 size: this.size,
                 product_price: this.get_product_price,
@@ -188,6 +188,15 @@ import { mapGetters, mapActions, mapMutations } from 'vuex';
                 return this.product.discount_price;
             }else{
                 return this.product.price;
+            }
+        },
+        get_product_quatity: function(){
+            if(this.qty > this.product.stock){
+                return this.product.stock;
+            }else if(this.qty <= 0){
+                return 1;
+            }else{
+                return this.qty;
             }
         }
     },

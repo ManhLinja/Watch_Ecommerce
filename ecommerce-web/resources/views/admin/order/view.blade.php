@@ -8,7 +8,47 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-header d-flex justify-content-between">
-                            <h5 class="card-title">Hóa đơn của {{ $username->cus->username }}</h5>
+                            <h5 class="card-title">Thông tin khách hàng</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Tên người nhận</th>
+                                            <th scope="col">Địa chỉ 1</th>
+                                            <th scope="col">Địa chỉ 2</th>
+                                            <th scope="col">Số điện thoại</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($receiver as $item)
+                                            
+                                        
+                                        <tr>
+                                            <th scope="row"></th>
+                                            <td>{{$item->receiver}}</td>
+                                            <td>{{ $item->address1 }}</td>
+                                            <td>{{$item->address2}}</td>
+                                            <td>{{$item->phone}} </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="cart-footer">
+                            
+                        </div>
+                    </div>
+                </div>  
+        </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between">
+                            <h5 class="card-title">Chi tiết đơn hàng</h5>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">#{{ $username->invoice_id }}</h5>

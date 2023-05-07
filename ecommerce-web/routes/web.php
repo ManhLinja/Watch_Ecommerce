@@ -118,6 +118,7 @@ Route::group([
         // Route::resource('admin',AdminController::class);
         // Route::post('/giao-hang', [AdminController::class, 'giao_hang']);
         Route::get('/orders', [OrderManagementController::class, 'index'])->name('admin.orders.index');
+        Route::get('/orders/view/{id}', [OrderManagementController::class, 'view'])->name('admin.orders.view');
         // Route::post('/update-status/{id}', [OrderManagementController::class, 'updateStatus'])->name('admin.orders.update_status');
         Route::get('/change-status/{id}', [OrderManagementController::class, 'changeStatus'])->name('change_status');
         Route::get('/update-status/{id}', [AdminController::class, 'updateStatus'])->name('update_status');
