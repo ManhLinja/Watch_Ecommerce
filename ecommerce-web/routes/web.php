@@ -26,6 +26,7 @@ use App\Http\Controllers\Product\StatusController;
 use App\Http\Controllers\Product\WriterController;
 use App\Http\Controllers\Product\PublicationController;
 use App\Http\Controllers\Product\VendorController;
+use App\Http\Controllers\Product\ImageController;
 
 
 
@@ -196,6 +197,7 @@ Route::group([
         Route::resource('writer',WriterController::class);
         Route::resource('publication',PublicationController::class);
         Route::resource('vendor', VendorController::class);
+        Route::resource('image', ImageController::class);
         
 
         Route::get('/get-all-cateogory-selected-by-main-category/{main_category_id}', [CategoryController::class, 'get_category_by_main_category'])->name('get_all_cateogory_selected_by_main_category');
