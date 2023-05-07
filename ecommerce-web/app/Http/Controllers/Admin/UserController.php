@@ -54,7 +54,7 @@ class UserController extends Controller
         $user->username = $request->username;
         $user->role_id = $request->role_id;
         $user->email = $request->email;
-        $user->phone = $request->phone;
+        // $user->phone = $request->phone;
         $user->password = Hash::make($request->password);
         $user->created_at = Carbon::now()->toDateTimeString();
         $user->creator = Auth::user()->id;
@@ -98,12 +98,12 @@ class UserController extends Controller
             ]);
             $user->username = $request->username;
         }
-        if($user->phone != $request->phone){
-            $this->validate($request,[
-                'phone' => ['required', "unique:users"],
-            ]);
-            $user->phone = $request->phone;
-        }
+        // if($user->phone != $request->phone){
+        //     $this->validate($request,[
+        //         'phone' => ['required', "unique:users"],
+        //     ]);
+        //     $user->phone = $request->phone;
+        // }
         // dd($request->all());
         if(!is_null($request->old_password) && !is_null($request->password) && !is_null($request->password_confirmation)){
             $this->validate($request,[

@@ -42,13 +42,14 @@ class SubCategoryController extends Controller
             'name' => ['required'],
             'main_category_id' => ['required'],
             'category_id' => ['required'],
-            'icon' => ['required']
+            // 'icon' => ['required']
         ]);
-        $sub_category = SubCategory::create($request->except('icon'));
-        if($request->hasFile('icon')){
-            $sub_category->icon = Storage::put('uploads/category',$request->file('icon'));
-            $sub_category->save();
-        }
+        // $sub_category = SubCategory::create($request->except('icon'));
+        // if($request->hasFile('icon')){
+        //     $sub_category->icon = Storage::put('uploads/category',$request->file('icon'));
+        //     $sub_category->save();
+        // }
+        $sub_category = SubCategory::create($request->all());
 
         $sub_category->slug = Str::slug($sub_category->name);
         $sub_category->creator = Auth::user()->id; 
@@ -89,17 +90,19 @@ class SubCategoryController extends Controller
             'main_category_id' => ['required'],
             'category_id' => ['required'],
         ]);
-        $sub_category->update($request->except('icon'));
-        if($request->hasFile('icon')){
-            $sub_category->icon = Storage::put('uploads/category',$request->file('icon'));
-            $sub_category->save();
-        }
+        // $sub_category->update($request->except('icon'));
+        // if($request->hasFile('icon')){
+        //     $sub_category->icon = Storage::put('uploads/category',$request->file('icon'));
+        //     $sub_category->save();
+        // }
+        $sub_category->update($request->all());
 
         $sub_category->slug = Str::slug($sub_category->name);
         $sub_category->creator = Auth::user()->id; 
         $sub_category->save();
 
-        return 'success';
+        return redirect()->back()->with('success','data updated successfully');
+        // return 'success';
     }
 
     /**

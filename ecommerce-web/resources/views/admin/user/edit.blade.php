@@ -8,7 +8,7 @@
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <div class="card-title">Update User</div>
+                                    <div class="card-title">Cập nhật người dùng</div>
                                     <hr />
                                     <form method="POST" 
                                     action="#" 
@@ -21,7 +21,7 @@
                                         @csrf
                                         <input type="hidden" name="id" value="{{ $user->id }}">
                                         <div class="form-group row">
-                                            <label for="input-21" class="col-sm-2 col-form-label">First Name</label>
+                                            <label for="input-21" class="col-sm-2 col-form-label">Họ</label>
                                             <div class="col-sm-10">
                                                 <input type="text" name="first_name" value="{{ $user->first_name }}" class="form-control" id="input-21" placeholder="First name" />
                                                 @error('first_name')
@@ -30,7 +30,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="input-21" class="col-sm-2 col-form-label">Last Name</label>
+                                            <label for="input-21" class="col-sm-2 col-form-label">Tên</label>
                                             <div class="col-sm-10">
                                                 <input type="text" name="last_name" value="{{ $user->last_name }}" class="form-control" id="input-21" placeholder="Last name" />
                                                 @error('last_name')
@@ -39,7 +39,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="input-21" class="col-sm-2 col-form-label">User Name</label>
+                                            <label for="input-21" class="col-sm-2 col-form-label">Tên người dùng</label>
                                             <div class="col-sm-10">
                                                 <input type="text" name="username" value="{{ $user->username }}" class="form-control" id="input-21" placeholder="User name" />
                                                 @error('username')
@@ -48,7 +48,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="input-21" class="col-sm-2 col-form-label">User Role</label>
+                                            <label for="input-21" class="col-sm-2 col-form-label">Quyền người dùng</label>
                                             <div class="col-sm-10">
                                                 {{-- <input type="text" name="role" class="form-control" id="input-21" placeholder="User name" /> --}}
                                                 <select name="role_id" class="form-control" id="">
@@ -70,7 +70,7 @@
                                                 @enderror
                                             </div>
                                         </div>
-                                        <div class="form-group row">
+                                        {{-- <div class="form-group row">
                                             <label for="input-23" class="col-sm-2 col-form-label">Mobile Number</label>
                                             <div class="col-sm-10">
                                                 <input type="text" name="phone" value="{{ $user->phone }}" class="form-control" id="input-23" placeholder="Phone" />
@@ -78,9 +78,9 @@
                                                     <div class="text-warning">{{ $message }}</div>
                                                 @enderror
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="form-group row">
-                                            <label for="input-24" class="col-sm-2 col-form-label">Old Password</label>
+                                            <label for="input-24" class="col-sm-2 col-form-label">Mật khẩu cũ</label>
                                             <div class="col-sm-10">
                                                 <input type="password" name="old_password" class="form-control" id="input-24" placeholder="Enter Old Password" />
                                                 {{-- @error('old_password')
@@ -92,7 +92,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="input-24" class="col-sm-2 col-form-label">Password</label>
+                                            <label for="input-24" class="col-sm-2 col-form-label">Mật khẩu mới</label>
                                             <div class="col-sm-10">
                                                 <input type="password" name="password" class="form-control" id="input-24" placeholder="Enter Password" />
                                                 @error('password')
@@ -101,7 +101,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="input-25" class="col-sm-2 col-form-label">Confirm Password</label>
+                                            <label for="input-25" class="col-sm-2 col-form-label">Nhập lại mật khẩu</label>
                                             <div class="col-sm-10">
                                                 <input type="password" name="password_confirmation" class="form-control" id="input-25" placeholder="Confirm Password" />
                                                 @error('password_confirmation')
@@ -110,7 +110,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="input-25" class="col-sm-2 col-form-label">Image</label>
+                                            <label for="input-25" class="col-sm-2 col-form-label">Ảnh đại diện</label>
                                             <div class="col-sm-10">
                                                 <img src="/{{ $user->photo }}" style="height: 50px; margin-bottom: 10px;" alt="user image"> <br>
                                                 <input type="file" name="image" class="form-control" id="input-25" />

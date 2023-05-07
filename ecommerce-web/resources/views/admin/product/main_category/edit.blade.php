@@ -22,14 +22,14 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-group row">
+                                        {{-- <div class="form-group row">
                                             <label for="input-21" class="col-sm-2 col-form-label">icon</label>
                                             <div class="col-sm-10">
                                                 <input type="file" name="icon" class="form-control" id="input-21" />
                                                 <img src="/{{ $main_category->logo }}" style="height: 40px;" alt="">
                                                 <span class="text-danger icon"></span>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         
                                         <div class="form-group row">
                                             <label class="col-sm-2 col-form-label"></label>

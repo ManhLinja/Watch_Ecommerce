@@ -34,14 +34,14 @@
                                                 <span class="text-danger name"></span>
                                             </div>
                                         </div>
-                                        <div class="form-group row">
+                                        {{-- <div class="form-group row">
                                             <label for="input-21" class="col-sm-2 col-form-label">Icon</label>
                                             <div class="col-sm-10">
                                                 <input type="file" name="icon" class="form-control" id="input-21"/>
                                                 <img src="/{{ $category->icon }}" style="height: 40px;" alt="">
                                                 <span class="text-danger icon"></span>
                                             </div>
-                                        </div>
+                                        </div> --}}
         
         
                                         <div class="form-group row">

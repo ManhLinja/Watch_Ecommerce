@@ -62,7 +62,7 @@
                                                 @enderror
                                             </div>
                                         </div>
-                                        <div class="form-group row">
+                                        {{-- <div class="form-group row">
                                             <label for="input-23" class="col-sm-2 col-form-label">Số điện thoại</label>
                                             <div class="col-sm-10">
                                                 <input type="text" name="phone" class="form-control" id="input-23" placeholder="Phone" />
@@ -70,7 +70,7 @@
                                                     <div class="text-warning">{{ $message }}</div>
                                                 @enderror
                                             </div>
-                                        </div>
+                                        </div> --}}
                                         <div class="form-group row">
                                             <label for="input-24" class="col-sm-2 col-form-label">Mật khẩu</label>
                                             <div class="col-sm-10">

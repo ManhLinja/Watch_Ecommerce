@@ -10,7 +10,7 @@
                                 <div class="card-header d-flex justify-content-between">
                                     <h5 class="card-title">All Users</h5>
                                     <a href="{{ route('admin_user_create') }}" class="btn btn-warning waves-effect waves-light m-1">
-                                        <i class="fa fa-plus"></i> <span>Add New</span> 
+                                        <i class="fa fa-plus"></i> <span>Thêm mới</span> 
                                    </a>
                                 </div>
                                 <div class="card-body">

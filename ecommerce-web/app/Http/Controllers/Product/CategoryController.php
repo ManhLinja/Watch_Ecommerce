@@ -50,14 +50,14 @@ class CategoryController extends Controller
         $this->validate($request,[
             'name' => ['required'],
             'main_category_id' => ['required'],
-            'icon' => ['required']
+            // 'icon' => ['required']
         ]);
-        $category = Category::create($request->except('icon'));
-        if($request->hasFile('icon')){
-            $category->icon = Storage::put('uploads/category',$request->file('icon'));
-            $category->save();
-        }
-
+        // $category = Category::create($request->except('icon'));
+        // if($request->hasFile('icon')){
+        //     $category->icon = Storage::put('uploads/category',$request->file('icon'));
+        //     $category->save();
+        // }
+        $category = Category::create($request->all());
         $category->slug = Str::slug($category->name);
         $category->creator = Auth::user()->id; 
         $category->save();
@@ -96,17 +96,18 @@ class CategoryController extends Controller
             'name' => ['required'],
             'main_category_id' => ['required']
         ]);
-        $category->update($request->except('icon'));
-        if($request->hasFile('icon')){
-            $category->icon = Storage::put('uploads/category',$request->file('icon'));
-            $category->save();
-        }
-
+        // $category->update($request->except('icon'));
+        // if($request->hasFile('icon')){
+        //     $category->icon = Storage::put('uploads/category',$request->file('icon'));
+        //     $category->save();
+        // }
+        $category->update($request->all());
         $category->slug = Str::slug($category->name);
         $category->creator = Auth::user()->id; 
         $category->save();
 
-        return 'success';
+        return redirect()->back()->with('success','data updated successfully');
+        // return 'success';
     }
 
     /**

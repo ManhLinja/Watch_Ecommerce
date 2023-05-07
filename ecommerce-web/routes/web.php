@@ -14,6 +14,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\WebsiteController;
 use App\Http\Controllers\CheckOutController;
 use App\Http\Controllers\Ordercontroller;
+use App\Http\Controllers\ProductCategory;
 use App\Http\Controllers\Product\ProductController;
 use App\Http\Controllers\Product\BrandController;
 use App\Http\Controllers\Product\MainCategoryController;
@@ -62,6 +63,8 @@ Route::get('/products/category/{main_category}/{category}/all-product-json', [We
 
 Route::get('/products/category/{main_category}/{category}/{sub_category}', [WebsiteController::class, '@sub_category_products'])->name('website_sub_category_products');
 Route::get('/products/category/{main_category}/{category}/{sub_category}/all-product-json', [WebsiteController::class, 'sub_category_products_json'])->name('website_sub_category_products_json');
+
+// Route::get('/products/{slug}/', [ProductCategory::class, 'maincategory'])->name('main_category');
 
 Route::get('/product-details/{product}', [WebsiteController::class, 'details'])->name('website_product_details');
 Route::get('/cart', [WebsiteController::class, 'cart'])->name('website_cart');
