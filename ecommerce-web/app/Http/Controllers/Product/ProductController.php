@@ -27,25 +27,25 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'size'])
+        $collection = Product::active()->with(['category', 'sub_category', 'main_category','image'])
                                 ->orderBy('id','DESC')->paginate(10);
         // $collection = Product::all();
         if($key = request()->key){
-            $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'size'])
+            $collection = Product::active()->with(['category', 'sub_category', 'main_category','image'])
             ->orderBy('id','DESC')->where('name','like','%'.$key.'%')->paginate(10);
         }
         elseif(isset($_GET['sort_by'])){
             $sort_by = $_GET['sort_by'];
             if($sort_by == 'highest_to_lowest'){
-                $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'size'])
+                $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'image'])
                 ->orderBy('price','DESC')->paginate(10);
             }
             elseif($sort_by == 'lowest_to_highest'){
-                $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'size'])
+                $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'image'])
                 ->orderBy('price','ASC')->paginate(10);
             }
         }else{
-            $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'color', 'image', 'size'])
+            $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'image'])
                                 ->orderBy('id','DESC')->paginate(10);
         }
 
@@ -59,8 +59,8 @@ class ProductController extends Controller
     public function create()
     {
         $brands = Brand::where('status', 1)->get();
-        $colors = Color::where('status', 1)->get();
-        $sizes = Size::where('status', 1)->get();
+        // $colors = Color::where('status', 1)->get();
+        // $sizes = Size::where('status', 1)->get();
         // $units = Unit::where('status', 1)->get();
         // $writers = Writer::where('status', 1)->get();
         // $publications = Publication::where('status', 1)->get();
@@ -80,8 +80,8 @@ class ProductController extends Controller
 
         return view('admin.product.create', compact(
             'brands',
-            'colors',
-            'sizes',
+            // 'colors',
+            // 'sizes',
             // 'units',
             'maincategories',
             'categories',
@@ -104,8 +104,8 @@ class ProductController extends Controller
             'product_main_category_id' => ['required'],
             'product_category_id' => ['required'],
             'product_sub_category_id' => ['required'],
-            'color_id' => ['required'],
-            'size_id' => ['required'],
+            // 'color_id' => ['required'],
+            // 'size_id' => ['required'],
             // 'unit_id' => ['required'],
             // 'vendor_id' => ['required'],
             'price' => ['required'],
@@ -163,13 +163,13 @@ class ProductController extends Controller
         //     $product->publication()->attach($request->publication_id);
         // }
 
-        if ($request->has('color_id')) {
-            $product->color()->attach($request->color_id);
-        }
+        // if ($request->has('color_id')) {
+        //     $product->color()->attach($request->color_id);
+        // }
 
-        if ($request->has('size_id')) {
-            $product->size()->attach($request->size_id);
-        }
+        // if ($request->has('size_id')) {
+        //     $product->size()->attach($request->size_id);
+        // }
 
         // if ($request->has('unit_id')) {
         //     $product->unit()->attach($request->unit_id);
@@ -182,7 +182,7 @@ class ProductController extends Controller
         // if ($request->has('vendor_id')) {
         //     $product->vendor()->attach($request->vendor_id);
         // }
-        return Product::with(['category', 'sub_category', 'main_category', 'color', 'image', 'size',])
+        return Product::with(['category', 'sub_category', 'main_category', 'image',])
                         ->latest()->first();
     }
 
@@ -201,8 +201,8 @@ class ProductController extends Controller
     {
         // dd($product->minimum_amount);
         $brands = Brand::where('status', 1)->get();
-        $colors = Color::where('status', 1)->get();
-        $sizes = Size::where('status', 1)->get();
+        // $colors = Color::where('status', 1)->get();
+        // $sizes = Size::where('status', 1)->get();
         // $units = Unit::where('status', 1)->get();
         // $writers = Writer::where('status', 1)->get();
         // $publications = Publication::where('status', 1)->get();
@@ -223,8 +223,8 @@ class ProductController extends Controller
         return view('admin.product.edit',compact(
             'product',
             'brands',
-            'colors',
-            'sizes',
+            // 'colors',
+            // 'sizes',
             // 'units',
             'maincategories',
             'categories',
@@ -247,8 +247,8 @@ class ProductController extends Controller
             'product_main_category_id' => ['required'],
             'product_category_id' => ['required'],
             'product_sub_category_id' => ['required'],
-            'color_id' => ['required'],
-            'size_id' => ['required'],
+            // 'color_id' => ['required'],
+            // 'size_id' => ['required'],
             // 'unit_id' => ['required'],
             // 'vendor_id' => ['required'],
             'price' => ['required'],
@@ -300,13 +300,13 @@ class ProductController extends Controller
         //     $product->publication()->sync($request->publication_id);
         // }
 
-        if ($request->has('color_id')) {
-            $product->color()->sync($request->color_id);
-        }
+        // if ($request->has('color_id')) {
+        //     $product->color()->sync($request->color_id);
+        // }
 
-        if ($request->has('size_id')) {
-            $product->size()->sync($request->size_id);
-        }
+        // if ($request->has('size_id')) {
+        //     $product->size()->sync($request->size_id);
+        // }
 
         // if ($request->has('unit_id')) {
         //     $product->unit()->sync($request->unit_id);
@@ -320,7 +320,7 @@ class ProductController extends Controller
         //     $product->vendor()->sync($request->vendor_id);
         // }
 
-        return Product::where('id',$product->id)->with(['category', 'sub_category', 'main_category', 'color', 'image', 'size'])
+        return Product::where('id',$product->id)->with(['category', 'sub_category', 'main_category', 'image'])
                         ->latest()->first();
 
     }

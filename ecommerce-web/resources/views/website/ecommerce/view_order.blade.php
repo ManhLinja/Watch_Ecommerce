@@ -21,8 +21,6 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Tên sản phẩm</th>
                                     <th scope="col">Số lượng</th>
-                                    <th scope="col">Màu sắc</th>
-                                    <th scope="col">Size</th>
                                     <th scope="col">Giá/1 sản phẩm</th>
                                 </tr>
                             </thead>
@@ -32,7 +30,7 @@
                                     <th scope="row">{{ $key+1 }}</th>
                                     <td>{{$item->product_name}}</td>
                                     <td>{{$item->qty}}</td>
-                                    <td>
+                                    {{-- <td>
                                         @if ($item->color == 1)
                                             <span>Red</span>
                                         @elseif ($item->color == 2)
@@ -57,7 +55,7 @@
                                         @elseif ($item->size == 5)
                                             <span>XL</span>                                         
                                         @endif
-                                    </td>
+                                    </td> --}}
                                     <td>${{$item->price}}</td>
                                 </tr>
                                 @endforeach

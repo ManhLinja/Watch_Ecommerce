@@ -58,10 +58,8 @@
                                         <tr>
                                             <th scope="col">#</th>
                                             <th scope="col">Tên sản phẩm</th>
-                                            <th scope="col">Hang trong kho</th>
+                                            <th scope="col">Hàng trong kho</th>
                                             <th scope="col">Số lượng</th>
-                                            <th scope="col">Màu sắc</th>
-                                            <th scope="col">Size</th>
                                             <th scope="col">Giá/1 sản phẩm</th>
                                         </tr>
                                     </thead>
@@ -72,32 +70,6 @@
                                             <td>{{$item->product_name}}</td>
                                             <td>{{$item->product->stock}}</td>
                                             <td>{{$item->qty}}</td>
-                                            <td>
-                                                @if ($item->color == 1)
-                                                    <span>Red</span>
-                                                @elseif ($item->color == 2)
-                                                    <span>Gold</span>
-                                                @elseif ($item->color == 3)
-                                                    <span>Pink</span>
-                                                @elseif ($item->color == 4)
-                                                    <span>Green</span>
-                                                @elseif ($item->color == 5)
-                                                    <span>Skyblue</span>
-                                                @endif
-                                            </td>
-                                            <td>
-                                                @if ($item->size == 1)
-                                                    <span>Mini</span>           
-                                                @elseif ($item->size == 2)
-                                                    <span>Regular</span>
-                                                @elseif ($item->size == 3)
-                                                    <span>Unisex</span>
-                                                @elseif ($item->size == 4)
-                                                    <span>Sport</span>
-                                                @elseif ($item->size == 5)
-                                                    <span>XL</span>                                         
-                                                @endif
-                                            </td>
                                             <td>${{$item->price}}</td>
                                         </tr>
                                         @endforeach

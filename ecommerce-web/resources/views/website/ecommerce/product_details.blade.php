@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-xl-9 col-lg-9 col-md-12 col-12">
                 <div class="row">
-                    <div class="col-12" id="productList">
+                    <div class="col-15" id="productList">
                         <div id="app_product_details">
                             <product-details
                                 :selected_product="{{$product}}">

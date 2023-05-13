@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\OrderProduct;
+use App\Models\Product;
 
 
 class OrderManagementController extends Controller
@@ -50,6 +51,7 @@ class OrderManagementController extends Controller
     //     $order->save();
     // }
     public function changeStatus($id) {
+        
         $getStatus = Order::select('status')->where('id', $id)->first();
         if($getStatus->status == 3){
             $status = 1;
@@ -57,6 +59,50 @@ class OrderManagementController extends Controller
             $status = 3;
         }
         Order::where('id', $id)->update(['status'=>$status]);
+
+        // Order::where('id', $id)->update(['status'=>$status]);
+        // if($getStatus->status == 1){
+
+            $order_sell = OrderProduct::where('order_id', $id)->get();
+            // dd($order_sell);
+            // $list_product_id = Product::where('id',$order_sell->product_id)->get();
+            // dd($list_product_id);
+            $list_product = [];
+            $qty_arr = [];
+            $product_id = [];
+            // $abc = '';
+            
+            foreach ($order_sell as $item){
+                
+                $product = Product::where('id', $item->product_id)->get();
+                // dd($product);
+                array_push($qty_arr,$item->qty); 
+                
+                // dd($product_stock);
+                
+                
+                // array_push($list_product,$product); 
+
+                foreach($product as $item2) {
+                    array_push($product_id,$item2->id); 
+                }
+            }
+            // dd($qty_arr, $product_id);
+            foreach ($product_id as $key1 => $id) {
+                $product1 = Product::find($id);
+                $product1_stock = $product1->stock;
+                foreach($qty_arr as $key2 => $qty){
+                    if($key1 == $key2){
+                        $abc = $product1_stock - $qty;
+                        $product1->stock = $abc;
+                        $product1->save();
+                    }
+                }
+            }
+
+            
+        
+
         return redirect()->back();
     }
 }

@@ -35,7 +35,7 @@
                             <del>$ {{product.price}}</del>
                         </span>
                         <span v-else>${{product.price}}</span>
-
+                        
                         <span v-if="product.discount_price>0" >$ {{product.discount_price}}</span>
                     </div>
                 </div>

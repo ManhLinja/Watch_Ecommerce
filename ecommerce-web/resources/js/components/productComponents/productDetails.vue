@@ -43,28 +43,31 @@
                     <form action="#" class="row">
                         <div class="col-md-4">
                             <div class="form-group d-flex justify-content-between">
-                                <label for="" style="margin-right: 10px; font-weight:bold;">Số lượng: </label>
+                                <label style="margin-right: 10px; font-weight:bold;">Số lượng: </label>
                                 <input class="form-control" min="1" v-model="qty" :max="product.stock" name="quantity" type="number" style="width: 60px;">
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <!-- <div class="col-md-4">
                             <div class="form-group d-flex">
-                                <label for="" style="margin-right: 10px; font-weight:bold;">Màu sắc: </label>
+                                <label style="margin-right: 10px; font-weight:bold;">Màu sắc: </label>
                                 <select name="" v-model="color" class="form-control" id="">
                                     <option v-for="(color) in product.color" :key="color.id" :value="color.id" > {{color.name}}</option>
                                 </select>
                             </div>
-                        </div>
-                        <div class="col-md-4">
+                        </div> -->
+                        <!-- <div class="col-md-4">
                             <div class="form-group d-flex">
-                                <label for="" style="margin-right: 10px; font-weight:bold;">Size: </label>
+                                <label style="margin-right: 10px; font-weight:bold;">Size: </label>
                                 <select name="" v-model="size" class="form-control" id="">
                                      <option v-for="(size) in product.size" :key="size.id" :value="size.id" > {{size.name}}</option>
                                 </select>
                             </div>
-                        </div>
-                        <div class="col-12">
+                        </div> -->
+                        <div class="col-12" v-if="product.stock > 0">
                             <button @click.prevent="add_to_cart(product)" @click="notify" type="button">Thêm vào giỏ hàng</button>
+                        </div>
+                        <div class="col-12" v-if="product.stock == 0">
+                            <span class="badge badge-danger">Hết hàng!</span>
                         </div>
                     </form>
                 </div>
@@ -202,7 +205,7 @@ import { mapGetters, mapActions, mapMutations } from 'vuex';
     },
     setup() {
         const notify = () => {
-        toast("success!!!", {
+        toast("Thành công !!!", {
             autoClose: 3000,
         }); // ToastOptions
         }

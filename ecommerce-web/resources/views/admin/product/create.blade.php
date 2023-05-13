@@ -183,16 +183,16 @@
                                             ])
                                         </div> --}}
 
-                                        <div class="form-group col-md-6  col-xl-4">
+                                        {{-- <div class="form-group col-md-6  col-xl-4">
                                             <label for="" class="col-form-label">Màu sắc</label>
-                                            {{-- <div class="">
+                                            <div class="">
                                                 <select name="color_id" id="" class="form-control multiple-select" multiple>
                                                     @foreach ($colors as $key=>$item)
                                                         <option {{ $key==0?'selected':'' }} value="{{ $item->id }}">{{ $item->name }}</option>
                                                     @endforeach
                                                 </select>
                                                 <span class="text-danger color_id"></span>
-                                            </div> --}}
+                                            </div>
                                             @include('admin.product.components.select',[
                                                 'name' => 'color_id',
                                                 'attributes' => 'multiple',
@@ -203,17 +203,17 @@
                                                     ['name' => 'name', 'type' => 'text'],
                                                 ]
                                             ])
-                                        </div>
-                                        <div class="form-group col-md-6  col-xl-4">
+                                        </div> --}}
+                                        {{-- <div class="form-group col-md-6  col-xl-4">
                                             <label for="" class="col-form-label">Size</label>
-                                            {{-- <div class="">
+                                            <div class="">
                                                 <select name="size_id" id="" class="form-control multiple-select" multiple>
                                                     @foreach ($sizes as $key=>$item)
                                                         <option {{ $key==0?'selected':'' }} value="{{ $item->id }}">{{ $item->name }}</option>
                                                     @endforeach
                                                 </select>
                                                 <span class="text-danger size_id"></span>
-                                            </div> --}}
+                                            </div>
                                             @include('admin.product.components.select',[
                                                 'name' => 'size_id',
                                                 'attributes' => 'multiple',
@@ -224,7 +224,7 @@
                                                     ['name' => 'name', 'type' => 'text'],
                                                 ]
                                             ])
-                                        </div>
+                                        </div> --}}
                                         
                                         {{-- <div class="form-group col-md-6  col-xl-4">
                                             <label for="" class="col-form-label">Đơn vị</label> --}}

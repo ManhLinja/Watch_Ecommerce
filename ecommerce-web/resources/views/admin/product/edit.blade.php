@@ -138,7 +138,7 @@
                                     ])
                                 </div> --}}
 
-                                <div class="form-group col-md-6  col-xl-4">
+                                {{-- <div class="form-group col-md-6  col-xl-4">
                                     <label for="" class="col-form-label">Màu sắc</label>
                                     @include('admin.product.components.select',[
                                         'name' => 'color_id',
@@ -166,7 +166,7 @@
                                             ['name' => 'name', 'type' => 'text'],
                                         ]
                                     ])
-                                </div>
+                                </div> --}}
 
                                 {{-- <div class="form-group col-md-6  col-xl-4">
                                     <label for="" class="col-form-label">Đơn vị</label>

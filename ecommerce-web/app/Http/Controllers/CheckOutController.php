@@ -87,8 +87,8 @@ class CheckOutController extends Controller
             // $order_product->product_code = $product_info->code;
             $order_product->product_name = $product_info->name;
             $order_product->qty = $cart->qty;
-            $order_product->color = $cart->color;
-            $order_product->size = $cart->size;
+            // $order_product->color = $cart->color;
+            // $order_product->size = $cart->size;
             $order_product->price = $cart->product_price;
             $order_product->creator = Auth::user()->id;
             $order_product->created_at = Carbon::now()->toDateTimeString();
