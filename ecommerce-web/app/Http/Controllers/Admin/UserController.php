@@ -118,8 +118,6 @@ class UserController extends Controller
                 }
                 return redirect()->back()->withErrors('old_password','old password wrong');
             }
-
-            
         }
         $user->first_name = $request->first_name;
         $user->last_name = $request->last_name;
@@ -139,8 +137,9 @@ class UserController extends Controller
         }
         // dd($request->all());
         // return redirect()->route('admin_user_view',$user->id);
-        // return redirect()->back()->with('success','data updated');
-        return $user;
+        return redirect()->back()->with('success','data updated');
+        // return $user;
+        
     }
     public function delete(Request $request)
     {

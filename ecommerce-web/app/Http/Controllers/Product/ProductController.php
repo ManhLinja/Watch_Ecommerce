@@ -27,25 +27,31 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $collection = Product::active()->with(['category', 'sub_category', 'main_category','image'])
+        $collection = Product::with(['category', 'sub_category', 'main_category','image'])
                                 ->orderBy('id','DESC')->paginate(10);
         // $collection = Product::all();
         if($key = request()->key){
-            $collection = Product::active()->with(['category', 'sub_category', 'main_category','image'])
+            $collection = Product::with(['category', 'sub_category', 'main_category','image'])
             ->orderBy('id','DESC')->where('name','like','%'.$key.'%')->paginate(10);
         }
         elseif(isset($_GET['sort_by'])){
             $sort_by = $_GET['sort_by'];
             if($sort_by == 'highest_to_lowest'){
-                $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'image'])
+                $collection = Product::with(['category', 'sub_category', 'main_category', 'image'])
                 ->orderBy('price','DESC')->paginate(10);
             }
             elseif($sort_by == 'lowest_to_highest'){
-                $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'image'])
+                $collection = Product::with(['category', 'sub_category', 'main_category', 'image'])
                 ->orderBy('price','ASC')->paginate(10);
+            }elseif($sort_by == 'hoat_dong'){
+                $collection = Product::with(['category', 'sub_category', 'main_category', 'image'])->where('status',1)->paginate(10);
+            }elseif($sort_by == 'bao_duong'){
+                $collection = Product::with(['category', 'sub_category', 'main_category', 'image'])->where('status',2)->paginate(10);
+            }elseif($sort_by == 'ngung_cung_cap'){
+                $collection = Product::with(['category', 'sub_category', 'main_category', 'image'])->where('status',3)->paginate(10);
             }
         }else{
-            $collection = Product::active()->with(['category', 'sub_category', 'main_category', 'image'])
+            $collection = Product::with(['category', 'sub_category', 'main_category', 'image'])
                                 ->orderBy('id','DESC')->paginate(10);
         }
 
@@ -322,6 +328,7 @@ class ProductController extends Controller
 
         return Product::where('id',$product->id)->with(['category', 'sub_category', 'main_category', 'image'])
                         ->latest()->first();
+        // return redirect()->route('admin.product.index')->with('success','data deactivated');
 
     }
 

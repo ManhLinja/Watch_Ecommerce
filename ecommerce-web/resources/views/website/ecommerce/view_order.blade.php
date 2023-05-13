@@ -20,6 +20,7 @@
                                 <tr>
                                     <th scope="col">#</th>
                                     <th scope="col">Tên sản phẩm</th>
+                                    <th scope="col">Ảnh minh họa</th>
                                     <th scope="col">Số lượng</th>
                                     <th scope="col">Giá/1 sản phẩm</th>
                                 </tr>
@@ -29,6 +30,9 @@
                                 <tr>
                                     <th scope="row">{{ $key+1 }}</th>
                                     <td>{{$item->product_name}}</td>
+                                    <td>
+                                        <img src="/{{ $item->product->thumb_image }}" style="width:50px;">
+                                    </td>
                                     <td>{{$item->qty}}</td>
                                     {{-- <td>
                                         @if ($item->color == 1)

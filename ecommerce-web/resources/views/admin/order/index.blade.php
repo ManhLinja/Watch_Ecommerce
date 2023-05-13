@@ -69,11 +69,11 @@
                                         <td>
                                             {{-- {{ $item->status_information ? $item->status_information->name : $item->status }} --}}
                                             @if ($item->status == 1)
-                                            <a href="{{ route('change_status', $item->id) }}" onclick="return confirm('Thay đổi trạng thái thành đang xử lý?')" class="text text-success">Đã giao hàng</a>
+                                            <a class="badge badge-success">Đã giao hàng</a>
                                             @elseif ($item->status ==2)
-                                                <a class="text text-danger">Đã hủy</a> 
+                                                <a class="badge badge-danger">Đã hủy</a> 
                                             @elseif ($item->status ==3)
-                                            <a class="text text-warning">Đang xử lý</a>
+                                            <a class="badge badge-warning">Đang xử lý</a>
                                             @endif
                                             {{-- <select name="status" id="" class="form-control select-status" data-action="{{ route('admin.orders.update_status', $item->id) }}">
                                                 @foreach (config('order.status') as $status)

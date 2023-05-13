@@ -53,12 +53,12 @@ class OrderManagementController extends Controller
     public function changeStatus($id) {
         
         $getStatus = Order::select('status')->where('id', $id)->first();
-        if($getStatus->status == 3){
-            $status = 1;
-        }elseif($getStatus->status == 1){
-            $status = 3;
-        }
-        Order::where('id', $id)->update(['status'=>$status]);
+        // if($getStatus->status == 3){
+        //     $status = 1;
+        // }elseif($getStatus->status == 1){
+        //     $status = 3;
+        // }
+        Order::where('id', $id)->update(['status'=>1]);
 
         // Order::where('id', $id)->update(['status'=>$status]);
         // if($getStatus->status == 1){

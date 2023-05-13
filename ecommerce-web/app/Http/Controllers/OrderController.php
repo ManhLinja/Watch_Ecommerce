@@ -28,4 +28,9 @@ class OrderController extends Controller
         $username = Order::find($id);
         return view('website.ecommerce.view_order', compact('collection','username'));
     }
+    public function delete_order($id) {
+        $getStatus = Order::select('status')->where('id', $id)->first();
+        Order::where('id', $id)->update(['status'=>2]);
+        return redirect()->back();
+    }
 }

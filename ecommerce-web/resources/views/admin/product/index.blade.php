@@ -69,6 +69,7 @@
 
                                                             </select>
                                                         </div>
+
                                                         <div class="btn-group mx-3" role="group">
                                                             {{-- <button type="button" class="btn btn-light">Price Range</button>
                                                             <div class="btn-group" role="group">
@@ -80,6 +81,14 @@
                                                                     <li><a class="dropdown-item" href="#">Dropdown link</a></li>
                                                                 </ul>
                                                             </div> --}}
+                                                            <select name="status" id="status" class="form-control">
+                                                                <option value="{{Request::url()}}?sort_by=none">Lọc theo trạng thái</option>
+                                                                <option value="{{Request::url()}}?sort_by=hoat_dong">Hoạt động</option>
+                                                                <option value="{{Request::url()}}?sort_by=bao_duong">Bảo dưỡng</option>
+                                                                <option value="{{Request::url()}}?sort_by=ngung_cung_cap">Ngừng cung cấp</option>
+                                                                {{-- <option value="{{Request::url()}}?sort_by=a_z">a-z</option> --}}
+
+                                                            </select>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -148,6 +157,7 @@
                                                             <th scope="col">Hàng trong kho</th>
                                                             <th scope="col">Giá</th>
                                                             <th scope="col">giảm giá</th>
+                                                            <th scope="col">Trạng thái</th>
                                                             <th scope="col" class="text-right">Chức năng</th>
                                                         </tr>
                                                     </thead>
@@ -164,6 +174,15 @@
                                                             <td>{{ $item->stock }}</td>
                                                             <td>{{ $item->price }}</td>
                                                             <td>{{ $item->discount }}%</td>
+                                                            <td>
+                                                                @if ($item->status == 1)
+                                                                <span class="badge badge-success">Hoạt động</span>
+                                                                @elseif ($item->status == 2)
+                                                                <span class="badge badge-warning">Bảo dưỡng</span>
+                                                                @elseif ($item->status == 3)
+                                                                <span class="badge badge-danger">Ngừng cung cấp</span>
+                                                                @endif
+                                                            </td>
                                                             <td>
                                                                 <div class="text-right">
                                                                     <a href="{{ route('product.show',$item->id) }}" class="btn btn-sm btn-warning ml-2">Xem chi tiết</a>

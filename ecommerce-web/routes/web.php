@@ -78,6 +78,7 @@ Route::get('/contact', [WebsiteController::class, 'contact'])->name('website_con
 Route::get('/history', [Ordercontroller::class, 'history'])->middleware('auth');
 Route::post('/huy-don-hang', [Ordercontroller::class, 'huy_don_hang']);
 Route::get('/xem-chi-tiet/{id}',[OrderController::class, 'xem_chi_tiet'])->name('xem_chi_tiet');
+Route::get('/delete-order/{id}',[OrderController::class, 'delete_order'])->name('delete_order');
 
 Route::group([
     'prefix' => 'json',

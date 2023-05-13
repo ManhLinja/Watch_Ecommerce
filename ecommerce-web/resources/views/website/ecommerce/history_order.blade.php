@@ -45,12 +45,12 @@
                                             {{-- <a href="#" @click.prevent="remove_product_form_carts(cart)" class="btn btn-danger btn-sm my-1" title="Remove this item">
                                                 <i class="fa fa-trash"></i> Hủy đơn hàng
                                             </a> --}}
-                                            @if ($item->status != 2 && $item->status !=1)
+                                            {{-- @if ($item->status != 2 && $item->status !=1)
                                             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#huydon">
                                                 Hủy đơn
                                               </button>
                                               @endif
-                                              <!-- Modal -->
+                                              
                                               <div class="modal fade" id="huydon" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <form action="">
                                                     @csrf
@@ -68,11 +68,17 @@
                                                     <div class="modal-footer">
                                                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
                                                       <button type="button" id="{{ $item->invoice_id }}" onclick="Huydonhang(this.id)" class="btn btn-danger">Hủy</button>
+                                                      
                                                     </div>
                                                   </div>
                                                 </div>
                                             </form>
-                                              </div>
+                                              </div> --}}
+                                              @if ($item->status ==3)
+                                                        <a href="{{ route('delete_order', $item->id) }}" class="btn btn-danger" onclick="return confirm('Xác nhận giao hàng?')">
+                                                            Hủy đơn
+                                                        </a>
+                                                    @endif
                                             <a href="{{ route('xem_chi_tiet', $item->id) }}"  class="btn btn-warning btn-sm my-1">
                                                 <i class="fa fa-eye"></i> Xem
                                             </a>
@@ -85,11 +91,11 @@
                                         </td>
                                         <td >
                                             @if ($item->status == 1)
-                                            <span class="text text-success">Đã giao hàng</span>
+                                            <span class="badge badge-success">Đã giao hàng</span>
                                             @elseif ($item->status ==2)
-                                                <span class="text text-danger">Đã hủy</span> 
+                                                <span class="badge badge-danger">Đã hủy</span> 
                                             @elseif ($item->status ==3)
-                                            <span class="text text-warning">Đang xử lý</span>
+                                            <span class="badge badge-warning">Đang xử lý</span>
                                             @endif
                                         </td>
                                         <td>
