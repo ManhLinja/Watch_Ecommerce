@@ -52,7 +52,7 @@ class OrderManagementController extends Controller
     // }
     public function changeStatus($id) {
         
-        $getStatus = Order::select('status')->where('id', $id)->first();
+        // $getStatus = Order::select('status')->where('id', $id)->first();
         // if($getStatus->status == 3){
         //     $status = 1;
         // }elseif($getStatus->status == 1){
@@ -86,23 +86,28 @@ class OrderManagementController extends Controller
                 foreach($product as $item2) {
                     array_push($product_id,$item2->id); 
                 }
-            }
+            };
             // dd($qty_arr, $product_id);
-            foreach ($product_id as $key1 => $id) {
-                $product1 = Product::find($id);
+            foreach ($product_id as $key1 => $id_pro) {
+                $product1 = Product::find($id_pro);
                 $product1_stock = $product1->stock;
                 foreach($qty_arr as $key2 => $qty){
                     if($key1 == $key2){
-                        $abc = $product1_stock - $qty;
-                        $product1->stock = $abc;
-                        $product1->save();
+                        if($product1_stock > $qty){
+                            $abc = $product1_stock - $qty;
+                            $product1->stock = $abc;
+                            $product1->save();
+                        }else{
+                            Order::where('id', $id)->update(['status'=>3]);
+                            return redirect()->back()->with('error','Số lượng trong kho không đủ!');
+                        } 
                     }
                 }
-            }
+            };
 
             
         
 
-        return redirect()->back();
+        return redirect()->back()->with('success','Thành công');
     }
 }

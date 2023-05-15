@@ -19,9 +19,10 @@ class AdminController extends Controller
 {
     public function index() 
     {
-        $order_count = Order::count();
+        $order_count = Order::where('status',3)->count();
         $revenue = Order::where('status',1)->sum('total');
         $customer = User::where('role_id',4)->count();
+        $product = Product::count();
         $collection = Order::latest()->paginate(8);
         if(request()->date_from && request()->date_to){
             $collection = Order::whereBetween('invoice_date',[request()->date_from,request()->date_to])->paginate(8);
@@ -38,7 +39,7 @@ class AdminController extends Controller
         }
 
         // $items = DB::table('order_products')->select('products.id', DB::raw('SUM(product_id) as count'))->groupBy('product_id')->orderBy('count','desc')->get();
-        return view('admin.index', compact('order_count','collection','revenue','customer','revenue_from_to','count_order','topProducts'));
+        return view('admin.index', compact('order_count','collection','revenue','customer','revenue_from_to','count_order','topProducts','product'));
     }
 
     public function view($id){

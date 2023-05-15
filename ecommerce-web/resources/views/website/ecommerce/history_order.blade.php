@@ -75,7 +75,7 @@
                                             </form>
                                               </div> --}}
                                               @if ($item->status ==3)
-                                                        <a href="{{ route('delete_order', $item->id) }}" class="btn btn-danger" onclick="return confirm('Xác nhận giao hàng?')">
+                                                        <a href="{{ route('delete_order', $item->id) }}" class="btn btn-danger" onclick="return confirm('Bạn muốn hủy đơn hàng?')">
                                                             Hủy đơn
                                                         </a>
                                                     @endif

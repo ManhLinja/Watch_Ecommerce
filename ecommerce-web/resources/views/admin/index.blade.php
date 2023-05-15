@@ -18,7 +18,7 @@
                                 <div class="card-body card-block p-3" style="position: relative;">
                                     <div class="media align-items-center">
                                         <div class="media-body text-left">
-                                            <p class="text-white mb-0">Tổng Đơn hàng</p>
+                                            <p class="text-white mb-0">Đơn hàng chờ xác nhận</p>
                                             <h5 class="text-white mb-0">{{ $order_count }}</h5>
                                         </div>
                                         <div class="w-icon"><i class="zmdi zmdi-shopping-basket text-white"></i></div>
@@ -438,8 +438,8 @@
                                 <div class="card-body card-block p-3" style="position: relative;">
                                     <div class="media align-items-center">
                                         <div class="media-body text-left">
-                                            <p class="text-white mb-0">Tăng trưởng</p>
-                                            <h5 class="text-white mb-0">41.86%</h5>
+                                            <p class="text-white mb-0">Sản phẩm</p>
+                                            <h5 class="text-white mb-0">{{ $product }}</h5>
                                         </div>
                                         <div class="w-icon"><i class="zmdi zmdi-chart-donut text-white"></i></div>
                                     </div>
@@ -574,11 +574,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Sản phẩm bán chạy nhất</h5>
+                                    <h5 class="card-title">Sản phẩm hot</h5>
                                     <div class="table-responsive">
                                         <table class="table">
                                             <thead>
@@ -606,7 +606,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     {{-- <div class="row">
 
                         <form autocomplete="off" method="GET" action="" class="form-inline" style="margin-left:15px;">
