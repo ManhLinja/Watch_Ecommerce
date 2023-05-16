@@ -44,7 +44,7 @@
                         <div class="col-md-4">
                             <div class="form-group d-flex justify-content-between">
                                 <label style="margin-right: 10px; font-weight:bold;">Số lượng: </label>
-                                <input class="form-control" min="1" v-model="qty" :max="product.stock" name="quantity" type="number" style="width: 60px;" @blur="blurInput()" >
+                                <input class="form-control" min="1" v-model="qty" :max="product.stock" name="quantity" type="number" style="width: 100px;" @blur="blurInput()" >
                             </div>
                         </div>
                         <!-- <div class="col-md-4">

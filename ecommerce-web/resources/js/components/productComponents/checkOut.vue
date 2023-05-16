@@ -200,7 +200,6 @@ export default {
                 }
             }
             if(this.error.length === 0) {
-                    alert("perfect!")
                     this.set_billing_address(this.billing_address);
                     this.abc = "/checkout_success"
             }else{

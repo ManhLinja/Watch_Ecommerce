@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="woocommerce-breadcrumb mtb-15">
-                    <div class="menu">
+                    {{-- <div class="menu">
                         <ul>
                             <li><a href="index.html">Home</a></li>
                             <li><a href="shop.html">Shop</a></li>
@@ -14,7 +14,7 @@
                             <li><a href="#">Hats</a></li>
                             <li class="active"><a href="#">Cras nec nisl ut erat</a></li>
                         </ul>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

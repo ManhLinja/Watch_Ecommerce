@@ -69,9 +69,11 @@
                 <div class="clearfix"></div>
                 <hr>
                 <div class="text-right">
+                    <a href="/history" class="button button-success" style="color: white; background-color: #28a745;">Theo dõi đơn hàng</a>
                     <button id="print" class="btn btn-default btn-outline" type="button">
                         <span><i class="fa fa-print"></i> In hóa đơn</span>
                     </button>
+                    
                 </div>
             </div>
         </div>
