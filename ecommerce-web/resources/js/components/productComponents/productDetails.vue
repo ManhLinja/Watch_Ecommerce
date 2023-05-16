@@ -44,7 +44,7 @@
                         <div class="col-md-4">
                             <div class="form-group d-flex justify-content-between">
                                 <label style="margin-right: 10px; font-weight:bold;">Số lượng: </label>
-                                <input class="form-control" min="1" v-model="qty" :max="product.stock" name="quantity" type="number" style="width: 60px;">
+                                <input class="form-control" min="1" v-model="qty" :max="product.stock" name="quantity" type="number" style="width: 60px;" @blur="blurInput()" >
                             </div>
                         </div>
                         <!-- <div class="col-md-4">
@@ -156,6 +156,13 @@ import { mapGetters, mapActions, mapMutations } from 'vuex';
             this.qty = 0;
             this.color = '';
             this.size = '';
+        },
+        blurInput() {
+            if(this.qty > this.product.stock){
+                this.qty = this.product.stock;
+            }else if(this.qty <= 0 ) {
+                this.qty = 1;
+            }
         }
     },
         data: function(){

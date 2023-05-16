@@ -37,7 +37,8 @@
                                         <span class="amounte">${{ cart.product.discount_price || cart.product.price }}</span>
                                     </td>
                                     <td class="product-quantity">
-                                        <input :value="cart.qty" @change="change_product_qty($event,cart.product.id)" min="1" :max="cart.product.stock" type="number" style="width: 60px;">
+                                        <!-- <input :value="cart.qty" @change="change_product_qty($event,cart.product.id)" min="1" :max="cart.product.stock" type="number" style="width: 60px;" @blur="abc()"> -->
+                                        {{cart.qty}}
                                     </td>
                                     <td class="product-subtotal">
                                         <span class="sub-total">${{ cart.product_price * cart.qty }}</span>
@@ -138,7 +139,21 @@ import productDetails from './productDetails.vue';
                 };
 
                 this.change_cart_qty(product_info);
-            }
+            },
+
+            // abc() {
+            //     if(cart.qty > 100){
+            //         alert("aaaa");
+            //     }
+            // }
+
+            // blurInput2() {
+            //     if(this.qty > this.product.stock){
+            //     this.qty = this.product.stock;
+            //     }else if(this.qty <= 0 ) {
+            //         this.qty = 1;
+            //     }
+            // }
         },
         computed: {
             ...mapGetters([

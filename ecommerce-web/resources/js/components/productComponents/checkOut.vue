@@ -87,7 +87,8 @@
                             <b>Ghi chú đặt hàng</b>
                             <textarea name="#" id="#" cols="30" rows="10" placeholder="Ghi chú thêm về đơn hàng của bạn"></textarea>
                         </div>
-                        <a class="btn btn-success btn-sm" href="/checkout_success" @click="start_checkout">Đặt hàng</a>
+                        <!-- <a class="btn btn-success btn-sm" href="/checkout_success" @click="start_checkout">Đặt hàng</a> -->
+                        <a class="btn btn-success btn-sm" :href="abc" @click="start_checkout">Đặt hàng</a>
                         <!-- <button class="btn btn-success" @click.prevent="checout_confirm">Checkout</button> -->
                     </div>
                 </div>
@@ -138,6 +139,32 @@
                 </div>
             </div>
     </div>
+
+    <div class="dialog" v-show="def">
+      <div class="dialog__msg-box">
+        <div class="msg-content">
+          <div class="m__icon-question"></div>
+          <div class="msg__content" style="margin: 0 20px;">
+             <ul>
+                <li v-for="item in error" v-bind:key="item">
+                    {{ item }} Không xác định
+                </li>
+             </ul>
+          </div>
+        </div>
+        <div class="dialog__footer">
+          <div class="">
+            <button
+              class="button button1"
+              style="min-width: 50px !important; margin-left: 6px"
+              @click="handleSuccess"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 </template>
 
 <script>
@@ -151,10 +178,13 @@ export default {
                 address: '',
                 address2: '',
                 town: '',
-                state: '',
+                // state: '',
                 phone: '',
-                order_notes:'',
-            }
+                // order_notes:'',
+            },
+            abc: '',
+            def: 0,
+            error: [],
         }
     },
     methods: {
@@ -163,8 +193,25 @@ export default {
         ]),
 
         start_checkout: function(){
-            this.set_billing_address(this.billing_address);
+            this.error = []
+            for (const item in this.billing_address){
+                if(this.billing_address[item] === "" || this.billing_address[item].length === 0){
+                    this.error.push(item)
+                }
+            }
+            if(this.error.length === 0) {
+                    alert("perfect!")
+                    this.set_billing_address(this.billing_address);
+                    this.abc = "/checkout_success"
+            }else{
+                this.abc = "#"
+                this.def = 1;
+            }
+            
         },
+        handleSuccess() {
+            this.def = 0;
+        }
 
         
 
@@ -206,5 +253,52 @@ export default {
 </script>
 
 <style scoped>
+    .dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.24);
+    z-index: 1000;
+}
+
+/* dialog ban co muon xoa hay khong */
+
+.dialog__msg-box {
+    /* display: flex; */
+    position: absolute;
+    /* flex-direction: column; */
+    /* column-gap: 5px; */
+    justify-content: space-between;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #fff;
+    width: 444px;
+    min-width: 400px;
+    height: auto;
+    padding : 20px;
+}
+
+.dialog__msg-box .msg-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-bottom: 20px;
+    /* border-bottom: 1px solid #ccc; */
+}
+
+.dialog__msg-box .dialog__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.msg-content li {
+    color: red;
+}
 
 </style>

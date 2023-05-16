@@ -93,7 +93,7 @@ class OrderManagementController extends Controller
                 $product1_stock = $product1->stock;
                 foreach($qty_arr as $key2 => $qty){
                     if($key1 == $key2){
-                        if($product1_stock > $qty){
+                        if($product1_stock >= $qty){
                             $abc = $product1_stock - $qty;
                             $product1->stock = $abc;
                             $product1->save();

@@ -62,6 +62,7 @@ class CheckOutController extends Controller
         $shipping_address->created_at = Carbon::now()->toDateTimeString();
         $shipping_address->save();
 
+
         $order = new Order();
         $order->user_id = Auth::user()->id;
         $order->invoice_date = Carbon::now()->toDateTimeString();
